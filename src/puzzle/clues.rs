@@ -1,6 +1,6 @@
 use std::*;
 
-use super::*;
+use crate::*;
 
 
 #[derive(PartialEq, Eq)]

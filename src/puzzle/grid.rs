@@ -1,13 +1,12 @@
 use std::*;
 
-use super::*;
-use crate::utils;
+use crate::*;
 
 
 pub struct Grid<const N: usize>
 {
-    cells: [[Cell; N]; N],
-    clues: Clues<N>,
+    pub cells: [[Cell; N]; N],
+    pub clues: Clues<N>,
 }
 
 impl<const N: usize> Grid<N>
@@ -67,21 +66,10 @@ impl<const N: usize> Grid<N>
                 if      x == 0   { if n > 0 { clues.left[y] = Some(n); } None }
                 else if x == N+1 { if n > 0 { clues.right[y] = Some(n); } None }
                 else if n > 0    { Some(Cell::Solved(n)) }
-                else             { Some(Cell::Pencil((1..=N as Digit).collect())) }
+                else             { Some(Cell::Pencil( Some((1..=N as Digit).collect()) )) }
             );
 
         utils::as_array(row)
-    }
-}
-
-impl<const N: usize> Grid<N>
-{
-    pub fn cells(&self) -> &[[Cell; N]; N] {
-        &self.cells
-    }
-
-    pub fn clues(&self) -> &Clues<N> {
-        &self.clues
     }
 }
 
@@ -91,7 +79,36 @@ impl<const N: usize> Grid<N>
         &self.cells[y][x]
     }
 
-    pub fn look_right(&self, row: usize) -> [&Cell; N] {
-        utils::as_array(self.cells[row].iter())
+    pub fn look_right(&mut self, row: usize) -> (Option<Digit>, [&mut Cell; N]) {
+        ( self.clues.left[row], utils::as_array(self.cells[row].iter_mut()) )
+    }
+    pub fn look_left(&mut self, row: usize) -> (Option<Digit>, [&mut Cell; N]) {
+        ( self.clues.right[row], utils::as_array(self.cells[row].iter_mut().rev()) )
+    }
+
+    pub fn look_down(&mut self, col: usize) -> (Option<Digit>, [&mut Cell; N]) {
+        ( self.clues.upper[col], utils::as_array(self.cells.iter_mut().map(|row| &mut row[col])) )
+    }
+    pub fn look_up(&mut self, col: usize) -> (Option<Digit>, [&mut Cell; N]) {
+        ( self.clues.upper[col], utils::as_array(self.cells.iter_mut().rev().map(|row| &mut row[col])) )
+    }
+}
+
+impl<const N: usize> fmt::Debug for Grid<N>
+{
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}",
+            self.cells.iter()
+                .map(|row|
+                    row.iter()
+                        .map(|cell| Cell::render::<N>(cell))
+                        .collect::<Vec<_>>()
+                        .join(" | ")
+                )
+                .map(|row| format!("| {row} |"))
+                .chain(iter::once(iter::repeat_n('-', N * (N+5) + 1).collect::<String>()))
+                .collect::<Vec<_>>()
+                .join("\n")
+        )
     }
 }
