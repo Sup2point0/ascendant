@@ -7,7 +7,7 @@ pub use puzzle::*;
 mod solver;
 pub use solver::*;
 
-pub mod utils;
+pub mod util;
 
 
 pub type Digit = u8;

@@ -1,6 +1,8 @@
 use std::*;
 use std::collections::HashSet;
 
+use itertools::*;
+
 use crate::*;
 
 
@@ -37,6 +39,7 @@ impl Cell
 
             Self::Pencil(Some(digits)) => {
                 let str = digits.iter()
+                    .sorted()
                     .map(|n| n.to_string())
                     .collect::<Vec<String>>()
                     .join("");
@@ -61,6 +64,7 @@ impl fmt::Debug for Cell
 
             Self::Pencil(Some(digits)) => format!("[{}]",
                 digits.iter()
+                    .sorted()
                     .map(|n| n.to_string())
                     .collect::<Vec<String>>()
                     .join("")
