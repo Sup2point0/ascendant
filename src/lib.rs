@@ -1,5 +1,6 @@
 #![feature(generic_const_exprs)]
 
-pub mod puzzle;
+mod puzzle;
+pub use puzzle::*;
 
 pub mod utils;
