@@ -1,68 +1,7 @@
 use std::*;
 
-use itertools::*;
-
+use super::*;
 use crate::utils;
-
-
-type Digit = u8;
-
-
-#[derive(Clone, PartialEq, Eq)]
-pub enum Cell {
-    Solved(Digit),
-    Pencil(collections::HashSet<Digit>),
-}
-
-#[macro_export]
-macro_rules! pen {
-    ( $($digit: expr),* $(,)? ) =>
-    {
-        Cell::Pencil(std::collections::HashSet::from([$( $digit, )*]))
-    }
-}
-
-impl fmt::Debug for Cell
-{
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}", match self {
-            Self::Solved(d)  => format!("'{d}'"),
-            Self::Pencil(ds) => format!("[{}]", ds.iter().map(|n| n.to_string()).collect::<Vec<String>>().join("")),
-        })
-    }
-}
-
-
-#[derive(PartialEq, Eq)]
-pub struct Clues<const N: usize>
-{
-    pub upper: [Option<Digit>; N],
-    pub lower: [Option<Digit>; N],
-    pub left:  [Option<Digit>; N],
-    pub right: [Option<Digit>; N],
-}
-
-impl<const N: usize> Clues<N>
-{
-    pub fn new() -> Self
-    {
-        Self {
-            upper: [None; N],
-            left:  [None; N], right: [None; N],
-            lower: [None; N],
-        }
-    }
-}
-
-impl<const N: usize> fmt::Debug for Clues<N>
-{
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result
-    {
-        [self.upper, self.left, self.right, self.lower]
-            .concat()
-            .fmt(f)
-    }
-}
 
 
 pub struct Grid<const N: usize>
