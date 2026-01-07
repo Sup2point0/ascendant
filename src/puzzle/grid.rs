@@ -90,7 +90,7 @@ impl<const N: usize> Grid<N>
         ( self.clues.upper[col], util::arr(self.cells.iter_mut().map(|row| &mut row[col])) )
     }
     pub fn look_up(&mut self, col: usize) -> (Option<Digit>, [&mut Cell; N]) {
-        ( self.clues.upper[col], util::arr(self.cells.iter_mut().rev().map(|row| &mut row[col])) )
+        ( self.clues.lower[col], util::arr(self.cells.iter_mut().rev().map(|row| &mut row[col])) )
     }
 }
 

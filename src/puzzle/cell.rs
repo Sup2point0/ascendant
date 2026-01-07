@@ -9,6 +9,10 @@ use crate::*;
 #[derive(Clone, PartialEq, Eq)]
 pub enum Cell {
     Solved(Digit),
+
+    /// A cell we haven't deduced yet, containing pencil marks of possible digits.
+    /// 
+    /// We use an `Option<>` to allow `.take()` on it, which will allow mutably replacing the value. This field should always atomically be `Some()` by contract.
     Pencil(Option<HashSet<Digit>>),
 }
 
