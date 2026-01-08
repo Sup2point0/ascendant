@@ -59,6 +59,26 @@ use ascendant::*;
     );
 }
 
+#[test] pub fn solve_5x5_sparse()
+{
+    let cc = 0;
+    
+    assert_eq!(
+        Solver::solve(examples::grid_5x5_sparse_1()).cells,
+        Grid::<5>::construct(
+            [
+                [cc, cc, cc, cc, cc, cc, cc].into(),
+                [cc,  3,  2,  5,  4,  1, cc].into(),
+                [cc,  1,  5,  4,  3,  2, cc].into(),
+                [cc,  4,  1,  3,  2,  5, cc].into(),
+                [cc,  2,  4,  1,  5,  3, cc].into(),
+                [cc,  5,  3,  2,  1,  4, cc].into(),
+                [cc, cc, cc, cc, cc, cc, cc].into(),
+            ]
+        ).cells
+    );
+}
+
 #[test] pub fn solve_6x6_full()
 {
     let cc = 0;
@@ -94,4 +114,27 @@ use ascendant::*;
             ]
         ).cells
     );
+}
+
+#[test] pub fn solve_8x8_full()
+{
+    let cc = 0;
+    
+    // assert_eq!(
+    //     Solver::solve(examples::grid_8x8_full_easy_1()).cells,
+    //     Grid::<8>::construct(
+    //         [
+    //             [ cc, cc, cc, cc, cc, cc, cc, cc, cc, cc ],
+    //             [ cc,  2,  6,  4,  7,  1,  8,  3,  5, cc ],
+    //             [ cc,  6,  5,  7,  3,  2,  4,  8,  1, cc ],
+    //             [ cc,  4,  7,  6,  1,  8,  5,  2,  3, cc ],
+    //             [ cc,  7,  8,  5,  6,  4,  3,  1,  2, cc ],
+    //             [ cc,  5,  3,  8,  2,  7,  1,  4,  6, cc ],
+    //             [ cc,  8,  4,  1,  5,  3,  2,  6,  7, cc ],
+    //             [ cc,  1,  2,  3,  8,  5,  6,  7,  4, cc ],
+    //             [ cc,  3,  1,  2,  4,  6,  7,  5,  8, cc ],
+    //             [ cc, cc, cc, cc, cc, cc, cc, cc, cc, cc ],
+    //         ]
+    //     ).cells
+    // );
 }
