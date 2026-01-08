@@ -17,11 +17,11 @@ use crate::*;
     assert_eq!(
         Grid::occurrences(
             &[
-                &mut pen![1,2,3    ],
-                &mut pen![1,2      ],
-                &mut pen![  2,3    ],
-                &mut pen![    3,4,5],
-                &mut pen![1,      5],
+                &mut p![1,2,3    ],
+                &mut p![1,2      ],
+                &mut p![  2,3    ],
+                &mut p![    3,4,5],
+                &mut p![1,      5],
             ]
         ),
         map![
@@ -36,11 +36,11 @@ use crate::*;
     assert_eq!(
         Grid::occurrences(
             &[
-                &mut pen![1,2,3  ],
-                &mut pen![1,2    ],
+                &mut p![1,2,3  ],
+                &mut p![1,2    ],
                 &mut Sv(5),
-                &mut pen![    3,4],
-                &mut pen![1,     ],
+                &mut p![    3,4],
+                &mut p![1,     ],
             ]
         ),
         map![

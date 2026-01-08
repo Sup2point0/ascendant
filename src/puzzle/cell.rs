@@ -17,7 +17,7 @@ pub enum Cell {
 }
 
 #[macro_export]
-macro_rules! pen {
+macro_rules! p {
     ( $($digit: expr),* $(,)? ) =>
     {
         Cell::Pencil(

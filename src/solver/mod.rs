@@ -165,7 +165,7 @@ impl<const N: usize> Solver<N>
             let clue = match clue {
                 None    => break 'exit,
                 Some(1) => break 'exit,
-                Some(2) => break 'exit,
+                Some(2) => return Self::deduce_haven_for_2_clue(lane),
                 Some(c) => c,
             };
 
@@ -241,6 +241,60 @@ impl<const N: usize> Solver<N>
         let upper = sequence_peak - j;
 
         (lower..=upper).collect()
+    }
+
+    /// # Situation
+    /// 
+    /// ```ignore
+    /// 2 | [1~k] [1~k] [1~k] ... 6 ...
+    /// ```
+    /// 
+    /// with k < 6.
+    /// 
+    /// # Deduction
+    /// 
+    /// ```ignore
+    /// 2 | [1~k] [1~d] [1~d] ... 6 ...
+    /// ```
+    /// 
+    /// with d = k - 1.
+    /// 
+    /// # Prerequisites
+    /// 
+    /// - We have a peak in the lane.
+    /// - We have a clue of 2.
+    pub fn deduce_haven_for_2_clue(lane: [&mut Cell; N]) -> bool
+    {
+        let mut did_deduce = false;
+
+        'exit: {
+            let blockade = match lane[0] {
+                Cell::Solved(digit) => *digit,
+                Cell::Pencil(Some(heads)) => *heads.iter().max().unwrap(),
+                _ => break 'exit,
+            };
+
+            if let Some(peak_idx) = Grid::find_peak(&lane) {
+                let cands: HashSet<Digit> = (1..blockade).collect();
+
+                for i in 1..peak_idx
+                {
+                    if let Cell::Pencil(digits) = lane[i]
+                    && let Some(ds) = digits.take()
+                    {
+                        let deduced: HashSet<Digit> = ds.intersection(&cands).copied().collect();
+
+                        if deduced != ds {
+                            did_deduce = true;
+                        }
+
+                        *digits = Some(deduced);
+                    }
+                }
+            }
+        }
+
+        did_deduce
     }
 
     pub fn pinpoint_cells_in_lane(mut lane: [&mut Cell; N]) -> bool
