@@ -5,7 +5,7 @@ use crate::*;
 
 // == 4x4 == //
 
-pub fn grid_4x4_easy() -> Grid<4> {
+pub fn grid_4x4_full_1() -> Grid<4> {
     Grid::construct(
         [
             [ 00,   2,  2,  1,  3,  0 ].into(),
@@ -20,7 +20,7 @@ pub fn grid_4x4_easy() -> Grid<4> {
     )
 }
 
-pub fn grid_4x4_hard_1() -> Grid<4> {
+pub fn grid_4x4_sparse_1() -> Grid<4> {
     Grid::construct(
         [
             [ 00,  00,  2, 00, 00,  0 ].into(),
@@ -154,7 +154,7 @@ pub fn grid_6x6_full_hard_1() -> Grid<6> {
     )
 }
 
-pub fn grid_6x6_hard_1() -> Grid<6> {
+pub fn grid_6x6_sparse_1() -> Grid<6> {
     Grid::construct(
         [
             [ 00,  00, 00, 00, 00,  4,  2,  0 ].into(),

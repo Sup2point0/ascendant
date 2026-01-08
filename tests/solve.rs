@@ -6,7 +6,7 @@ use ascendant::*;
     let cc = 0;
     
     assert_eq!(
-        Solver::solve(examples::grid_4x4_easy()).cells,
+        Solver::solve(examples::grid_4x4_full_1()).cells,
         Grid::<4>::construct(
             [
                 [cc, cc, cc, cc, cc, cc].into(),
@@ -20,7 +20,7 @@ use ascendant::*;
     );
     
     assert_eq!(
-        Solver::solve(examples::grid_4x4_hard_1()).cells,
+        Solver::solve(examples::grid_4x4_sparse_1()).cells,
         Grid::<4>::construct(
             [
                 [cc, cc, cc, cc, cc, cc].into(),
@@ -57,6 +57,22 @@ use ascendant::*;
 #[test] pub fn solve_6x6()
 {
     let cc = 0;
+    
+    // assert_eq!(
+    //     Solver::solve(examples::grid_6x6_full_easy_1()).cells,
+    //     Grid::<6>::construct(
+    //         [
+    //             [cc, cc, cc, cc, cc, cc, cc, cc].into(),
+    //             [cc,  1,  6,  3,  4,  2,  5, cc].into(),
+    //             [cc,  6,  5,  4,  2,  3,  1, cc].into(),
+    //             [cc,  5,  3,  1,  6,  4,  2, cc].into(),
+    //             [cc,  2,  1,  5,  3,  6,  4, cc].into(),
+    //             [cc,  4,  2,  6,  5,  1,  3, cc].into(),
+    //             [cc,  3,  4,  2,  1,  5,  6, cc].into(),
+    //             [cc, cc, cc, cc, cc, cc, cc, cc].into(),
+    //         ]
+    //     ).cells
+    // );
     
     assert_eq!(
         Solver::solve(examples::grid_6x6_full_hard_1()).cells,
