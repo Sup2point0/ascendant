@@ -74,7 +74,7 @@ impl fmt::Debug for Cell
                     .join("")
             ),
 
-            Self::Pencil(None) => format!("[ ? ]"),
+            Self::Pencil(None) => "[ ? ]".to_string(),
         })
     }
 }

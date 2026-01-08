@@ -111,7 +111,7 @@ impl<const N: usize> fmt::Debug for Grid<N>
                     util::rep(' ', 3),
                     self.clues.upper.clone()
                         .map(|clue|
-                            clue.map(|c| format!(" {}{} ", util::rep(' ', N-1), c.to_string()))
+                            clue.map(|c| format!(" {}{} ", util::rep(' ', N-1), c))
                                 .unwrap_or(util::rep(' ', N+2).to_string())
                         ).join(" | ")
                 )
@@ -126,7 +126,7 @@ impl<const N: usize> fmt::Debug for Grid<N>
                         )
                         .chain(
                             row.iter()
-                                .map(|cell| Cell::render::<N>(cell))
+                                .map(Cell::render::<N>)
                         )
                         .chain(
                             iter::once( 
@@ -143,7 +143,7 @@ impl<const N: usize> fmt::Debug for Grid<N>
                         util::rep(' ', 3),
                         self.clues.lower.clone()
                             .map(|clue|
-                                clue.map(|c| format!(" {}{} ", util::rep(' ', N-1), c.to_string()))
+                                clue.map(|c| format!(" {}{} ", util::rep(' ', N-1), c))
                                     .unwrap_or(util::rep(' ', N+2).to_string())
                             ).join(" | ")
                     ) ))

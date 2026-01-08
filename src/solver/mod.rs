@@ -70,31 +70,30 @@ impl<const N: usize> Solver<N>
                 *cell = Cell::Solved(i+1);
             }
 
-            if let Cell::Pencil(digits) = cell {
-                if let Some(ds) = digits.take()
-                {
-                    let peak_idx = lane_snap.iter().position(|c| *c == Cell::Solved(N));
+            if let Cell::Pencil(digits) = cell
+                && let Some(ds) = digits.take()
+            {
+                let peak_idx = lane_snap.iter().position(|c| *c == Cell::Solved(N));
 
-                    let cands = {
-                        if let Some(c) = clue
-                            && let Some(idx) = peak_idx
-                            && i < idx
-                        {
-                            Self::calc_cands_from_peak(c, i, idx)
-                        }
-                        else {
-                            Self::calc_cands_from_clue(clue, i)
-                        }
-                    };
-
-                    let deduced: HashSet<Digit> = ds.intersection(&cands).copied().collect();
-
-                    if deduced != ds {
-                        did_deduce = true;
+                let cands = {
+                    if let Some(c) = clue
+                        && let Some(idx) = peak_idx
+                        && i < idx
+                    {
+                        Self::calc_cands_from_peak(c, i, idx)
                     }
+                    else {
+                        Self::calc_cands_from_clue(clue, i)
+                    }
+                };
 
-                    *digits = Some(deduced);
+                let deduced: HashSet<Digit> = ds.intersection(&cands).copied().collect();
+
+                if deduced != ds {
+                    did_deduce = true;
                 }
+
+                *digits = Some(deduced);
             }
         }
 
@@ -111,28 +110,26 @@ impl<const N: usize> Solver<N>
 
     pub fn calc_cands_from_peak(clue: Digit, i: usize, peak_idx: usize) -> HashSet<Digit>
     {
-        let clue = clue as usize;
-        let lower;
-        let upper;
+        let lower = 1 + if peak_idx < clue {i} else {0};
 
-        lower = 1 + if peak_idx < clue {i} else {0};
-
-        if clue == 2 {
-            if i == 0 {
-                if peak_idx == N-1 {
-                    return HashSet::from([N-1]);
+        let upper = {
+            if clue == 2 {
+                if i == 0 {
+                    if peak_idx == N-1 {
+                        return HashSet::from([N-1]);
+                    }
+                    N - 1
                 }
-                upper = N - 1;
+                else {
+                    N - 2
+                }
             }
             else {
-                upper = N - 2;
+                (1 + N - clue + i).min(N-1)
             }
-        }
-        else {
-            upper = (1 + N - clue + i).min(N-1);
-        }
+        };
         
-        (lower..= upper).collect()
+        (lower..=upper).collect()
     }
 
     pub fn deduce_one_cell_sudoku_style(mut grid: Grid<N>, x: usize, y: usize) -> (Grid<N>, bool)
@@ -202,18 +199,17 @@ impl<const N: usize> Solver<N>
             }
 
             for (i, cell) in lane[0..last_index].iter_mut().enumerate() {
-                if let Cell::Pencil(digits) = cell {
-                    if let Some(ds) = digits.take()
-                    {
-                        let cands = Self::calc_ascending(target, i, last_index);
-                        let deduced: HashSet<Digit> = ds.intersection(&cands).copied().collect();
+                if let Cell::Pencil(digits) = cell
+                    && let Some(ds) = digits.take()
+                {
+                    let cands = Self::calc_ascending(target, i, last_index);
+                    let deduced: HashSet<Digit> = ds.intersection(&cands).copied().collect();
 
-                        if deduced != ds {
-                            did_deduce = true;
-                        }
-
-                        *digits = Some(deduced);
+                    if deduced != ds {
+                        did_deduce = true;
                     }
+
+                    *digits = Some(deduced);
                 }
             }
         }
@@ -241,11 +237,11 @@ impl<const N: usize> Solver<N>
         for (i, cell) in lane.iter().enumerate() {
             match cell {
                 Cell::Solved(digit) => {
-                    seen_indices[(*digit-1) as usize].push(i);
+                    seen_indices[*digit - 1].push(i);
                 }
                 Cell::Pencil(Some(digits)) => {
                     for digit in digits {
-                        seen_indices[(*digit-1) as usize].push(i);
+                        seen_indices[*digit - 1].push(i);
                     }
                 },
                 _ => (),
@@ -253,7 +249,7 @@ impl<const N: usize> Solver<N>
         }
 
         for (i, indices) in seen_indices.iter().enumerate() {
-            let digit = (i+1);
+            let digit = i + 1;
 
             if indices.len() == 1 {
                 let idx = indices.into_iter().next().unwrap();
