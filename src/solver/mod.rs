@@ -107,20 +107,20 @@ impl<const N: usize> Solver<N>
         let lower;
         let upper;
 
+        lower = 1 + if peak_idx < clue {i} else {0};
+
         if clue == 2 {
-            lower = 1 + if peak_idx < clue {i} else {0};
-            if peak_idx == N-1 {
-                if i == 0 {
+            if i == 0 {
+                if peak_idx == N-1 {
                     return HashSet::from([(N-1) as Digit]);
                 }
-                upper = N - 2;
+                upper = N - 1;
             }
             else {
-                upper = N - 1;
+                upper = N - 2;
             }
         }
         else {
-            lower = 1 + if peak_idx < clue {i} else {0};
             upper = (1 + N - clue + i).min(N-1);
         }
         
