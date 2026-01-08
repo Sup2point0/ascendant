@@ -11,6 +11,16 @@ macro_rules! set {
     };
 }
 
+#[macro_export]
+macro_rules! map {
+    ( $($value: expr),* $(,)? ) =>
+    {
+        (1..).zip(
+            [ $( $value, )* ]
+        ).collect()
+    };
+}
+
 
 pub fn test_grid() -> Grid<5> {
     Grid::construct(

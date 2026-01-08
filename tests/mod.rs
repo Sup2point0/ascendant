@@ -5,13 +5,15 @@ pub use util::*;
 mod grid {
     mod construct;
 
-    mod at;
+    mod query;
 
-    mod look;
+    mod process;
 }
 
 
 mod solver {
+    mod solve;
+
     mod calc_cands_from_peak;
 
     // mod deduce_sequence_in_lane;
