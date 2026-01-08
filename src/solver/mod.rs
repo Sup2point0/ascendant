@@ -27,12 +27,10 @@ impl<const N: usize> Solver<N>
     {
         let mut did_deduce = false;
 
-        println!("pre-deduce = \n{:?}", grid);
         for x in 0..N { did_deduce |= Self::deduce_one_lane(grid.look_down(x)); }
         for x in 0..N { did_deduce |= Self::deduce_one_lane(grid.look_up(x)); }
         for y in 0..N { did_deduce |= Self::deduce_one_lane(grid.look_right(y)); }
         for y in 0..N { did_deduce |= Self::deduce_one_lane(grid.look_left(y)); }
-        println!("post-deduce = \n{:?}", grid);
 
         let mut deduced;
 
@@ -73,13 +71,6 @@ impl<const N: usize> Solver<N>
                     && i < idx
                 {
                     let out = Self::calc_cands_from_peak(c, i, idx);
-                    if out.len() == 0 {
-                        // println!("\n---\ncell = {:?}", cell);
-                        // println!("clue = {:?}", clue);
-                        // println!("i = {:?}", i);
-                        // println!("idx = {:?}", idx);
-                        // println!("lane = {:?}", lane_snap);
-                    }
                     out
                 }
                 else {
@@ -115,10 +106,27 @@ impl<const N: usize> Solver<N>
     pub fn calc_cands_from_peak(clue: Digit, i: usize, peak_idx: usize) -> HashSet<Digit>
     {
         let clue = clue as usize;
-        let lower = (1 + if peak_idx < clue {i} else {0}) as Digit;
-        let upper = (1 + N - clue + i).min(N-1) as Digit;
+        let lower;
+        let upper;
+
+        if clue == 2 {
+            lower = 1 + if peak_idx < clue {i} else {0};
+            if peak_idx == N-1 {
+                if i == 0 {
+                    return HashSet::from([(N-1) as Digit]);
+                }
+                upper = N - 2;
+            }
+            else {
+                upper = N - 1;
+            }
+        }
+        else {
+            lower = 1 + if peak_idx < clue {i} else {0};
+            upper = (1 + N - clue + i).min(N-1);
+        }
         
-        (lower..=upper).collect()
+        (lower as Digit ..= upper as Digit).collect()
     }
 
     pub fn deduce_one_cell_sudoku_style(mut grid: Grid<N>, x: usize, y: usize) -> (Grid<N>, bool)

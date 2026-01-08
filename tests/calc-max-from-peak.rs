@@ -17,9 +17,9 @@ macro_rules! set {
 
     // 2 | _ _ _ 4
     let peak_idx = 3;
-    assert_eq!( Solver::<4>::calc_cands_from_peak(clue, 0, peak_idx), set![1,2,3] );
-    assert_eq!( Solver::<4>::calc_cands_from_peak(clue, 1, peak_idx), set![1,2,3] );
-    assert_eq!( Solver::<4>::calc_cands_from_peak(clue, 2, peak_idx), set![1,2,3] );
+    assert_eq!( Solver::<4>::calc_cands_from_peak(clue, 0, peak_idx), set![3] );
+    assert_eq!( Solver::<4>::calc_cands_from_peak(clue, 1, peak_idx), set![1,2] );
+    assert_eq!( Solver::<4>::calc_cands_from_peak(clue, 2, peak_idx), set![1,2] );
     
     // 2 | _ _ 4 _
     let peak_idx = 2;
