@@ -1,7 +1,7 @@
 use ascendant::*;
 
 
-#[test] pub fn solve_4x4()
+#[test] pub fn solve_4x4_full()
 {
     let cc = 0;
     
@@ -18,6 +18,11 @@ use ascendant::*;
             ]
         ).cells
     );
+}
+
+#[test] pub fn solve_4x4_sparse()
+{
+    let cc = 0;
     
     assert_eq!(
         Solver::solve(examples::grid_4x4_sparse_1()).cells,
@@ -34,7 +39,7 @@ use ascendant::*;
     );
 }
 
-#[test] pub fn solve_5x5()
+#[test] pub fn solve_5x5_full()
 {
     let cc = 0;
     
@@ -54,7 +59,7 @@ use ascendant::*;
     );
 }
 
-#[test] pub fn solve_6x6()
+#[test] pub fn solve_6x6_full()
 {
     let cc = 0;
     

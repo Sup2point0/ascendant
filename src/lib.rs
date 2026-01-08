@@ -8,4 +8,4 @@ pub mod examples;
 pub mod util;
 
 
-pub type Digit = u8;
+pub type Digit = usize;

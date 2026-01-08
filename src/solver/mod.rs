@@ -58,21 +58,22 @@ impl<const N: usize> Solver<N>
         let mut did_deduce = false;
         let lane_snap: [Cell; N] = util::arr(lane.iter().map(|cell| (*cell).clone()));
 
-        for (i, cell) in lane.into_iter().enumerate() {
+        for (i, cell) in lane.into_iter().enumerate()
+        {
             if let Cell::Solved{..} = cell { continue; }
 
             if let Some(1) = clue && i == 0 {
-                *cell = Cell::Solved(N as Digit);
+                *cell = Cell::Solved(N);
                 continue;
             }
-            else if let Some(c) = clue && c == N as Digit {
-                *cell = Cell::Solved((i+1) as Digit);
+            else if let Some(c) = clue && c == N {
+                *cell = Cell::Solved(i+1);
             }
 
             if let Cell::Pencil(digits) = cell {
                 if let Some(ds) = digits.take()
                 {
-                    let peak_idx = lane_snap.iter().position(|c| *c == Cell::Solved(N as Digit));
+                    let peak_idx = lane_snap.iter().position(|c| *c == Cell::Solved(N));
 
                     let cands = {
                         if let Some(c) = clue
@@ -103,7 +104,7 @@ impl<const N: usize> Solver<N>
     pub fn calc_cands_from_clue(clue: Option<Digit>, i: usize) -> HashSet<Digit>
     {
         let clue_offset = clue.map(|c| c-1).unwrap_or(0);
-        let out = (N + i) as Digit - clue_offset;
+        let out = N + i - clue_offset;
 
         (1..=out).collect()
     }
@@ -119,7 +120,7 @@ impl<const N: usize> Solver<N>
         if clue == 2 {
             if i == 0 {
                 if peak_idx == N-1 {
-                    return HashSet::from([(N-1) as Digit]);
+                    return HashSet::from([N-1]);
                 }
                 upper = N - 1;
             }
@@ -131,7 +132,7 @@ impl<const N: usize> Solver<N>
             upper = (1 + N - clue + i).min(N-1);
         }
         
-        (lower as Digit ..= upper as Digit).collect()
+        (lower..= upper).collect()
     }
 
     pub fn deduce_one_cell_sudoku_style(mut grid: Grid<N>, x: usize, y: usize) -> (Grid<N>, bool)
@@ -173,7 +174,7 @@ impl<const N: usize> Solver<N>
                 Some(c) => c,
             };
 
-            let mut target = N as Digit;
+            let mut target = N;
             let mut peaks = 0;
             let mut last_index = N;
 
@@ -185,7 +186,7 @@ impl<const N: usize> Solver<N>
                         peaks += 1;
                         last_index = i;
                     }
-                    else if *digit == (N-1) as Digit || peaks > 0 {
+                    else if *digit == N-1 || peaks > 0 {
                         break 'exit;
                     }
                 }
@@ -196,21 +197,15 @@ impl<const N: usize> Solver<N>
             }
 
             /* 2nd pass from start: Enforce ascending sequence */
-            if last_index as Digit != clue - peaks {
+            if last_index != clue - peaks {
                 break 'exit;
             }
-
-            println!("\nlane = {:?}", lane);
-            println!("clue = {:?}", clue);
-            println!("target = {:?}", target);
-            println!("last_index = {:?}", last_index);
 
             for (i, cell) in lane[0..last_index].iter_mut().enumerate() {
                 if let Cell::Pencil(digits) = cell {
                     if let Some(ds) = digits.take()
                     {
                         let cands = Self::calc_ascending(target, i, last_index);
-                        println!("cands = {:?}", cands);
                         let deduced: HashSet<Digit> = ds.intersection(&cands).copied().collect();
 
                         if deduced != ds {
@@ -231,9 +226,9 @@ impl<const N: usize> Solver<N>
         let j = (last_index - 1) - i;
 
         let lower = 1 + i;
-        let upper = target - j as Digit;
+        let upper = target - j;
 
-        (lower as Digit..=upper as Digit).collect()
+        (lower..=upper).collect()
     }
 
     pub fn pinpoint_cells_in_lane(mut lane: [&mut Cell; N]) -> bool
@@ -258,7 +253,7 @@ impl<const N: usize> Solver<N>
         }
 
         for (i, indices) in seen_indices.iter().enumerate() {
-            let digit = (i+1) as Digit;
+            let digit = (i+1);
 
             if indices.len() == 1 {
                 let idx = indices.into_iter().next().unwrap();

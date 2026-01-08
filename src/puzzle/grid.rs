@@ -67,7 +67,7 @@ impl<const N: usize> Grid<N>
                 if      x == 0   { if n > 0 { clues.left[y] = Some(n); } None }
                 else if x == N+1 { if n > 0 { clues.right[y] = Some(n); } None }
                 else if n > 0    { Some(Cell::Solved(n)) }
-                else             { Some(Cell::Pencil( Some((1..=N as Digit).collect()) )) }
+                else             { Some(Cell::Pencil( Some((1..=N).collect()) )) }
             );
 
         util::arr(row)
