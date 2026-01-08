@@ -26,6 +26,23 @@ Some example puzzles are provided in `src/examples.rs`.
 <br>
 
 
+## Progress
+
+| size | clues  | status |
+| :--- | :----- | :----- |
+| 4x4  | full       | solvable
+| 4x4  | sparse     | nearing
+| 5x5  | full, easy | solvable
+| 5x5  | full, hard | nearing
+| 5x5  | sparse     | nearing
+| 6x6  | full, easy | work
+| 6x6  | full, hard | solvable
+| 6x6  | sparse |
+
+
+<br>
+
+
 ## Algorithm
 
 ### Outline
