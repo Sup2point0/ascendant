@@ -32,6 +32,18 @@ use ascendant::Cell::Solved as Sv;
     assert_eq!(lane, [ p![1], Sv(2), Sv(5), p![3,4], p![3,4] ]);
 }
 
+#[test] fn deduce_sequence_in_lane_36()
+{
+    const N: usize = 6;
+    let clue = 3;
+
+    // 3 | _ 2 5 1 _ 6
+    let mut lane = [ p![3,4], Sv(2), Sv(5), Sv(1), p![3,4], Sv(6) ];
+
+    Solver::<N>::deduce_sequence_in_lane((Some(clue), util::arr(lane.iter_mut())));
+    assert_eq!(lane, [ p![3,4], Sv(2), Sv(5), Sv(1), p![3,4], Sv(6) ]);
+}
+
 #[test] fn deduce_sequence_in_lane_45()
 {
     const N: usize = 5;
