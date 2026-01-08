@@ -39,6 +39,53 @@ impl Cell
         ))
     }
 
+    pub fn cands<const N: usize>(lower: impl Into<Digit>, upper: impl Into<Digit>) -> HashSet<Digit>
+    {
+        let lower: Digit = lower.into();
+        let upper: Digit = upper.into();
+
+        if upper >= lower { lower..= upper } else { 1..=N }
+            .collect()
+    }
+}
+
+impl Cell
+{
+    /// For a `Cell::Pencil`, combine its current candidates with `candidates`. Returns `true` if a deduction was made as a result.
+    /// 
+    /// Panics if the set of candidates is not present (contract violation), or is empty (logic error).
+    pub fn intersect(&mut self, candidates: &HashSet<Digit>) -> bool
+    {
+        let mut did_deduce = false;
+
+        if let Self::Pencil(digits) = self
+        {
+            match digits {
+                None => panic!("Encountered cell with pencilmarks stolen!"),
+                
+                Some(ds) => {
+                    let deduced: HashSet<Digit> =
+                        ds.intersection(&candidates).copied().collect();
+
+                    if deduced.len() == 0 {
+                        panic!("Conflicting deductions! Old: {ds:?}; New: {candidates:?}");
+                    }
+                    
+                    if deduced != *ds {
+                        did_deduce = true;
+                    }
+
+                    *ds = deduced;
+                }
+            }
+        }
+
+        did_deduce
+    }
+}
+
+impl Cell
+{
     pub fn render<const N: usize>(&self) -> String
     {
         match self {
