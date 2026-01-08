@@ -169,50 +169,51 @@ impl<const N: usize> Solver<N>
                 Some(c) => c,
             };
 
+            /* 1st pass from end: Descend peaks */
+            let peak_index = match Grid::find_peak(&lane) {
+                None    => break 'exit,
+                Some(i) => i,
+            };
+            
             let seen_indices = Grid::occurrences(&lane);
-
+            
+            let mut first_peak_idx = peak_index;
             let mut target = N;
-            let mut peaks = 0;
-            let mut first_index = seen_indices;
-            let mut last_index = N;
+            let mut peaks = 1;
 
-            /* 1st pass from end: Find peaks */
-            for (i, cell) in lane.iter().enumerate().rev() {
-                if let Cell::Solved(digit) = cell {
-                    if *digit == target {
-                        target -= 1;
+            for digit in (2..N).rev() {
+                let indices = &seen_indices[&digit];
+
+                /* This is a solved skyscraper since it only appears in one cell in the lane. */
+                if indices.len() == 1 {
+                    if indices[0] < first_peak_idx {
+                        first_peak_idx = indices[0];
+                        target = digit;
                         peaks += 1;
-                        last_index = i;
                     }
-                    else if *digit == N-1 || peaks > 0 {
-                        break 'exit;
-                    }
+                }
+                /* If we encounter an uncertain peak that may or may not contribute to the sequence, then we can't determine the bounds of the sequence with certainty. */
+                else if !indices.iter().all(|i| *i > first_peak_idx || *i == 0)
+                    && (0..first_peak_idx).any(|i| matches!(lane[i], Cell::Solved{..}))
+                {
+                    break 'exit;
                 }
             }
 
-            if peaks == 0 {
-                break 'exit;
-            }
+            target -= 1;
 
             /* 2nd pass from start: Enforce ascending sequence */
-            if last_index != clue - peaks
-            || last_index == 0 {
+            let cells_visible = clue - peaks;
+
+            if first_peak_idx == 0 {
                 break 'exit;
             }
 
-            /* NOTE: If the algorithm's working correctly, this cell should always be `Pencil` with at least 1 possible digit. */
-            if let Cell::Pencil(Some(digits)) = lane[last_index - 1]
-                && let Some(d) = digits.iter().max()
-            {
-                target = target.min(*d);
-            }
-            else { break 'exit; }
-
-            for (i, cell) in lane[0..last_index].iter_mut().enumerate() {
+            for (i, cell) in lane[0..first_peak_idx].iter_mut().enumerate() {
                 if let Cell::Pencil(digits) = cell
                 && let Some(ds) = digits.take()
                 {
-                    let cands = Self::calc_ascending(target, i, last_index);
+                    let cands = Self::calc_ascending(i, target, cells_visible, first_peak_idx);
                     let deduced: HashSet<Digit> = ds.intersection(&cands).copied().collect();
 
                     if deduced != ds {
@@ -227,12 +228,17 @@ impl<const N: usize> Solver<N>
         did_deduce
     }
 
-    pub fn calc_ascending(target: Digit, i: usize, last_index: usize) -> HashSet<Digit>
+    pub fn calc_ascending(
+        i: usize,               // What index is the current cell we're considering?
+        sequence_peak: Digit,   // What's the tallest a skyscraper in the gap can be?
+        cells_visible: usize,   // How many skyscrapers are visible in the gap before the first peak?
+        first_peak_idx: usize,  // What index was the shortest peak in the lane?
+    ) -> HashSet<Digit>
     {
-        let j = (last_index - 1) - i;
+        let j = ((cells_visible as i32 - 1) - i as i32).max(0) as Digit;
 
-        let lower = 1 + i;
-        let upper = target - j;
+        let lower = 1 + if first_peak_idx == cells_visible {i} else {0};
+        let upper = sequence_peak - j;
 
         (lower..=upper).collect()
     }

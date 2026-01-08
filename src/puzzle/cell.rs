@@ -32,10 +32,10 @@ macro_rules! pen {
 
 impl Cell
 {
-    pub fn new<const N: usize>() -> Self
+    pub fn new(n: usize) -> Self
     {
         Self::Pencil(Some(
-            (1..=N).collect()
+            (1..=n).collect()
         ))
     }
 

@@ -45,7 +45,7 @@ Some example puzzles are provided in `src/examples.rs`.
 ### Outline
 The solving algorithm is iterative – it’ll keep passing over the grid, trying to make logical deductions, until it can no longer find any.
 
-The steps are as follows (they are executed in this order, but the order is irrelevant, really):
+The steps in each pass-through are as follows (they are executed in this order to optimise deduction rate, but the order is irrelevant, really):
 
 - Use the clues to establish a foundation of what digits each cell might take on.
   - For instance, a lane with a clue of $4$ in a $6 \times 6$ puzzle could start with any of $\{ 1, 2, 3 \}$, but not $\{ 4, 5, 6 \}$.
@@ -59,3 +59,11 @@ The steps are as follows (they are executed in this order, but the order is irre
 - The goal is to get as far as possible with purely logical deductions, i.e. no ‘guesswork’ or ‘backtracking’. Even though guesswork [isn’t well-defined<sup>↗</sup>](https://sup2point0.github.io/skyscraping/thoughts/imagination-vs-guesswork)...
 - The strategies I plan on implementing are mostly those covered in [Skyscraping<sup>↗</sup>](https://sup2point0.github.io/skyscraping/cases).
 - If we stick firmly to this, then we may be able to also generate new skyscrapers puzzles!
+
+### Terminology
+- *Skyscraper*: One value in a cell. For instance, the “5-skyscraper”.
+- *Lane*: A straight line of cells in the $x$ or $y$ direction.
+- *Row*: A horizontal lane, determined by a $y$ index.
+- *Col*: A vertical lane, determined by an $x$ index.
+- *Peak*: An $N$-skyscraper in an $N \times N$ puzzle. Akin to a ‘maximum’ in mathematics.
+- *Sequence*: An ascending sequence of skyscrapers, looking from a clue across the lane towards the peak. Ideally strictly ascending, but not always so.
