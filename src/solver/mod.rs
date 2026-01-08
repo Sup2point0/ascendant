@@ -71,14 +71,14 @@ impl<const N: usize> Solver<N>
             }
 
             if let Cell::Pencil(digits) = cell
-                && let Some(ds) = digits.take()
+            && let Some(ds) = digits.take()
             {
                 let peak_idx = lane_snap.iter().position(|c| *c == Cell::Solved(N));
 
                 let cands = {
                     if let Some(c) = clue
-                        && let Some(idx) = peak_idx
-                        && i < idx
+                    && let Some(idx) = peak_idx
+                    && i < idx
                     {
                         Self::calc_cands_from_peak(c, i, idx)
                     }
@@ -194,13 +194,22 @@ impl<const N: usize> Solver<N>
             }
 
             /* 2nd pass from start: Enforce ascending sequence */
-            if last_index != clue - peaks {
+            if last_index != clue - peaks
+            || last_index == 0 {
                 break 'exit;
             }
 
+            /* NOTE: If the algorithm's working correctly, this cell should always be `Pencil` with at least 1 possible digit. */
+            if let Cell::Pencil(Some(digits)) = lane[last_index - 1]
+                && let Some(d) = digits.iter().max()
+            {
+                target = target.min(*d);
+            }
+            else { break 'exit; }
+
             for (i, cell) in lane[0..last_index].iter_mut().enumerate() {
                 if let Cell::Pencil(digits) = cell
-                    && let Some(ds) = digits.take()
+                && let Some(ds) = digits.take()
                 {
                     let cands = Self::calc_ascending(target, i, last_index);
                     let deduced: HashSet<Digit> = ds.intersection(&cands).copied().collect();
