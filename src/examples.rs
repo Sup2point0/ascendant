@@ -54,3 +54,35 @@ pub fn grid3() -> Grid<6>
         ].into()
     )
 }
+
+pub fn grid_4x4_easy() -> Grid<4>
+{
+    Grid::construct(
+        [
+            [ 0,  2, 2, 1, 3,  0 ].into(),
+
+            [ 3,  0, 0, 0, 0,  2 ].into(),
+            [ 1,  0, 0, 0, 0,  2 ].into(),
+            [ 2,  0, 0, 0, 0,  2 ].into(),
+            [ 4,  0, 0, 0, 0,  1 ].into(),
+
+            [ 0,  3, 2, 2, 1,  0 ].into(),
+        ].into()
+    )
+}
+
+pub fn grid_4x4_hard() -> Grid<4>
+{
+    Grid::construct(
+        [
+            [ 0,  0, 3, 0, 0,  0 ].into(),
+
+            [ 0,  0, 0, 0, 0,  0 ].into(),
+            [ 0,  0, 0, 0, 0,  1 ].into(),
+            [ 0,  0, 0, 0, 0,  0 ].into(),
+            [ 0,  0, 0, 0, 0,  0 ].into(),
+
+            [ 0,  1, 0, 0, 0,  0 ].into(),
+        ].into()
+    )
+}

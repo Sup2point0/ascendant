@@ -32,6 +32,15 @@ impl<const N: usize> Solver<N>
         for y in 0..N { did_deduce |= Self::deduce_one_lane(grid.look_right(y)); }
         for y in 0..N { did_deduce |= Self::deduce_one_lane(grid.look_left(y)); }
 
+        let mut deduced;
+
+        for x in 0..N {
+            for y in 0..N {
+                (grid, deduced) = Self::deduce_one_cell_sudoku_style(grid, x, y);
+                did_deduce |= deduced;
+            }
+        }
+
         for x in 0..N { did_deduce |= Self::pinpoint_one_lane(grid.look_down(x).1) }
         for x in 0..N { did_deduce |= Self::pinpoint_one_lane(grid.look_up(x).1) }
         for y in 0..N { did_deduce |= Self::pinpoint_one_lane(grid.look_right(y).1) }
@@ -88,6 +97,33 @@ impl<const N: usize> Solver<N>
         let out = (N + i) as Digit - clue_offset;
 
         out
+    }
+
+    fn deduce_one_cell_sudoku_style(mut grid: Grid<N>, x: usize, y: usize) -> (Grid<N>, bool)
+    {
+        let mut did_deduce = false;
+
+        /* Would make this a little more structured, but then we end up in borrowing conflicts =( */
+        if let Cell::Solved{..} = grid.at(x, y) {
+            return (grid, did_deduce);
+        }
+
+        let mut seen = HashSet::new();
+
+        for cell in grid.look_right(y).1 {
+            if let Cell::Solved(digit) = cell { seen.insert(*digit); }
+        }
+        for cell in grid.look_down(x).1 {
+            if let Cell::Solved(digit) = cell { seen.insert(*digit); }
+        }
+
+        if let Cell::Pencil(Some(cands)) = grid.at_mut(x, y) {
+            for digit in seen {
+                did_deduce |= cands.remove(&digit);
+            }
+        }
+
+        (grid, did_deduce)
     }
 
     fn pinpoint_one_lane(lane: [&mut Cell; N]) -> bool

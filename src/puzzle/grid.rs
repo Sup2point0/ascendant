@@ -78,6 +78,10 @@ impl<const N: usize> Grid<N>
     pub fn at(&self, x: usize, y: usize) -> &Cell {
         &self.cells[y][x]
     }
+    
+    pub fn at_mut(&mut self, x: usize, y: usize) -> &mut Cell {
+        &mut self.cells[y][x]
+    }
 
     pub fn look_right(&mut self, row: usize) -> (Option<Digit>, [&mut Cell; N]) {
         ( self.clues.left[row], util::arr(self.cells[row].iter_mut()) )
@@ -99,6 +103,7 @@ impl<const N: usize> fmt::Debug for Grid<N>
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let col_width = N + 5;
 
+        // I don't even know anymore...
         write!(f, "{}",
             iter::once(
                 format!("{}| {} |",
