@@ -1,12 +1,9 @@
-mod examples;
-use examples::*;
-
 use ascendant::*;
 
 
 fn main()
 {
-    let grid = grid_4x4_easy();
+    let grid = examples::grid_4x4_easy();
 
     println!("\n{grid:?}\n");
 

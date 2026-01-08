@@ -23,7 +23,7 @@ macro_rules! pen {
         Cell::Pencil(
             Some(
                 std::collections::HashSet::from(
-                    [$( $digit, )*]
+                    [ $($digit,)* ]
                 )
             )
         )

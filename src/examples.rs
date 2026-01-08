@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use ascendant::*;
+use crate::*;
 
 
 pub fn grid1() -> Grid<5>
@@ -71,7 +71,23 @@ pub fn grid_4x4_easy() -> Grid<4>
     )
 }
 
-pub fn grid_4x4_hard() -> Grid<4>
+pub fn grid_4x4_hard_1() -> Grid<4>
+{
+    Grid::construct(
+        [
+            [ 0,  0, 2, 0, 0,  0 ].into(),
+
+            [ 0,  0, 0, 0, 0,  0 ].into(),
+            [ 3,  0, 0, 0, 0,  0 ].into(),
+            [ 3,  0, 0, 0, 0,  1 ].into(),
+            [ 0,  0, 0, 0, 0,  3 ].into(),
+
+            [ 0,  0, 0, 0, 0,  0 ].into(),
+        ].into()
+    )
+}
+
+pub fn grid_4x4_hard_2() -> Grid<4>
 {
     Grid::construct(
         [

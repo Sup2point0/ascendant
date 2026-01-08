@@ -3,6 +3,7 @@ use std::*;
 use crate::*;
 
 
+#[derive(PartialEq, Eq)]
 pub struct Grid<const N: usize>
 {
     pub cells: [[Cell; N]; N],

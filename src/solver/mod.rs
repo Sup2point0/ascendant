@@ -13,7 +13,7 @@ impl<const N: usize> Solver<N>
         let mut did_deduce;
 
         loop {
-            // println!("starting with = \n{grid:?}\n");
+            println!("\n{grid:?}\n");
 
             (grid, did_deduce) = Self::deduce_one_pass(grid);
             if !did_deduce { break; }
@@ -23,14 +23,16 @@ impl<const N: usize> Solver<N>
     }
 
     /// Perform one pass of deductions through the grid. Returns the updated grid and a `bool` indicating if any deductions were successfully made.
-    fn deduce_one_pass(mut grid: Grid<N>) -> (Grid<N>, bool)
+    pub fn deduce_one_pass(mut grid: Grid<N>) -> (Grid<N>, bool)
     {
         let mut did_deduce = false;
 
+        println!("pre-deduce = \n{:?}", grid);
         for x in 0..N { did_deduce |= Self::deduce_one_lane(grid.look_down(x)); }
         for x in 0..N { did_deduce |= Self::deduce_one_lane(grid.look_up(x)); }
         for y in 0..N { did_deduce |= Self::deduce_one_lane(grid.look_right(y)); }
         for y in 0..N { did_deduce |= Self::deduce_one_lane(grid.look_left(y)); }
+        println!("post-deduce = \n{:?}", grid);
 
         let mut deduced;
 
@@ -41,25 +43,21 @@ impl<const N: usize> Solver<N>
             }
         }
 
-        println!("pre-pinpoint = \n{grid:?}\n");
-
         for x in 0..N { did_deduce |= Self::pinpoint_one_lane(grid.look_down(x).1) }
         for x in 0..N { did_deduce |= Self::pinpoint_one_lane(grid.look_up(x).1) }
         for y in 0..N { did_deduce |= Self::pinpoint_one_lane(grid.look_right(y).1) }
         for y in 0..N { did_deduce |= Self::pinpoint_one_lane(grid.look_left(y).1) }
-
-        println!("post-pinpoint = \n{grid:?}\n");
         
         (grid, did_deduce)
     }
 
-    fn deduce_one_lane((clue, lane): (Option<Digit>, [&mut Cell; N])) -> bool
+    pub fn deduce_one_lane((clue, lane): (Option<Digit>, [&mut Cell; N])) -> bool
     {
         let mut did_deduce = false;
+        let lane_snap: [Cell; N] = util::arr(lane.iter().map(|cell| (*cell).clone()));
 
         for (i, cell) in lane.into_iter().enumerate() {
-            let max = Self::calc_max_from_clue(clue, i);
-            let cands: HashSet<Digit> = (1..=max).collect();
+            if let Cell::Solved{..} = cell { continue; }
 
             if let Some(1) = clue && i == 0 {
                 *cell = Cell::Solved(N as Digit);
@@ -69,41 +67,61 @@ impl<const N: usize> Solver<N>
                 *cell = Cell::Solved((i+1) as Digit);
             }
 
-            match cell {
-                Cell::Solved{..} => continue,
-                Cell::Pencil(digits) => {
-                    if let Some(ds) = digits.take() {
-                        // TODO might be unnecessary
-                        let deduced: HashSet<Digit> = ds.intersection(&cands).copied().collect();
-
-                        if deduced.len() == 1 {
-                            let digit = deduced.into_iter().next().unwrap();
-                            *cell = Cell::Solved(digit);
-                            did_deduce = true;
-                        }
-                        else {
-                            if deduced != ds {
-                                did_deduce = true;
-                            }
-                            *digits = Some(deduced);
-                        }
+            let cands: HashSet<Digit> = {
+                if let Some(c) = clue
+                    && let Some(idx) = lane_snap.iter().position(|c| *c == Cell::Solved(N as Digit))
+                    && i < idx
+                {
+                    let out = Self::calc_cands_from_peak(c, i, idx);
+                    if out.len() == 0 {
+                        // println!("\n---\ncell = {:?}", cell);
+                        // println!("clue = {:?}", clue);
+                        // println!("i = {:?}", i);
+                        // println!("idx = {:?}", idx);
+                        // println!("lane = {:?}", lane_snap);
                     }
-                },
+                    out
+                }
+                else {
+                    Self::calc_cands_from_clue(clue, i)
+                }
+            };
+
+            if let Cell::Pencil(digits) = cell {
+                if let Some(ds) = digits.take()
+                {
+                    let deduced: HashSet<Digit> = ds.intersection(&cands).copied().collect();
+
+                    if deduced != ds {
+                        did_deduce = true;
+                    }
+
+                    *digits = Some(deduced);
+                }
             }
         }
 
         did_deduce
     }
 
-    fn calc_max_from_clue(clue: Option<Digit>, i: usize) -> Digit
+    pub fn calc_cands_from_clue(clue: Option<Digit>, i: usize) -> HashSet<Digit>
     {
         let clue_offset = clue.map(|c| c-1).unwrap_or(0);
         let out = (N + i) as Digit - clue_offset;
 
-        out
+        (1..=out).collect()
     }
 
-    fn deduce_one_cell_sudoku_style(mut grid: Grid<N>, x: usize, y: usize) -> (Grid<N>, bool)
+    pub fn calc_cands_from_peak(clue: Digit, i: usize, peak_idx: usize) -> HashSet<Digit>
+    {
+        let clue = clue as usize;
+        let lower = (1 + if peak_idx < clue {i} else {0}) as Digit;
+        let upper = (1 + N - clue + i).min(N-1) as Digit;
+        
+        (lower..=upper).collect()
+    }
+
+    pub fn deduce_one_cell_sudoku_style(mut grid: Grid<N>, x: usize, y: usize) -> (Grid<N>, bool)
     {
         let mut did_deduce = false;
 
@@ -130,7 +148,7 @@ impl<const N: usize> Solver<N>
         (grid, did_deduce)
     }
 
-    fn pinpoint_one_lane(mut lane: [&mut Cell; N]) -> bool
+    pub fn pinpoint_one_lane(mut lane: [&mut Cell; N]) -> bool
     {
         let mut did_deduce = false;
 
@@ -151,9 +169,6 @@ impl<const N: usize> Solver<N>
             }
         }
 
-        println!("lane = {:?}", lane);
-        println!("seen_indices = {:?}", seen_indices);
-
         for (i, indices) in seen_indices.iter().enumerate() {
             let digit = (i+1) as Digit;
 
@@ -161,7 +176,6 @@ impl<const N: usize> Solver<N>
                 let idx = indices.into_iter().next().unwrap();
 
                 if let cell@Cell::Pencil{..} = &mut lane[*idx] {
-                    println!("idx = {:?}", idx);
                     **cell = Cell::Solved(digit);
                     did_deduce = true;
                 }
