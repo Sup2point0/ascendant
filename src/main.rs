@@ -3,7 +3,7 @@ use ascendant::*;
 
 fn main()
 {
-    let grid = examples::grid_4x4_hard_1();
+    let grid = examples::grid_5x5_hard_1();
 
     println!("\n{grid:?}\n");
 

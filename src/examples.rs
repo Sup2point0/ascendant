@@ -3,8 +3,57 @@
 use crate::*;
 
 
-pub fn grid1() -> Grid<5>
-{
+// == 4x4 == //
+
+pub fn grid_4x4_easy() -> Grid<4> {
+    Grid::construct(
+        [
+            [ 0,  2, 2, 1, 3,  0 ].into(),
+
+            [ 3,  0, 0, 0, 0,  2 ].into(),
+            [ 1,  0, 0, 0, 0,  2 ].into(),
+            [ 2,  0, 0, 0, 0,  2 ].into(),
+            [ 4,  0, 0, 0, 0,  1 ].into(),
+
+            [ 0,  3, 2, 2, 1,  0 ].into(),
+        ].into()
+    )
+}
+
+pub fn grid_4x4_hard_1() -> Grid<4> {
+    Grid::construct(
+        [
+            [ 0,  0, 2, 0, 0,  0 ].into(),
+
+            [ 0,  0, 0, 0, 0,  0 ].into(),
+            [ 3,  0, 0, 0, 0,  0 ].into(),
+            [ 3,  0, 0, 0, 0,  1 ].into(),
+            [ 0,  0, 0, 0, 0,  3 ].into(),
+
+            [ 0,  0, 0, 0, 0,  0 ].into(),
+        ].into()
+    )
+}
+
+pub fn grid_4x4_hard_2() -> Grid<4> {
+    Grid::construct(
+        [
+            [ 0,  0, 3, 0, 0,  0 ].into(),
+
+            [ 0,  0, 0, 0, 0,  0 ].into(),
+            [ 0,  0, 0, 0, 0,  1 ].into(),
+            [ 0,  0, 0, 0, 0,  0 ].into(),
+            [ 0,  0, 0, 0, 0,  0 ].into(),
+
+            [ 0,  1, 0, 0, 0,  0 ].into(),
+        ].into()
+    )
+}
+
+
+// == 5x5 == //
+
+pub fn grid_5x5_hard_1() -> Grid<5> {
     Grid::construct(
         [
             [ 0,  0, 0, 0, 0, 3,  0 ].into(),
@@ -20,8 +69,7 @@ pub fn grid1() -> Grid<5>
     )
 }
 
-pub fn grid2() -> Grid<5>
-{
+pub fn grid_5x5_hard_2() -> Grid<5> {
     Grid::construct(
         [
             [ 0,  0, 0, 3, 0, 3,  0 ].into(),
@@ -37,8 +85,10 @@ pub fn grid2() -> Grid<5>
     )
 }
 
-pub fn grid3() -> Grid<6>
-{
+
+// == 6x6 == //
+
+pub fn grid_6x6_hard_1() -> Grid<6> {
     Grid::construct(
         [
             [ 0,  0, 0, 0, 0, 4, 2,  0 ].into(),
@@ -51,54 +101,6 @@ pub fn grid3() -> Grid<6>
             [ 0,  0, 0, 0, 0, 0, 0,  0 ].into(),
 
             [ 0,  0, 0, 3, 0, 0, 0,  0 ].into(),
-        ].into()
-    )
-}
-
-pub fn grid_4x4_easy() -> Grid<4>
-{
-    Grid::construct(
-        [
-            [ 0,  2, 2, 1, 3,  0 ].into(),
-
-            [ 3,  0, 0, 0, 0,  2 ].into(),
-            [ 1,  0, 0, 0, 0,  2 ].into(),
-            [ 2,  0, 0, 0, 0,  2 ].into(),
-            [ 4,  0, 0, 0, 0,  1 ].into(),
-
-            [ 0,  3, 2, 2, 1,  0 ].into(),
-        ].into()
-    )
-}
-
-pub fn grid_4x4_hard_1() -> Grid<4>
-{
-    Grid::construct(
-        [
-            [ 0,  0, 2, 0, 0,  0 ].into(),
-
-            [ 0,  0, 0, 0, 0,  0 ].into(),
-            [ 3,  0, 0, 0, 0,  0 ].into(),
-            [ 3,  0, 0, 0, 0,  1 ].into(),
-            [ 0,  0, 0, 0, 0,  3 ].into(),
-
-            [ 0,  0, 0, 0, 0,  0 ].into(),
-        ].into()
-    )
-}
-
-pub fn grid_4x4_hard_2() -> Grid<4>
-{
-    Grid::construct(
-        [
-            [ 0,  0, 3, 0, 0,  0 ].into(),
-
-            [ 0,  0, 0, 0, 0,  0 ].into(),
-            [ 0,  0, 0, 0, 0,  1 ].into(),
-            [ 0,  0, 0, 0, 0,  0 ].into(),
-            [ 0,  0, 0, 0, 0,  0 ].into(),
-
-            [ 0,  1, 0, 0, 0,  0 ].into(),
         ].into()
     )
 }
