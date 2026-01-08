@@ -33,7 +33,6 @@ impl<const N: usize> Solver<N>
         for y in 0..N { did_deduce |= Self::deduce_one_lane(grid.look_left(y)); }
 
         let mut deduced;
-
         for x in 0..N {
             for y in 0..N {
                 (grid, deduced) = Self::deduce_one_cell_sudoku_style(grid, x, y);
@@ -70,8 +69,7 @@ impl<const N: usize> Solver<N>
                     && let Some(idx) = lane_snap.iter().position(|c| *c == Cell::Solved(N as Digit))
                     && i < idx
                 {
-                    let out = Self::calc_cands_from_peak(c, i, idx);
-                    out
+                    Self::calc_cands_from_peak(c, i, idx)
                 }
                 else {
                     Self::calc_cands_from_clue(clue, i)
@@ -187,6 +185,16 @@ impl<const N: usize> Solver<N>
                     **cell = Cell::Solved(digit);
                     did_deduce = true;
                 }
+            }
+        }
+
+        for cell in lane {
+            if let Cell::Pencil(Some(digits)) = cell
+                && digits.len() == 1
+            {
+                let digit = digits.iter().next().unwrap();
+                *cell = Cell::Solved(*digit);
+                did_deduce = true;
             }
         }
 
