@@ -32,6 +32,13 @@ macro_rules! pen {
 
 impl Cell
 {
+    pub fn new<const N: usize>() -> Self
+    {
+        Self::Pencil(Some(
+            (1..=N).collect()
+        ))
+    }
+
     pub fn render<const N: usize>(&self) -> String
     {
         match self {
@@ -76,5 +83,12 @@ impl fmt::Debug for Cell
 
             Self::Pencil(None) => "[ ? ]".to_string(),
         })
+    }
+}
+
+impl AsRef<Cell> for Cell
+{
+    fn as_ref(&self) -> &Cell {
+        &self
     }
 }

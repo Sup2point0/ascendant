@@ -1,4 +1,5 @@
 use std::*;
+use std::collections::HashMap;
 
 use crate::*;
 
@@ -10,6 +11,7 @@ pub struct Grid<const N: usize>
     pub clues: Clues<N>,
 }
 
+// == CONSTRUCTORS == //
 impl<const N: usize> Grid<N>
 {
     pub fn construct(data: [[Digit; N+2]; N+2]) -> Self
@@ -74,6 +76,7 @@ impl<const N: usize> Grid<N>
     }
 }
 
+// == QUERY == //
 impl<const N: usize> Grid<N>
 {
     pub fn at(&self, x: usize, y: usize) -> &Cell {
@@ -96,6 +99,57 @@ impl<const N: usize> Grid<N>
     }
     pub fn look_up(&mut self, col: usize) -> (Option<Digit>, [&mut Cell; N]) {
         ( self.clues.lower[col], util::arr(self.cells.iter_mut().rev().map(|row| &mut row[col])) )
+    }
+
+    pub fn look_across_row(&mut self, row: usize) -> (Option<Digit>, [&mut Cell; N], Option<Digit>) {
+        (
+            self.clues.left[row],
+            util::arr(self.cells[row].iter_mut()),
+            self.clues.right[row],
+        )
+    }
+
+    pub fn look_across_col(&mut self, col: usize) -> (Option<Digit>, [&mut Cell; N], Option<Digit>) {
+        (
+            self.clues.upper[col],
+            util::arr(self.cells.iter_mut().rev().map(|row| &mut row[col])),
+            self.clues.lower[col],
+        )
+    }
+}
+
+// == PROCESS == //
+impl<const N: usize> Grid<N>
+{
+    pub fn occurrences(lane: &[&mut Cell; N]) -> HashMap<Digit, Vec<usize>>
+    {
+        let mut seen_indices: HashMap<Digit, Vec<usize>> =
+            (1..=N)
+            .map(|digit|
+                (digit, vec![])
+            )
+            .collect();
+
+        for (i, cell) in lane.iter().enumerate() {
+            match cell {
+                Cell::Solved(digit) => {
+                    seen_indices.get_mut(digit).unwrap().push(i);
+                }
+                Cell::Pencil(Some(digits)) => {
+                    for digit in digits {
+                        seen_indices.get_mut(digit).unwrap().push(i);
+                    }
+                },
+                _ => (),
+            }
+        }
+
+        seen_indices
+    }
+
+    pub fn find_peak(lane: &[impl AsRef<Cell>; N]) -> Option<usize>
+    {
+        lane.iter().position(|c| *c.as_ref() == Cell::Solved(N))
     }
 }
 

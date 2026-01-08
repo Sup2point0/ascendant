@@ -73,11 +73,9 @@ impl<const N: usize> Solver<N>
             if let Cell::Pencil(digits) = cell
             && let Some(ds) = digits.take()
             {
-                let peak_idx = lane_snap.iter().position(|c| *c == Cell::Solved(N));
-
                 let cands = {
                     if let Some(c) = clue
-                    && let Some(idx) = peak_idx
+                    && let Some(idx) = Grid::find_peak(&lane_snap)
                     && i < idx
                     {
                         Self::calc_cands_from_peak(c, i, idx)
@@ -171,8 +169,11 @@ impl<const N: usize> Solver<N>
                 Some(c) => c,
             };
 
+            let seen_indices = Grid::occurrences(&lane);
+
             let mut target = N;
             let mut peaks = 0;
+            let mut first_index = seen_indices;
             let mut last_index = N;
 
             /* 1st pass from end: Find peaks */
@@ -240,30 +241,11 @@ impl<const N: usize> Solver<N>
     {
         let mut did_deduce = false;
 
-        /* NOTE: Index corresponds to digit (-1) */
-        let mut seen_indices = [(); N].map(|_| vec![]);
-
-        for (i, cell) in lane.iter().enumerate() {
-            match cell {
-                Cell::Solved(digit) => {
-                    seen_indices[*digit - 1].push(i);
-                }
-                Cell::Pencil(Some(digits)) => {
-                    for digit in digits {
-                        seen_indices[*digit - 1].push(i);
-                    }
-                },
-                _ => (),
-            }
-        }
-
-        for (i, indices) in seen_indices.iter().enumerate() {
-            let digit = i + 1;
-
+        for (digit, indices) in Grid::occurrences(&lane) {
             if indices.len() == 1 {
                 let idx = indices.into_iter().next().unwrap();
 
-                if let cell@Cell::Pencil{..} = &mut lane[*idx] {
+                if let cell@Cell::Pencil{..} = &mut lane[idx] {
                     **cell = Cell::Solved(digit);
                     did_deduce = true;
                 }
@@ -272,7 +254,7 @@ impl<const N: usize> Solver<N>
 
         for cell in lane {
             if let Cell::Pencil(Some(digits)) = cell
-                && digits.len() == 1
+            && digits.len() == 1
             {
                 let digit = digits.iter().next().unwrap();
                 *cell = Cell::Solved(*digit);
