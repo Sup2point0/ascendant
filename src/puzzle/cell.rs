@@ -54,7 +54,7 @@ impl Cell
                 format!("[{fill}{str}]")
             },
 
-            Self::Pencil(None) => iter::repeat_n(' ', N+2).collect::<String>(),
+            Self::Pencil(None) => iter::repeat_n('?', N+2).collect::<String>(),
         }
     }
 }

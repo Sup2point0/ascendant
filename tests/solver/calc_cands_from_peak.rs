@@ -1,17 +1,8 @@
 use ascendant::*;
+use crate::*;
 
 
-macro_rules! set {
-    ( $($digit: expr),* $(,)? ) =>
-    {
-        std::collections::HashSet::from(
-            [ $( $digit, )* ]
-        )
-    };
-}
-
-
-#[test] fn calc_max_from_peak_24()
+#[test] fn calc_cands_from_peak_24()
 {
     let clue = 2;
 
@@ -31,7 +22,7 @@ macro_rules! set {
     assert_eq!( Solver::<4>::calc_cands_from_peak(clue, 0, peak_idx), set![1,2,3] );
 }
 
-#[test] fn calc_max_from_peak_36()
+#[test] fn calc_cands_from_peak_36()
 {
     let clue = 3;
 
@@ -54,7 +45,7 @@ macro_rules! set {
     assert_eq!( Solver::<6>::calc_cands_from_peak(clue, 1, peak_idx), set![  2,3,4,5] );
 }
 
-#[test] fn calc_max_from_peak_46()
+#[test] fn calc_cands_from_peak_46()
 {
     let clue = 4;
 
