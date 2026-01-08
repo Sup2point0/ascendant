@@ -31,8 +31,8 @@ Some example puzzles are provided in `src/examples.rs`.
 | size | full easy | full hard | sparse |
 | :--- | :-------- | :-------- | :----- |
 | 4x4  | solvable  | solvable  | solvable
-| 5x5  | solvable  | near      | solvable
-| 6x6  | near      | solvable  | –
+| 5x5  | solvable  | solvable  | solvable
+| 6x6  | solbable  | nearing   | –
 | 7x7  | near      |           |
 | 8x8  | –         |
 

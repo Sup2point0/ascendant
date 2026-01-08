@@ -57,6 +57,21 @@ use ascendant::*;
             ]
         ).cells
     );
+    
+    assert_eq!(
+        Solver::solve(examples::grid_5x5_full_hard_1()).cells,
+        Grid::<5>::construct(
+            [
+                [cc, cc, cc, cc, cc, cc, cc].into(),
+                [cc,  2,  3,  5,  4,  1, cc].into(),
+                [cc,  3,  1,  4,  5,  2, cc].into(),
+                [cc,  4,  2,  3,  1,  5, cc].into(),
+                [cc,  5,  4,  1,  2,  3, cc].into(),
+                [cc,  1,  5,  2,  3,  4, cc].into(),
+                [cc, cc, cc, cc, cc, cc, cc].into(),
+            ]
+        ).cells
+    );
 }
 
 #[test] pub fn solve_5x5_sparse()
