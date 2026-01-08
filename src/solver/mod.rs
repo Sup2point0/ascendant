@@ -13,7 +13,7 @@ impl<const N: usize> Solver<N>
         let mut did_deduce;
 
         loop {
-            println!("\n{grid:?}\n");
+            // println!("starting with = \n{grid:?}\n");
 
             (grid, did_deduce) = Self::deduce_one_pass(grid);
             if !did_deduce { break; }
@@ -41,10 +41,14 @@ impl<const N: usize> Solver<N>
             }
         }
 
+        println!("pre-pinpoint = \n{grid:?}\n");
+
         for x in 0..N { did_deduce |= Self::pinpoint_one_lane(grid.look_down(x).1) }
         for x in 0..N { did_deduce |= Self::pinpoint_one_lane(grid.look_up(x).1) }
         for y in 0..N { did_deduce |= Self::pinpoint_one_lane(grid.look_right(y).1) }
         for y in 0..N { did_deduce |= Self::pinpoint_one_lane(grid.look_left(y).1) }
+
+        println!("post-pinpoint = \n{grid:?}\n");
         
         (grid, did_deduce)
     }
@@ -126,7 +130,7 @@ impl<const N: usize> Solver<N>
         (grid, did_deduce)
     }
 
-    fn pinpoint_one_lane(lane: [&mut Cell; N]) -> bool
+    fn pinpoint_one_lane(mut lane: [&mut Cell; N]) -> bool
     {
         let mut did_deduce = false;
 
@@ -134,18 +138,33 @@ impl<const N: usize> Solver<N>
         let mut seen_indices = [(); N].map(|_| vec![]);
 
         for (i, cell) in lane.iter().enumerate() {
-            if let Cell::Pencil(Some(digits)) = cell {
-                for digit in digits {
+            match cell {
+                Cell::Solved(digit) => {
                     seen_indices[(*digit-1) as usize].push(i);
                 }
+                Cell::Pencil(Some(digits)) => {
+                    for digit in digits {
+                        seen_indices[(*digit-1) as usize].push(i);
+                    }
+                },
+                _ => (),
             }
         }
 
-        for (digit, indices) in seen_indices.iter().enumerate() {
+        println!("lane = {:?}", lane);
+        println!("seen_indices = {:?}", seen_indices);
+
+        for (i, indices) in seen_indices.iter().enumerate() {
+            let digit = (i+1) as Digit;
+
             if indices.len() == 1 {
                 let idx = indices.into_iter().next().unwrap();
-                *lane[*idx] = Cell::Solved((digit+1) as Digit);
-                did_deduce = true;
+
+                if let cell@Cell::Pencil{..} = &mut lane[*idx] {
+                    println!("idx = {:?}", idx);
+                    **cell = Cell::Solved(digit);
+                    did_deduce = true;
+                }
             }
         }
 
