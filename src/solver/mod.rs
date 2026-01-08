@@ -40,12 +40,10 @@ impl<const N: usize> Solver<N>
             }
         }
 
-        println!("pre-seq = \n{:?}", grid);
         for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_down(x)) }
         for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_up(x)) }
         for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_right(y)) }
         for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_left(y)) }
-        println!("post-seq = \n{:?}", grid);
 
         for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_down(x).1) }
         for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_up(x).1) }
@@ -136,16 +134,6 @@ impl<const N: usize> Solver<N>
         (lower as Digit ..= upper as Digit).collect()
     }
 
-    pub fn calc_ascending(target: Digit, i: usize, last_index: usize) -> HashSet<Digit>
-    {
-        let j = (last_index - 1) - i;
-
-        let lower = 1 + i;
-        let upper = target - j as Digit;
-
-        (lower as Digit..=upper as Digit).collect()
-    }
-
     pub fn deduce_one_cell_sudoku_style(mut grid: Grid<N>, x: usize, y: usize) -> (Grid<N>, bool)
     {
         let mut did_deduce = false;
@@ -190,14 +178,16 @@ impl<const N: usize> Solver<N>
             let mut last_index = N;
 
             /* 1st pass from end: Find peaks */
-            for (i, cell) in lane.iter().rev().enumerate() {
+            for (i, cell) in lane.iter().enumerate().rev() {
                 if let Cell::Solved(digit) = cell {
                     if *digit == target {
                         target -= 1;
                         peaks += 1;
                         last_index = i;
                     }
-                    else { break 'exit; }
+                    else if *digit == (N-1) as Digit || peaks > 0 {
+                        break 'exit;
+                    }
                 }
             }
 
@@ -205,24 +195,22 @@ impl<const N: usize> Solver<N>
                 break 'exit;
             }
 
-            // println!("\nlane = {:?}", lane);
-            // println!("target = {:?}", target);
-            // println!("peaks = {:?}", peaks);
-            // println!("last_index = {:?}", last_index);
-
             /* 2nd pass from start: Enforce ascending sequence */
-            if last_index as Digit != (clue - peaks) + 1 {
+            if last_index as Digit != clue - peaks {
                 break 'exit;
             }
+
+            println!("\nlane = {:?}", lane);
+            println!("clue = {:?}", clue);
+            println!("target = {:?}", target);
+            println!("last_index = {:?}", last_index);
 
             for (i, cell) in lane[0..last_index].iter_mut().enumerate() {
                 if let Cell::Pencil(digits) = cell {
                     if let Some(ds) = digits.take()
                     {
                         let cands = Self::calc_ascending(target, i, last_index);
-                        // println!("i = {:?}", i);
-                        // println!("ds = {:?}", ds);
-                        // println!("cands = {:?}", cands);
+                        println!("cands = {:?}", cands);
                         let deduced: HashSet<Digit> = ds.intersection(&cands).copied().collect();
 
                         if deduced != ds {
@@ -236,6 +224,16 @@ impl<const N: usize> Solver<N>
         }
 
         did_deduce
+    }
+
+    pub fn calc_ascending(target: Digit, i: usize, last_index: usize) -> HashSet<Digit>
+    {
+        let j = (last_index - 1) - i;
+
+        let lower = 1 + i;
+        let upper = target - j as Digit;
+
+        (lower as Digit..=upper as Digit).collect()
     }
 
     pub fn pinpoint_cells_in_lane(mut lane: [&mut Cell; N]) -> bool
