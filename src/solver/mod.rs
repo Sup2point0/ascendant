@@ -40,12 +40,12 @@ impl<const N: usize> Solver<N>
             }
         }
 
-        // println!("pre-seq:\n{grid:?}");
+        println!("pre-seq:\n{grid:?}");
         for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_down(x)) }
         for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_up(x)) }
         for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_right(y)) }
         for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_left(y)) }
-        // println!("post-seq:\n{grid:?}");
+        println!("post-seq:\n{grid:?}");
 
         for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_down(x).1) }
         for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_up(x).1) }
@@ -143,9 +143,12 @@ impl<const N: usize> Solver<N>
             if let Cell::Solved(digit) = cell { seen.insert(*digit); }
         }
 
-        if let Cell::Pencil(Some(cands)) = grid.at_mut(x, y) {
+        if let Cell::Pencil(Some(digits)) = grid.at_mut(x, y) {
             for digit in seen {
-                did_deduce |= cands.remove(&digit);
+                did_deduce |= digits.remove(&digit);
+                if digits.len() == 0 {
+                    panic!("Deleted all candidates while performing Sudoku deductions!");
+                }
             }
         }
 
@@ -201,16 +204,14 @@ impl<const N: usize> Solver<N>
             }
 
             /* 2nd pass from start: Enforce ascending sequence */
+            if first_peak_idx == 0 { break 'exit; }
+
             if peaks == clue - 1 {
                 return Self::deduce_haven_for_2_clue(lane, first_peak, first_peak_idx);
             }
 
             let sequence_peak = first_peak - 1;
             let cells_visible = clue - peaks;
-
-            if first_peak_idx == 0 {
-                break 'exit;
-            }
 
             for (i, cell) in lane[0..first_peak_idx].iter_mut().enumerate()
             {
@@ -249,21 +250,29 @@ impl<const N: usize> Solver<N>
         let mut did_deduce = false;
 
         'exit: {
+            if peak_idx == 0 { break 'exit; }
+            println!("\n2::");
+            println!("lane = {:?}", lane);
+            println!("peak = {:?}", peak);
+            println!("peak_idx = {:?}", peak_idx);
+
             let blockade = {
                 match lane[0] {
-                    Cell::Solved(digit) => *digit,
+                    Cell::Solved(digit)       => *digit,
                     Cell::Pencil(Some(heads)) => *heads.iter().max().unwrap(),
-                    _ => break 'exit,
+                    _                         => break 'exit,
                 }
                 .min(peak - 1)
             };
 
             let cands: HashSet<Digit> = (1..=blockade).collect();
+            println!("cands = {:?}", cands);
             if let cell@Cell::Pencil{..} = &mut lane[0] {
                 did_deduce |= cell.intersect(&cands);
             }
 
             let cands: HashSet<Digit> = (1..blockade).collect();
+            println!("cands' = {:?}", cands);
             for i in 1..peak_idx {
                 if let cell@Cell::Pencil{..} = &mut lane[i] {
                     did_deduce |= cell.intersect(&cands);

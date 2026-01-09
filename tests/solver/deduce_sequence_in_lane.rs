@@ -88,6 +88,18 @@ use ascendant::Cell::Solved as Sv;
 }
 
 
+#[test] fn deduce_sequence_in_lane_37()
+{
+    const N: usize = 7;
+    let clue = 3;
+
+    // 3 | _ _ _ _ _ _ 7
+    let mut lane = [ p![1;6], p![1;6], p![1;6], p![1;6], p![1;6], p![1;6], Sv(7) ];
+
+    Solver::<N>::deduce_sequence_in_lane((Some(clue), util::arr(lane.iter_mut())));
+    assert_eq!(lane, [ p![1;5], p![1;6], p![1;6], p![1;6], p![1;6], p![1;6], Sv(7) ]);
+}
+
 #[test] fn deduce_sequence_in_lane_47()
 {
     const N: usize = 7;

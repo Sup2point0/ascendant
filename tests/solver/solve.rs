@@ -131,6 +131,45 @@ use ascendant::*;
     // );
 }
 
+#[test] pub fn solve_7x7_full()
+{
+    let cc = 0;
+    
+    // assert_eq!(
+    //     Solver::solve(examples::grid_7x7_full_easy_1()).cells,
+    //     Grid::<7>::construct(
+    //         [
+    //             [ cc, cc, cc, cc, cc, cc, cc, cc, cc ],
+    //             [ cc,  5,  3,  7,  1,  4,  6,  2, cc ],
+    //             [ cc,  6,  2,  5,  4,  3,  7,  1, cc ],
+    //             [ cc,  1,  4,  6,  5,  7,  2,  3, cc ],
+    //             [ cc,  7,  6,  4,  3,  2,  1,  5, cc ],
+    //             [ cc,  3,  5,  1,  2,  6,  4,  7, cc ],
+    //             [ cc,  4,  1,  2,  7,  5,  3,  6, cc ],
+    //             [ cc,  2,  7,  3,  6,  1,  5,  4, cc ],
+    //             [ cc, cc, cc, cc, cc, cc, cc, cc, cc ],
+    //         ]
+    //     ).cells
+    // );
+    
+    // assert_eq!(
+    //     Solver::solve(examples::grid_7x7_full_hard_1()).cells,
+    //     Grid::<7>::construct(
+    //         [
+    //             [ cc, cc, cc, cc, cc, cc, cc, cc, cc ],
+    //             [ cc,  6,  5,  1,  2,  4,  7,  3, cc ],
+    //             [ cc,  3,  1,  6,  7,  2,  4,  5, cc ],
+    //             [ cc,  4,  2,  7,  5,  6,  3,  1, cc ],
+    //             [ cc,  2,  6,  5,  4,  3,  1,  7, cc ],
+    //             [ cc,  7,  4,  3,  6,  1,  5,  2, cc ],
+    //             [ cc,  5,  3,  2,  1,  7,  6,  4, cc ],
+    //             [ cc,  1,  7,  4,  3,  5,  2,  6, cc ],
+    //             [ cc, cc, cc, cc, cc, cc, cc, cc, cc ],
+    //         ]
+    //     ).cells
+    // );
+}
+
 #[test] pub fn solve_8x8_full()
 {
     let cc = 0;
