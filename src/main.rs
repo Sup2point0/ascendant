@@ -6,7 +6,7 @@ fn main()
     let grids = [
         // examples::grid_4x4_full_1(),  //
         // examples::grid_4x4_sparse_1(),  //
-        examples::grid_4x4_sparse_2(),
+        // examples::grid_4x4_sparse_2(),  //
 
         // examples::grid_5x5_full_easy_1(),  //
         // examples::grid_5x5_full_hard_1(),  //
@@ -20,6 +20,8 @@ fn main()
         // examples::grid_7x7_full_hard_1(),  //
 
         // examples::grid_8x8_full_easy_1(),
+
+        examples::grid_9x9_full_1(),
     ];
 
     for (i, grid) in grids.into_iter().enumerate() {
