@@ -35,15 +35,16 @@ pub fn grid_4x4_sparse_1() -> Grid<4> {
     )
 }
 
-pub fn grid_4x4_extreme_2() -> Grid<4> {
+/// https://www.brainbashers.com/showskyscrapers.asp?date=0107&size=4&diff=3
+pub fn grid_4x4_sparse_2() -> Grid<4> {
     Grid::construct(
         [
             [ 00,  00,  3, 00, 00,  00 ],
 
             [ 00,  00, 00, 00, 00,  00 ],
             [ 00,  00, 00, 00, 00,   1 ],
-            [ 00,  00, 00, 00, 00,  00 ],
-            [ 00,  00, 00, 00, 00,  00 ],
+            [ 00,   1, 00, 00, 00,  00 ],
+            [ 00,  00, 00, 00,  2,  00 ],
 
             [ 00,   1, 00, 00, 00,  00 ],
         ]

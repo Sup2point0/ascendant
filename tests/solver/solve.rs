@@ -37,6 +37,20 @@ use ascendant::*;
             ]
         ).cells
     );
+    
+    assert_eq!(
+        Solver::solve(examples::grid_4x4_sparse_2()).cells,
+        Grid::<4>::construct(
+            [
+                [cc, cc, cc, cc, cc, cc],
+                [cc,  3,  2,  4,  1, cc],
+                [cc,  2,  3,  1,  4, cc],
+                [cc,  1,  4,  2,  3, cc],
+                [cc,  4,  1,  3,  2, cc],
+                [cc, cc, cc, cc, cc, cc],
+            ]
+        ).cells
+    );
 }
 
 #[test] pub fn solve_5x5_full()
