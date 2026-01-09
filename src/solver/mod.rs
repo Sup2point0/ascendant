@@ -262,7 +262,15 @@ impl<const N: usize> Solver<N>
             };
 
             /* Head must obscure all of tail */
-            let cands: HashSet<Digit> = (peak_idx..=blockade).collect();
+            let lower = peak_idx.max(
+                lane[1..peak_idx].iter()
+                    .filter_map(|digit|
+                        if let Cell::Solved(d) = digit {Some(*d)} else {None}
+                    )
+                    .max()
+                    .unwrap_or(1)
+            );
+            let cands: HashSet<Digit> = (lower..=blockade).collect();
 
             if let cell@Cell::Pencil{..} = &mut lane[0] {
                 did_deduce |= cell.intersect(&cands);

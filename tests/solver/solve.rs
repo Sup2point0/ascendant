@@ -114,43 +114,43 @@ use ascendant::*;
         ).cells
     );
     
-    // assert_eq!(
-    //     Solver::solve(examples::grid_6x6_full_hard_1()).cells,
-    //     Grid::<6>::construct(
-    //         [
-    //             [cc, cc, cc, cc, cc, cc, cc, cc],
-    //             [cc,  1,  6,  3,  4,  2,  5, cc],
-    //             [cc,  6,  5,  4,  2,  3,  1, cc],
-    //             [cc,  5,  3,  1,  6,  4,  2, cc],
-    //             [cc,  2,  1,  5,  3,  6,  4, cc],
-    //             [cc,  4,  2,  6,  5,  1,  3, cc],
-    //             [cc,  3,  4,  2,  1,  5,  6, cc],
-    //             [cc, cc, cc, cc, cc, cc, cc, cc],
-    //         ]
-    //     ).cells
-    // );
+    assert_eq!(
+        Solver::solve(examples::grid_6x6_full_hard_1()).cells,
+        Grid::<6>::construct(
+            [
+                [cc, cc, cc, cc, cc, cc, cc, cc],
+                [cc,  2,  6,  4,  5,  3,  1, cc],
+                [cc,  3,  4,  5,  1,  2,  6, cc],
+                [cc,  5,  1,  3,  2,  6,  4, cc],
+                [cc,  4,  5,  2,  6,  1,  3, cc],
+                [cc,  1,  2,  6,  3,  4,  5, cc],
+                [cc,  6,  3,  1,  4,  5,  2, cc],
+                [cc, cc, cc, cc, cc, cc, cc, cc],
+            ]
+        ).cells
+    );
 }
 
 #[test] pub fn solve_7x7_full()
 {
     let cc = 0;
     
-    // assert_eq!(
-    //     Solver::solve(examples::grid_7x7_full_easy_1()).cells,
-    //     Grid::<7>::construct(
-    //         [
-    //             [ cc, cc, cc, cc, cc, cc, cc, cc, cc ],
-    //             [ cc,  5,  3,  7,  1,  4,  6,  2, cc ],
-    //             [ cc,  6,  2,  5,  4,  3,  7,  1, cc ],
-    //             [ cc,  1,  4,  6,  5,  7,  2,  3, cc ],
-    //             [ cc,  7,  6,  4,  3,  2,  1,  5, cc ],
-    //             [ cc,  3,  5,  1,  2,  6,  4,  7, cc ],
-    //             [ cc,  4,  1,  2,  7,  5,  3,  6, cc ],
-    //             [ cc,  2,  7,  3,  6,  1,  5,  4, cc ],
-    //             [ cc, cc, cc, cc, cc, cc, cc, cc, cc ],
-    //         ]
-    //     ).cells
-    // );
+    assert_eq!(
+        Solver::solve(examples::grid_7x7_full_easy_1()).cells,
+        Grid::<7>::construct(
+            [
+                [ cc, cc, cc, cc, cc, cc, cc, cc, cc ],
+                [ cc,  5,  3,  7,  1,  4,  6,  2, cc ],
+                [ cc,  6,  2,  5,  4,  3,  7,  1, cc ],
+                [ cc,  1,  4,  6,  5,  7,  2,  3, cc ],
+                [ cc,  7,  6,  4,  3,  2,  1,  5, cc ],
+                [ cc,  3,  5,  1,  2,  6,  4,  7, cc ],
+                [ cc,  4,  1,  2,  7,  5,  3,  6, cc ],
+                [ cc,  2,  7,  3,  6,  1,  5,  4, cc ],
+                [ cc, cc, cc, cc, cc, cc, cc, cc, cc ],
+            ]
+        ).cells
+    );
     
     assert_eq!(
         Solver::solve(examples::grid_7x7_full_hard_1()).cells,
