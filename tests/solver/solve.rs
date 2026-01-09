@@ -152,22 +152,22 @@ use ascendant::*;
     //     ).cells
     // );
     
-    // assert_eq!(
-    //     Solver::solve(examples::grid_7x7_full_hard_1()).cells,
-    //     Grid::<7>::construct(
-    //         [
-    //             [ cc, cc, cc, cc, cc, cc, cc, cc, cc ],
-    //             [ cc,  6,  5,  1,  2,  4,  7,  3, cc ],
-    //             [ cc,  3,  1,  6,  7,  2,  4,  5, cc ],
-    //             [ cc,  4,  2,  7,  5,  6,  3,  1, cc ],
-    //             [ cc,  2,  6,  5,  4,  3,  1,  7, cc ],
-    //             [ cc,  7,  4,  3,  6,  1,  5,  2, cc ],
-    //             [ cc,  5,  3,  2,  1,  7,  6,  4, cc ],
-    //             [ cc,  1,  7,  4,  3,  5,  2,  6, cc ],
-    //             [ cc, cc, cc, cc, cc, cc, cc, cc, cc ],
-    //         ]
-    //     ).cells
-    // );
+    assert_eq!(
+        Solver::solve(examples::grid_7x7_full_hard_1()).cells,
+        Grid::<7>::construct(
+            [
+                [ cc, cc, cc, cc, cc, cc, cc, cc, cc ],
+                [ cc,  6,  5,  1,  2,  4,  7,  3, cc ],
+                [ cc,  3,  1,  6,  7,  2,  4,  5, cc ],
+                [ cc,  4,  2,  7,  5,  6,  3,  1, cc ],
+                [ cc,  2,  6,  5,  4,  3,  1,  7, cc ],
+                [ cc,  7,  4,  3,  6,  1,  5,  2, cc ],
+                [ cc,  5,  3,  2,  1,  7,  6,  4, cc ],
+                [ cc,  1,  7,  4,  3,  5,  2,  6, cc ],
+                [ cc, cc, cc, cc, cc, cc, cc, cc, cc ],
+            ]
+        ).cells
+    );
 }
 
 #[test] pub fn solve_8x8_full()

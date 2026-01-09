@@ -40,12 +40,12 @@ impl<const N: usize> Solver<N>
             }
         }
 
-        println!("pre-seq:\n{grid:?}");
+        // println!("pre-seq:\n{grid:?}");
         for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_down(x)) }
         for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_up(x)) }
         for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_right(y)) }
         for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_left(y)) }
-        println!("post-seq:\n{grid:?}");
+        // println!("post-seq:\n{grid:?}");
 
         for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_down(x).1) }
         for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_up(x).1) }
@@ -251,10 +251,6 @@ impl<const N: usize> Solver<N>
 
         'exit: {
             if peak_idx == 0 { break 'exit; }
-            println!("\n2::");
-            println!("lane = {:?}", lane);
-            println!("peak = {:?}", peak);
-            println!("peak_idx = {:?}", peak_idx);
 
             let blockade = {
                 match lane[0] {
@@ -266,13 +262,11 @@ impl<const N: usize> Solver<N>
             };
 
             let cands: HashSet<Digit> = (1..=blockade).collect();
-            println!("cands = {:?}", cands);
             if let cell@Cell::Pencil{..} = &mut lane[0] {
                 did_deduce |= cell.intersect(&cands);
             }
 
             let cands: HashSet<Digit> = (1..blockade).collect();
-            println!("cands' = {:?}", cands);
             for i in 1..peak_idx {
                 if let cell@Cell::Pencil{..} = &mut lane[i] {
                     did_deduce |= cell.intersect(&cands);
