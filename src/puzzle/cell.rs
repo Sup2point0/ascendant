@@ -18,13 +18,21 @@ pub enum Cell {
 
 #[macro_export]
 macro_rules! p {
-    ( $($digit: expr),* $(,)? ) =>
+    ( $($digit:expr),* $(,)? ) =>
     {
         Cell::Pencil(
             Some(
                 std::collections::HashSet::from(
                     [ $($digit,)* ]
                 )
+            )
+        )
+    };
+    ( $lower:expr; $upper:expr ) =>
+    {
+        Cell::Pencil(
+            Some(
+                ( $lower ..= $upper).collect()
             )
         )
     }
