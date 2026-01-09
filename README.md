@@ -33,7 +33,7 @@ Some example puzzles are provided in `src/examples.rs`.
 | 4x4  | solvable  | solvable  | solvable
 | 5x5  | solvable  | solvable  | solvable
 | 6x6  | solvable  | near      | –
-| 7x7  | close!    | solvable  |
+| 7x7  | solvable  | solvable  |
 | 8x8  | –         |
 
 

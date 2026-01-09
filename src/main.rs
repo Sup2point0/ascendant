@@ -16,10 +16,10 @@ fn main()
         // examples::grid_6x6_full_hard_1(),  // close
         // examples::grid_6x6_sparse_1(),
 
-        // examples::grid_7x7_full_easy_1(),  // CLOSE!
+        examples::grid_7x7_full_easy_1(),  // CLOSE!
         // examples::grid_7x7_full_hard_1(),  //
 
-        examples::grid_8x8_full_easy_1(),
+        // examples::grid_8x8_full_easy_1(),
     ];
 
     for (i, grid) in grids.into_iter().enumerate() {

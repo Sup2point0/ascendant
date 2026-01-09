@@ -261,12 +261,16 @@ impl<const N: usize> Solver<N>
                 .min(peak - 1)
             };
 
-            let cands: HashSet<Digit> = (1..=blockade).collect();
+            /* Head must obscure all of tail */
+            let cands: HashSet<Digit> = (peak_idx..=blockade).collect();
+
             if let cell@Cell::Pencil{..} = &mut lane[0] {
                 did_deduce |= cell.intersect(&cands);
             }
 
+            /* Tail can be arbitrarily low */
             let cands: HashSet<Digit> = (1..blockade).collect();
+        
             for i in 1..peak_idx {
                 if let cell@Cell::Pencil{..} = &mut lane[i] {
                     did_deduce |= cell.intersect(&cands);

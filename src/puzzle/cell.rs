@@ -59,6 +59,15 @@ impl Cell
 
 impl Cell
 {
+    pub fn max(&self) -> Digit
+    {
+        match self {
+            Self::Solved(digit)        => *digit,
+            Self::Pencil(Some(digits)) => *digits.iter().max().unwrap(),
+            Self::Pencil(None)         => panic!("Encountered cell with pencilmarks stolen!"),
+        }
+    }
+
     /// For a `Cell::Pencil`, combine its current candidates with `candidates`. Returns `true` if a deduction was made as a result.
     /// 
     /// Panics if the set of candidates is not present (contract violation), or is empty (logic error).

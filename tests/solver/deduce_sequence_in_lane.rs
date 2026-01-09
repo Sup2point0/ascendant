@@ -2,22 +2,30 @@ use ascendant::*;
 use ascendant::Cell::Solved as Sv;
 
 
+// == 5x5 == //
+
 #[test] fn deduce_sequence_in_lane_25()
 {
     const N: usize = 5;
     let clue = 2;
 
-    // 2 | _ _ _ _ 5 _
-    let mut lane = [ p![1,2,3,4], p![1,2,3,4], p![1,2,3,4], p![1,2,3,4], Sv(5) ];
+    // 2 | _ _ _ _ 5
+    let mut lane = [ Sv(4), p![1;4], p![1;4], p![1;4], Sv(5) ];
 
     Solver::<N>::deduce_sequence_in_lane((Some(clue), util::arr(lane.iter_mut())));
-    assert_eq!(lane, [ p![1,2,3,4], p![1,2,3], p![1,2,3], p![1,2,3], Sv(5) ]);
+    assert_eq!(lane, [ Sv(4), p![1,2,3], p![1,2,3], p![1,2,3], Sv(5) ]);
+
+    // 2 | _ _ _ 5 _
+    let mut lane = [ p![1;4], p![1;4], p![1;4], Sv(5), p![1;4] ];
+
+    Solver::<N>::deduce_sequence_in_lane((Some(clue), util::arr(lane.iter_mut())));
+    assert_eq!(lane, [ p![3,4], p![1,2,3], p![1,2,3], Sv(5), p![1;4] ]);
 
     // 2 | 3 _ _ 5 _
-    let mut lane = [Sv(3), p![1,2,3,4], p![1,2,3,4], Sv(5), p![1,2,3,4] ];
+    let mut lane = [Sv(3), p![1;4], p![1;4], Sv(5), p![1;4] ];
 
     Solver::<N>::deduce_sequence_in_lane((Some(clue), util::arr(lane.iter_mut())));
-    assert_eq!(lane, [Sv(3), p![1,2], p![1,2], Sv(5), p![1,2,3,4] ]);
+    assert_eq!(lane, [Sv(3), p![1,2], p![1,2], Sv(5), p![1;4] ]);
 }
 
 #[test] fn deduce_sequence_in_lane_35()
@@ -44,6 +52,8 @@ use ascendant::Cell::Solved as Sv;
     assert_eq!(lane, [ p![1,2], p![1,2,3], p![1,2,3], Sv(4), Sv(5) ]);
 }
 
+
+// == 6x6 == //
 
 #[test] fn deduce_sequence_in_lane_36()
 {
@@ -88,6 +98,8 @@ use ascendant::Cell::Solved as Sv;
 }
 
 
+// == 7x7 == //
+
 #[test] fn deduce_sequence_in_lane_37()
 {
     const N: usize = 7;
@@ -109,5 +121,5 @@ use ascendant::Cell::Solved as Sv;
     let mut lane = [ p![1,2], p![1,2], Sv(3), Sv(5), Sv(7), Sv(6), Sv(4) ];
 
     Solver::<N>::deduce_sequence_in_lane((Some(clue), util::arr(lane.iter_mut())));
-    assert_eq!(lane, [ p![1,2], Sv(1), Sv(3), Sv(5), Sv(7), Sv(6), Sv(4) ]);
+    assert_eq!(lane, [ Sv(2), Sv(1), Sv(3), Sv(5), Sv(7), Sv(6), Sv(4) ]);
 }
