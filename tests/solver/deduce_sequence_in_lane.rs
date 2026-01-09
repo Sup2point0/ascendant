@@ -29,7 +29,7 @@ use ascendant::Cell::Solved as Sv;
     let mut lane = [ p![1,3], Sv(2), Sv(5), p![3,4], p![3,4] ];
 
     Solver::<N>::deduce_sequence_in_lane((Some(clue), util::arr(lane.iter_mut())));
-    assert_eq!(lane, [ p![1], Sv(2), Sv(5), p![3,4], p![3,4] ]);
+    assert_eq!(lane, [ Sv(1), Sv(2), Sv(5), p![3,4], p![3,4] ]);
 }
 
 #[test] fn deduce_sequence_in_lane_45()
@@ -84,7 +84,7 @@ use ascendant::Cell::Solved as Sv;
     let mut lane = [ p![1,2,3], p![1,2,3], p![1,2,3], Sv(4), Sv(6), Sv(5) ];
 
     Solver::<N>::deduce_sequence_in_lane((Some(clue), util::arr(lane.iter_mut())));
-    assert_eq!(lane, [ p![1], p![2], p![3], Sv(4), Sv(6), Sv(5) ]);
+    assert_eq!(lane, [ Sv(1), Sv(2), Sv(3), Sv(4), Sv(6), Sv(5) ]);
 }
 
 
@@ -109,5 +109,5 @@ use ascendant::Cell::Solved as Sv;
     let mut lane = [ p![1,2], p![1,2], Sv(3), Sv(5), Sv(7), Sv(6), Sv(4) ];
 
     Solver::<N>::deduce_sequence_in_lane((Some(clue), util::arr(lane.iter_mut())));
-    assert_eq!(lane, [ p![1,2], p![1], Sv(3), Sv(5), Sv(7), Sv(6), Sv(4) ]);
+    assert_eq!(lane, [ p![1,2], Sv(1), Sv(3), Sv(5), Sv(7), Sv(6), Sv(4) ]);
 }

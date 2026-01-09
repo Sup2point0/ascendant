@@ -74,16 +74,16 @@ impl Cell
                 Some(ds) => {
                     let deduced: HashSet<Digit> =
                         ds.intersection(&candidates).copied().collect();
-
-                    if deduced.len() == 0 {
-                        panic!("Conflicting deductions! Old: {ds:?}; New: {candidates:?}");
-                    }
                     
                     if deduced != *ds {
                         did_deduce = true;
                     }
 
-                    *ds = deduced;
+                    match deduced.len() {
+                        0 => panic!("Conflicting deductions! Old: {ds:?}; New: {candidates:?}"),
+                        1 => *self = Cell::Solved(*deduced.iter().next().unwrap()),
+                        _ => *ds = deduced,
+                    }
                 }
             }
         }
