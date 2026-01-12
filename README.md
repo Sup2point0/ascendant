@@ -28,6 +28,8 @@ Some example puzzles are provided in `src/examples.rs`.
 
 ## Progress
 
+Bear in mind most human-oriented puzzles are 5x5 or 6x6 ;)
+
 | size | full easy | full hard | sparse |
 | :--- | :-------- | :-------- | :----- |
 | 4x4  | solvable  | solvable  | solvable
@@ -35,6 +37,7 @@ Some example puzzles are provided in `src/examples.rs`.
 | 6x6  | solvable  | solvable  | –
 | 7x7  | solvable  | solvable  |
 | 8x8  | –         |
+| 9x9  | –         |
 
 
 <br>
