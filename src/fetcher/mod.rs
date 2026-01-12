@@ -28,11 +28,14 @@ impl ToString for Difficulty
 }
 
 
-pub struct Fetcher<const N: usize>;
+pub struct Fetcher;
 
-impl<const N: usize> Fetcher<N> where [(); N+2]:
+impl Fetcher
 {
-    pub fn get_puzzle_url(diff: Difficulty, (month, day): (usize, usize)) -> Url
+    pub fn get_puzzle_url<const N: usize>(
+        diff: Difficulty,
+        (month, day): (usize, usize),
+    ) -> Url
     {
         format!(
             "https://www.brainbashers.com/showskyscrapers.asp?date={:0>2}{:0>2}&size={}&diff={}",
@@ -43,18 +46,19 @@ impl<const N: usize> Fetcher<N> where [(); N+2]:
         )
     }
 
-    pub fn get_puzzle_urls(diff: Difficulty) -> Vec<Url>
+    pub fn get_puzzle_urls<const N: usize>(diff: Difficulty) -> Vec<Url>
     {
         [
             (1, 31),
             // (1, 31), (2, 28), (3, 31), (4, 30), (5, 31), (6, 30),
             // (7, 31), (8, 31), (9, 30), (10, 31), (11, 30), (12, 31),
         ].into_iter().map(
-            |(month, day)| Self::get_puzzle_url(diff, (month, day))
+            |(month, day)| Self::get_puzzle_url::<N>(diff, (month, day))
         ).collect()
     }
 
-    pub async fn fetch(urls: Vec<Url>) -> ah::Result<Vec<(Url, Grid<N>)>>
+    pub async fn fetch<const N: usize>(urls: Vec<Url>) -> ah::Result<Vec<(Url, Grid<N>)>>
+        where [(); N+2]:
     {
         let mut out = vec![];
 

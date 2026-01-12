@@ -1,3 +1,5 @@
+#![allow(incomplete_features)]
+#![feature(generic_const_exprs)]
 #![allow(dead_code)]
 
 use anyhow as ah;
@@ -43,8 +45,8 @@ fn solve()
 #[tk::main]
 async fn fetch() -> ah::Result<()>
 {
-    let urls = Fetcher::<5>::get_puzzle_urls(Difficulty::Sparse);
-    let grids = Fetcher::<5>::fetch(urls).await?;
+    let urls = Fetcher::get_puzzle_urls::<5>(Difficulty::Sparse);
+    let grids = Fetcher::fetch::<5>(urls).await?;
 
     Ok(())
 }
