@@ -3,6 +3,7 @@ use std::*;
 use anyhow as ah;
 use chromiumoxide as cr2o3;
 use futures::StreamExt;
+use itertools::*;
 use tokio as tk;
 
 use crate::*;
@@ -49,11 +50,16 @@ impl Fetcher
     pub fn get_puzzle_urls<const N: usize>(diff: Difficulty) -> Vec<Url>
     {
         [
-            (1, 31),
+            (1, 3),
             // (1, 31), (2, 28), (3, 31), (4, 30), (5, 31), (6, 30),
             // (7, 31), (8, 31), (9, 30), (10, 31), (11, 30), (12, 31),
-        ].into_iter().map(
-            |(month, day)| Self::get_puzzle_url::<N>(diff, (month, day))
+        ].into_iter()
+        .flat_map(|(month, days)|
+            (1..=days)
+            .map(|d|
+                Self::get_puzzle_url::<N>(diff, (month, d))
+            )
+            .collect_vec()
         ).collect()
     }
 
@@ -81,7 +87,7 @@ impl Fetcher
             for (y, row) in rows.into_iter().enumerate() {
                 let cells = row.find_elements("td").await?;
 
-                for (x, cell) in cells.into_iter().enumerate() {
+                for cell in cells {
                     digits[y].push(Self::extract_digit(cell).await?);
                 }
             }
@@ -100,11 +106,14 @@ impl Fetcher
         let out: Digit;
 
         if let Ok(img) = elem.find_element("img").await {
-            let id = img.attribute("id").await?
-                .ok_or(ah::anyhow!("Failed to extract id of <img>"))?;
+            let alt = img.attribute("alt").await?
+                .ok_or(ah::anyhow!("Failed to extract `alt` of <img>"))?;
             
-            let digit = id.chars().last()
-                .ok_or(ah::anyhow!("Failed to extract digit from id `{}`", id))?;
+            let text = alt.split_whitespace().skip(1).next()
+                .ok_or(ah::anyhow!("Failed to extract digit from alt `{}`", alt))?;
+
+            let digit = text.chars().next()
+                .ok_or(ah::anyhow!("Digit extracted from `alt` of <img> was empty"))?;
 
             out = digit.to_digit(10)
                 .ok_or(ah::anyhow!("Failed to convert char `{}` to digit", digit))?
