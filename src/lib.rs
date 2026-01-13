@@ -4,6 +4,7 @@
 mod puzzle;  pub use puzzle::*;
 mod solver;  pub use solver::*;
 mod fetcher; pub use fetcher::*;
+mod reader;  pub use reader::*;
 
 pub mod examples;
 pub mod util;

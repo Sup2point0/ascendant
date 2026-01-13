@@ -48,10 +48,13 @@ async fn fetch() -> ah::Result<()>
     let urls = Fetcher::get_puzzle_urls::<5>(Difficulty::Sparse);
     let grids = Fetcher::fetch::<5>(urls).await?;
 
-    for (url, grid) in grids {
-        println!("url = {:?}", url);
-        println!("{:?}", grid);
-    }
+    // for (url, grid) in grids {
+    //     println!("url = {:?}", url);
+    //     println!("{:?}", grid);
+    // }
+
+    let data = grids.into_iter().map(GridExchange::from);
+    Saver::save(data)?;
 
     Ok(())
 }
