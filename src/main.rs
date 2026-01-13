@@ -3,6 +3,7 @@
 #![allow(dead_code)]
 
 use anyhow as ah;
+use itertools::Itertools;
 use tokio as tk;
 
 use ascendant::*;
@@ -10,51 +11,57 @@ use ascendant::*;
 
 fn main()
 {
-    fetch().unwrap();
+    // fetch::<5>().unwrap();
+    solve();
+    println!(">> done!");
 }
 
 fn solve()
 {
-    let grids = [
-        // examples::grid_4x4_full_1(),  //
-        // examples::grid_4x4_sparse_1(),  //
-        // examples::grid_4x4_sparse_2(),  //
+    // let grids = [
+    //     // examples::grid_4x4_full_1(),  //
+    //     // examples::grid_4x4_sparse_1(),  //
+    //     // examples::grid_4x4_sparse_2(),  //
 
-        // examples::grid_5x5_full_easy_1(),  //
-        // examples::grid_5x5_full_hard_1(),  //
-        // examples::grid_5x5_sparse_1(),  //
+    //     // examples::grid_5x5_full_easy_1(),  //
+    //     // examples::grid_5x5_full_hard_1(),  //
+    //     // examples::grid_5x5_sparse_1(),  //
 
-        // examples::grid_6x6_full_easy_1(),  //
-        // examples::grid_6x6_full_hard_1(),  //
-        // examples::grid_6x6_sparse_1(),
+    //     // examples::grid_6x6_full_easy_1(),  //
+    //     // examples::grid_6x6_full_hard_1(),  //
+    //     // examples::grid_6x6_sparse_1(),
 
-        // examples::grid_7x7_full_easy_1(),  //
-        examples::grid_7x7_full_hard_1(),  //
+    //     // examples::grid_7x7_full_easy_1(),  //
+    //     examples::grid_7x7_full_hard_1(),  //
 
-        // examples::grid_8x8_full_easy_1(),
+    //     // examples::grid_8x8_full_easy_1(),
 
-        // examples::grid_9x9_full_1(),
-    ];
+    //     // examples::grid_9x9_full_1(),
+    // ];
+
+    let grids = Loader::load_grids::<5>().unwrap();
 
     for (i, grid) in grids.into_iter().enumerate() {
-        println!("solving grid #{}", i+1);
+        println!("solving grid #{} from {}", i+1, grid.url.clone().unwrap());
         Solver::solve(grid);
     }
 }
 
 #[tk::main]
-async fn fetch() -> ah::Result<()>
+async fn fetch<const N: usize>() -> ah::Result<()>
+    where [(); N+2]:
 {
-    let urls = Fetcher::get_puzzle_urls::<5>(Difficulty::Sparse);
-    let grids = Fetcher::fetch::<5>(urls).await?;
+    let urls = Fetcher::get_puzzle_urls::<N>(Difficulty::Sparse);
+    let grids = Fetcher::fetch::<N>(urls).await?;
 
     // for (url, grid) in grids {
     //     println!("url = {:?}", url);
     //     println!("{:?}", grid);
     // }
 
-    let data = grids.into_iter().map(GridExchange::from);
-    Saver::save(data)?;
+    let grids_data = grids.into_iter().map(GridExchange::from);
+    let grids_data = grids_data.into_group_map_by(|grid| grid.clues.upper.len());
+    Saver::save(grids_data)?;
 
     Ok(())
 }

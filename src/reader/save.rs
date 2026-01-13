@@ -11,11 +11,10 @@ pub struct Saver;
 
 impl Saver
 {
-    pub fn save(grids: impl IntoIterator<Item = GridExchange>) -> ah::Result<()>
+    pub fn save(data: impl serde::Serialize) -> ah::Result<()>
     {
-        let data = grids.into_iter().collect_vec();
         let text = json::to_string_pretty(&data)?;
-        fs::write("data/grids.json", text)?;
+        fs::write(DATA_ROUTE, text)?;
 
         Ok(())
     }

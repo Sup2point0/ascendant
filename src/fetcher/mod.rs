@@ -63,7 +63,7 @@ impl Fetcher
         ).collect()
     }
 
-    pub async fn fetch<const N: usize>(urls: Vec<Url>) -> ah::Result<Vec<(Url, Grid<N>)>>
+    pub async fn fetch<const N: usize>(urls: Vec<Url>) -> ah::Result<Vec<Grid<N>>>
         where [(); N+2]:
     {
         let mut out = vec![];
@@ -92,7 +92,8 @@ impl Fetcher
                 }
             }
 
-            out.push((url, Grid::<N>::try_construct(digits)));
+            let res = Grid::<N>::try_construct(digits, Some(url));
+            out.push(res);
         }
 
         browser.close().await?;

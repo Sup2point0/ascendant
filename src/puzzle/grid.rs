@@ -9,6 +9,7 @@ use crate::*;
 #[derive(PartialEq, Eq)]
 pub struct Grid<const N: usize>
 {
+    pub url:   Option<String>,
     pub cells: [[Cell; N]; N],
     pub clues: Clues<N>,
 }
@@ -30,12 +31,13 @@ impl<const N: usize> Grid<N>
                 });
 
         Self {
+            url: None,
             cells: util::arr(cells),
             clues,
         }
     }
 
-    pub fn try_construct<I,J>(data: I) -> Self
+    pub fn try_construct<I,J>(data: I, url: Option<String>) -> Self
         where
             I: IntoIterator<Item = J>,
             J: IntoIterator<Item = Digit>,
@@ -56,6 +58,7 @@ impl<const N: usize> Grid<N>
                 });
 
         Self {
+            url,
             cells: util::arr(cells),
             clues,
         }
