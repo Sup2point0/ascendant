@@ -32,6 +32,32 @@ impl<const N: usize> Grid<N>
             clues,
         }
     }
+
+    pub fn try_construct<I,J>(data: I) -> Self
+        where
+            I: IntoIterator<Item = J>,
+            J: IntoIterator<Item = Digit>,
+            [(); N+2]:
+    {
+        let mut clues = Clues::new();
+
+        let cells =
+            data.into_iter()
+                .enumerate()
+                .filter_map(|(y, row)| {
+                    let row = util::arr(row);
+                    match y {
+                        0             => { Self::prep_clue_row(row, &mut clues.upper); None }
+                        _ if y == N+1 => { Self::prep_clue_row(row, &mut clues.lower); None }
+                        _             => { Some( Self::prep_row(y-1, row, &mut clues) ) }
+                    }
+                });
+
+        Self {
+            cells: util::arr(cells),
+            clues,
+        }
+    }
 }
 
 impl<const N: usize> Grid<N>

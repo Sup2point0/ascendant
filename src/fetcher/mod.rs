@@ -21,8 +21,8 @@ impl ToString for Difficulty
 {
     fn to_string(&self) -> String {
         match self {
-            Self::Full => "3",
-            Self::Sparse => "2",
+            Self::Full   => "2",
+            Self::Sparse => "3",
         }.to_string()
     }
 }
@@ -76,17 +76,17 @@ impl Fetcher
             let grid = page.find_element("table").await?;
             let rows = grid.find_elements("tr").await?;
 
-            let mut digits = [[0; N+2]; N+2];
+            let mut digits: Vec<Vec<Digit>> = (0..N+2).map(|_| vec![]).collect();
 
             for (y, row) in rows.into_iter().enumerate() {
                 let cells = row.find_elements("td").await?;
 
                 for (x, cell) in cells.into_iter().enumerate() {
-                    digits[y][x] = Self::extract_digit(cell).await?;
+                    digits[y].push(Self::extract_digit(cell).await?);
                 }
             }
 
-            out.push((url, Grid::<N>::construct(digits)));
+            out.push((url, Grid::<N>::try_construct(digits)));
         }
 
         browser.close().await?;
@@ -114,7 +114,7 @@ impl Fetcher
             let value = input.attribute("value").await?
                 .ok_or(ah::anyhow!("Failed to extract value of <input>"))?;
 
-            out = value.as_str().parse::<Digit>()?;
+            out = value.as_str().parse::<Digit>().unwrap_or(0);
         }
         else {
             out = 0;
