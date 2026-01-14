@@ -8,12 +8,19 @@ use tokio as tk;
 
 use ascendant::*;
 
+mod test; use test::*;
+
 
 fn main()
 {
-    // fetch::<5>().unwrap();
-    solve();
-    println!(">> done!");
+    fetch::<5>().unwrap();
+    // solve();
+    // let res = try_solve_stored();
+
+    match res {
+        Ok(..) => println!(">> done!"),
+        Err(e) => println!("{:?}", e),
+    }
 }
 
 fn solve()
