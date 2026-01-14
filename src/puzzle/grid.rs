@@ -100,8 +100,8 @@ impl<const N: usize> Grid<N>
             .filter_map(|(x, n)|
                 if      x == 0   { if n > 0 { clues.left[y] = Some(n); } None }
                 else if x == N+1 { if n > 0 { clues.right[y] = Some(n); } None }
-                else if n > 0    { Some(Cell::Solved(n)) }
-                else             { Some(Cell::Pencil( Some((1..=N).collect()) )) }
+                else if n > 0    { Some( Cell::Solved(n) ) }
+                else             { Some( Cell::Pencil((1..=N).collect()) ) }
             );
 
         util::arr(row)
@@ -259,12 +259,11 @@ impl<const N: usize> Grid<N>
                 Cell::Solved(digit) => {
                     seen_indices.get_mut(digit).unwrap().push(i);
                 }
-                Cell::Pencil(Some(digits)) => {
+                Cell::Pencil(digits) => {
                     for digit in digits {
                         seen_indices.get_mut(digit).unwrap().push(i);
                     }
                 },
-                _ => (),
             }
         }
 

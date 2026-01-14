@@ -143,7 +143,7 @@ impl<const N: usize> Solver<N>
             if let Cell::Solved(digit) = cell { seen.insert(*digit); }
         }
 
-        if let Cell::Pencil(Some(digits)) = grid.at_mut(x, y) {
+        if let Cell::Pencil(digits) = grid.at_mut(x, y) {
             for digit in seen {
                 did_deduce |= digits.remove(&digit);
                 if digits.len() == 0 {
@@ -252,14 +252,7 @@ impl<const N: usize> Solver<N>
         'exit: {
             if peak_idx == 0 { break 'exit; }
 
-            let blockade = {
-                match lane[0] {
-                    Cell::Solved(digit)       => *digit,
-                    Cell::Pencil(Some(heads)) => *heads.iter().max().unwrap(),
-                    _                         => break 'exit,
-                }
-                .min(peak - 1)
-            };
+            let blockade = lane[0].max().min(peak - 1);
 
             /* Head must obscure all of tail */
             let lower = peak_idx.max(
@@ -305,7 +298,7 @@ impl<const N: usize> Solver<N>
         }
 
         for cell in lane {
-            if let Cell::Pencil(Some(digits)) = cell
+            if let Cell::Pencil(digits) = cell
             && digits.len() == 1
             {
                 let digit = digits.iter().next().unwrap();

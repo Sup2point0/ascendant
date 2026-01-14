@@ -13,7 +13,7 @@ pub enum Cell {
     /// A cell we haven't deduced yet, containing pencil marks of possible digits.
     /// 
     /// We use an `Option<>` to allow `.take()` on it, which will allow mutably replacing the value. This field should always atomically be `Some()` by contract.
-    Pencil(Option<HashSet<Digit>>),
+    Pencil(HashSet<Digit>),
 }
 
 #[macro_export]
@@ -21,19 +21,15 @@ macro_rules! p {
     ( $($digit:expr),* $(,)? ) =>
     {
         Cell::Pencil(
-            Some(
-                std::collections::HashSet::from(
-                    [ $($digit,)* ]
-                )
+            std::collections::HashSet::from(
+                [ $($digit,)* ]
             )
         )
     };
     ( $lower:expr; $upper:expr ) =>
     {
         Cell::Pencil(
-            Some(
-                ( $lower ..= $upper).collect()
-            )
+            ($lower ..= $upper).collect()
         )
     }
 }
@@ -42,9 +38,9 @@ impl Cell
 {
     pub fn new(n: usize) -> Self
     {
-        Self::Pencil(Some(
+        Self::Pencil(
             (1..=n).collect()
-        ))
+        )
     }
 
     pub fn cands<const N: usize>(lower: impl Into<Digit>, upper: impl Into<Digit>) -> HashSet<Digit>
@@ -72,9 +68,8 @@ impl Cell
     pub fn max(&self) -> Digit
     {
         match self {
-            Self::Solved(digit)        => *digit,
-            Self::Pencil(Some(digits)) => *digits.iter().max().unwrap(),
-            Self::Pencil(None)         => panic!("Encountered cell with pencilmarks stolen!"),
+            Self::Solved(digit)  => *digit,
+            Self::Pencil(digits) => *digits.iter().max().unwrap(),
         }
     }
 
@@ -87,23 +82,17 @@ impl Cell
 
         if let Self::Pencil(digits) = self
         {
-            match digits {
-                None => panic!("Encountered cell with pencilmarks stolen!"),
-                
-                Some(ds) => {
-                    let deduced: HashSet<Digit> =
-                        ds.intersection(&candidates).copied().collect();
-                    
-                    if deduced != *ds {
-                        did_deduce = true;
-                    }
+            let deduced: HashSet<Digit> =
+                digits.intersection(&candidates).copied().collect();
+            
+            if deduced != *digits {
+                did_deduce = true;
+            }
 
-                    match deduced.len() {
-                        0 => panic!("Conflicting deductions! Old: {ds:?}; New: {candidates:?}"),
-                        1 => *self = Cell::Solved(*deduced.iter().next().unwrap()),
-                        _ => *ds = deduced,
-                    }
-                }
+            match deduced.len() {
+                0 => panic!("Conflicting deductions! Old: {digits:?}; New: {candidates:?}"),
+                1 => *self = Cell::Solved(*deduced.iter().next().unwrap()),
+                _ => *digits = deduced,
             }
         }
 
@@ -122,7 +111,7 @@ impl Cell
                 format!("{fill}{d}")
             },
 
-            Self::Pencil(Some(digits)) => {
+            Self::Pencil(digits) => {
                 let str = digits.iter()
                     .sorted()
                     .map(|n| n.to_string())
@@ -134,8 +123,6 @@ impl Cell
 
                 format!("[{fill}{str}]")
             },
-
-            Self::Pencil(None) => iter::repeat_n('?', N+2).collect::<String>(),
         }
     }
 }
@@ -147,15 +134,13 @@ impl fmt::Debug for Cell
         write!(f, "{}", match self {
             Self::Solved(d)  => format!("'{d}'"),
 
-            Self::Pencil(Some(digits)) => format!("[{}]",
+            Self::Pencil(digits) => format!("[{}]",
                 digits.iter()
                     .sorted()
                     .map(|n| n.to_string())
                     .collect::<Vec<String>>()
                     .join("")
             ),
-
-            Self::Pencil(None) => "[ ? ]".to_string(),
         })
     }
 }
