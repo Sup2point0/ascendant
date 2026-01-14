@@ -27,10 +27,10 @@ impl<const N: usize> Solver<N>
     {
         let mut did_deduce = false;
 
-        for x in 0..N { did_deduce |= Self::deduce_cells_in_lane(grid.look_down(x)); }
-        for x in 0..N { did_deduce |= Self::deduce_cells_in_lane(grid.look_up(x)); }
-        for y in 0..N { did_deduce |= Self::deduce_cells_in_lane(grid.look_right(y)); }
-        for y in 0..N { did_deduce |= Self::deduce_cells_in_lane(grid.look_left(y)); }
+        for x in 0..N { did_deduce |= Self::deduce_cells_in_lane(grid.look_down_mut(x)); }
+        for x in 0..N { did_deduce |= Self::deduce_cells_in_lane(grid.look_up_mut(x)); }
+        for y in 0..N { did_deduce |= Self::deduce_cells_in_lane(grid.look_right_mut(y)); }
+        for y in 0..N { did_deduce |= Self::deduce_cells_in_lane(grid.look_left_mut(y)); }
 
         let mut deduced;
         for x in 0..N {
@@ -41,16 +41,16 @@ impl<const N: usize> Solver<N>
         }
 
         // println!("pre-seq:\n{grid:?}");
-        for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_down(x)) }
-        for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_up(x)) }
-        for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_right(y)) }
-        for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_left(y)) }
+        for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_down_mut(x)) }
+        for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_up_mut(x)) }
+        for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_right_mut(y)) }
+        for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_left_mut(y)) }
         // println!("post-seq:\n{grid:?}");
 
-        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_down(x).1) }
-        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_up(x).1) }
-        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_right(y).1) }
-        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_left(y).1) }
+        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_down_mut(x).1) }
+        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_up_mut(x).1) }
+        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_right_mut(y).1) }
+        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_left_mut(y).1) }
         
         (grid, did_deduce)
     }
@@ -136,10 +136,10 @@ impl<const N: usize> Solver<N>
 
         let mut seen = HashSet::new();
 
-        for cell in grid.look_right(y).1 {
+        for cell in grid.look_right_mut(y).1 {
             if let Cell::Solved(digit) = cell { seen.insert(*digit); }
         }
-        for cell in grid.look_down(x).1 {
+        for cell in grid.look_down_mut(x).1 {
             if let Cell::Solved(digit) = cell { seen.insert(*digit); }
         }
 

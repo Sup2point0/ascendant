@@ -66,14 +66,6 @@ pub struct GridExchange
 
 impl GridExchange
 {
-    fn digit_from_cell(cell: Cell) -> Digit
-    {
-        match cell {
-            Cell::Solved(digit) => digit,
-            Cell::Pencil(..)    => 0,
-        }
-    }
-
     fn digit_into_cell<const N: usize>(digit: Digit) -> Cell
     {
         if digit == 0 { Cell::new(N) }
@@ -92,7 +84,7 @@ impl<const N: usize> From<Grid<N>> for GridExchange
                 grid.cells.into_iter()
                     .map(|row|
                         row.into_iter()
-                            .map(Self::digit_from_cell)
+                            .map(|cell| cell.digit())
                             .collect_vec()
                     )
                     .collect_vec(),

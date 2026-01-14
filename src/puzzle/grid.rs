@@ -1,7 +1,8 @@
 use std::*;
-use std::collections::HashMap;
-
-use serde_json as json;
+use std::collections::{
+    HashMap,
+    HashSet,
+};
 
 use crate::*;
 
@@ -110,6 +111,36 @@ impl<const N: usize> Grid<N>
 // == QUERY == //
 impl<const N: usize> Grid<N>
 {
+    pub fn is_solved(&self) -> bool
+    {
+        (0..N).all(|y| Self::validate_lane(self.look_across_row(y)))
+        && (0..N).all(|x| Self::validate_lane(self.look_across_col(x)))
+    }
+
+    fn validate_lane((clue_start, lane, clue_end): (Option<Digit>, [&Cell; N], Option<Digit>)) -> bool
+    {
+        let mut invalid = false;
+
+        invalid |=
+            lane.iter()
+                .map(|cell| cell.digit())
+                .collect::<HashSet<_>>()
+            !=
+                (1..=N).collect::<HashSet<_>>();
+
+        if let Some(clue) = clue_start {
+            invalid |= Self::count_visible(lane) != clue;
+        }
+        if let Some(clue) = clue_end {
+            invalid |= Self::count_visible(lane.into_iter().rev()) != clue;
+        }
+
+        !invalid
+    }
+}
+
+impl<const N: usize> Grid<N>
+{
     pub fn at(&self, x: usize, y: usize) -> &Cell {
         &self.cells[y][x]
     }
@@ -118,21 +149,42 @@ impl<const N: usize> Grid<N>
         &mut self.cells[y][x]
     }
 
-    pub fn look_right(&mut self, row: usize) -> (Option<Digit>, [&mut Cell; N]) {
+    pub fn look_right(&self, row: usize) -> (Option<Digit>, [&Cell; N]) {
+        ( self.clues.left[row], util::arr(self.cells[row].iter()) )
+    }
+    pub fn look_right_mut(&mut self, row: usize) -> (Option<Digit>, [&mut Cell; N]) {
         ( self.clues.left[row], util::arr(self.cells[row].iter_mut()) )
     }
-    pub fn look_left(&mut self, row: usize) -> (Option<Digit>, [&mut Cell; N]) {
+
+    pub fn look_left(&self, row: usize) -> (Option<Digit>, [&Cell; N]) {
+        ( self.clues.right[row], util::arr(self.cells[row].iter().rev()) )
+    }
+    pub fn look_left_mut(&mut self, row: usize) -> (Option<Digit>, [&mut Cell; N]) {
         ( self.clues.right[row], util::arr(self.cells[row].iter_mut().rev()) )
     }
 
-    pub fn look_down(&mut self, col: usize) -> (Option<Digit>, [&mut Cell; N]) {
+    pub fn look_down(&self, col: usize) -> (Option<Digit>, [&Cell; N]) {
+        ( self.clues.upper[col], util::arr(self.cells.iter().map(|row| &row[col])) )
+    }
+    pub fn look_down_mut(&mut self, col: usize) -> (Option<Digit>, [&mut Cell; N]) {
         ( self.clues.upper[col], util::arr(self.cells.iter_mut().map(|row| &mut row[col])) )
     }
-    pub fn look_up(&mut self, col: usize) -> (Option<Digit>, [&mut Cell; N]) {
+
+    pub fn look_up(&mut self, col: usize) -> (Option<Digit>, [&Cell; N]) {
+        ( self.clues.lower[col], util::arr(self.cells.iter().rev().map(|row| &row[col])) )
+    }
+    pub fn look_up_mut(&mut self, col: usize) -> (Option<Digit>, [&mut Cell; N]) {
         ( self.clues.lower[col], util::arr(self.cells.iter_mut().rev().map(|row| &mut row[col])) )
     }
 
-    pub fn look_across_row(&mut self, row: usize) -> (Option<Digit>, [&mut Cell; N], Option<Digit>) {
+    pub fn look_across_row(&self, row: usize) -> (Option<Digit>, [&Cell; N], Option<Digit>) {
+        (
+            self.clues.left[row],
+            util::arr(self.cells[row].iter()),
+            self.clues.right[row],
+        )
+    }
+    pub fn look_across_row_mut(&mut self, row: usize) -> (Option<Digit>, [&mut Cell; N], Option<Digit>) {
         (
             self.clues.left[row],
             util::arr(self.cells[row].iter_mut()),
@@ -140,10 +192,17 @@ impl<const N: usize> Grid<N>
         )
     }
 
-    pub fn look_across_col(&mut self, col: usize) -> (Option<Digit>, [&mut Cell; N], Option<Digit>) {
+    pub fn look_across_col(&self, col: usize) -> (Option<Digit>, [&Cell; N], Option<Digit>) {
         (
             self.clues.upper[col],
-            util::arr(self.cells.iter_mut().rev().map(|row| &mut row[col])),
+            util::arr(self.cells.iter().map(|row| &row[col])),
+            self.clues.lower[col],
+        )
+    }
+    pub fn look_across_col_mut(&mut self, col: usize) -> (Option<Digit>, [&mut Cell; N], Option<Digit>) {
+        (
+            self.clues.upper[col],
+            util::arr(self.cells.iter_mut().map(|row| &mut row[col])),
             self.clues.lower[col],
         )
     }
@@ -152,6 +211,40 @@ impl<const N: usize> Grid<N>
 // == PROCESS == //
 impl<const N: usize> Grid<N>
 {
+    pub fn count_visible<'a>(lane: impl IntoIterator<Item = &'a Cell>) -> usize
+    {
+        let mut visible = 0;
+        let mut peak = 0;
+
+        for cell in lane.into_iter() {
+            let digit = cell.digit();
+
+            if digit > peak {
+                visible += 1;
+                peak = digit;
+            }
+        }
+
+        visible
+    }
+
+    pub fn find_visible_indices(lane: &[&mut Cell; N]) -> Vec<usize>
+    {
+        let mut visible = vec![];
+        let mut peak = 0;
+
+        for (i, cell) in lane.iter().enumerate() {
+            let digit = cell.digit();
+
+            if digit > peak {
+                visible.push(i);
+                peak = digit;
+            }
+        }
+
+        visible
+    }
+
     pub fn occurrences(lane: &[&mut Cell; N]) -> HashMap<Digit, Vec<usize>>
     {
         let mut seen_indices: HashMap<Digit, Vec<usize>> =

@@ -59,6 +59,16 @@ impl Cell
 
 impl Cell
 {
+    /// For a `Cell::Solved`, extract the solved digit, otherwise return `0`.
+    pub fn digit(&self) -> Digit
+    {
+        match self {
+            Cell::Solved(digit) => *digit,
+            Cell::Pencil(..)    => 0,
+        }
+    }
+
+    /// Return the maximum digit a cell could be, whether it is solved or pencil marks.
     pub fn max(&self) -> Digit
     {
         match self {
