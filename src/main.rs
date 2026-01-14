@@ -21,7 +21,7 @@ fn main()
 
     match res {
         Ok(..) => println!(">> done!"),
-        Err(e) => println!("{:?}", e),
+        Err(e) => println!("!! {:?}", e),
     }
 }
 

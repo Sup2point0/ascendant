@@ -68,15 +68,17 @@ impl Fetcher
     {
         let mut out = vec![];
 
-        let (mut browser, mut handler) = cr2o3::Browser::launch(
+        println!(".. launching browser...");
+        let (browser, mut handler) = cr2o3::Browser::launch(
             // cr2o3::BrowserConfig::builder().with_head().build().map_err(|e| ah::anyhow!(e))?
-            cr2o3::BrowserConfig::builder().headless_mode(HeadlessMode::New).build().map_err(|e| ah::anyhow!(e))?
+            cr2o3::BrowserConfig::builder().headless_mode(HeadlessMode::True).build().map_err(|e| ah::anyhow!(e))?
         ).await?;
 
         let handle = tk::spawn(async move {
             while let Some(_) = handler.next().await {}
         });
 
+        println!(".. fetching urls...");
         for url in urls {
             let page = browser.new_page(url.clone()).await?;
 
@@ -97,7 +99,7 @@ impl Fetcher
             out.push(res);
         }
 
-        browser.close().await?;
+        // browser.close().await?;
         handle.await?;
         
         Ok(out)
