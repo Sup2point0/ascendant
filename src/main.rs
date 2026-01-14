@@ -1,6 +1,8 @@
 #![allow(incomplete_features)]
 #![feature(generic_const_exprs)]
+
 #![allow(dead_code)]
+#![allow(unused_imports)]
 
 use anyhow as ah;
 use itertools::Itertools;
@@ -13,8 +15,8 @@ mod test; use test::*;
 
 fn main()
 {
-    fetch::<5>().unwrap();
-    // solve();
+    // let res = solve();
+    let res = fetch::<5>();
     // let res = try_solve_stored();
 
     match res {

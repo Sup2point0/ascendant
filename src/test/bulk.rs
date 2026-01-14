@@ -10,7 +10,7 @@ pub fn try_solve_stored() -> ah::Result<()>
             let total = grids.len();
             let solved = try_solve_all::<N>(grids)?;
 
-            println!("{}x{} -- solved {solved}/{total}", N, N);
+            println!(".. {}x{} -- solved {solved}/{total}", N, N);
         }
     });
 

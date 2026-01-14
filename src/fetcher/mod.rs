@@ -2,6 +2,7 @@ use std::*;
 
 use anyhow as ah;
 use chromiumoxide as cr2o3;
+use chromiumoxide::browser::HeadlessMode;
 use futures::StreamExt;
 use itertools::*;
 use tokio as tk;
@@ -40,8 +41,7 @@ impl Fetcher
     {
         format!(
             "https://www.brainbashers.com/showskyscrapers.asp?date={:0>2}{:0>2}&size={}&diff={}",
-            month,
-            day,
+            month, day,
             N,
             diff.to_string()
         )
@@ -50,7 +50,7 @@ impl Fetcher
     pub fn get_puzzle_urls<const N: usize>(diff: Difficulty) -> Vec<Url>
     {
         [
-            (1, 3),
+            (1, 31),
             // (1, 31), (2, 28), (3, 31), (4, 30), (5, 31), (6, 30),
             // (7, 31), (8, 31), (9, 30), (10, 31), (11, 30), (12, 31),
         ].into_iter()
@@ -69,7 +69,8 @@ impl Fetcher
         let mut out = vec![];
 
         let (mut browser, mut handler) = cr2o3::Browser::launch(
-            cr2o3::BrowserConfig::builder().with_head().build().map_err(|e| ah::anyhow!(e))?
+            // cr2o3::BrowserConfig::builder().with_head().build().map_err(|e| ah::anyhow!(e))?
+            cr2o3::BrowserConfig::builder().headless_mode(HeadlessMode::New).build().map_err(|e| ah::anyhow!(e))?
         ).await?;
 
         let handle = tk::spawn(async move {
