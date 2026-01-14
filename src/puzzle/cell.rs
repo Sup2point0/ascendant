@@ -104,14 +104,10 @@ impl Cell
 
 impl Cell
 {
-    pub fn render<const N: usize>(&self) -> String
+    pub fn fmt<const N: usize>(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result
     {
         match self {
-            Self::Solved(d) => {
-                let fill = iter::repeat_n(' ', N+1).collect::<String>();
-
-                format!("{fill}{d}")
-            },
+            Self::Solved(digit) => write!(f, " {: ^1$} ", digit, N),
 
             Self::Pencil(digits) => {
                 let str = digits.iter()
@@ -120,10 +116,7 @@ impl Cell
                     .collect::<Vec<String>>()
                     .join("");
 
-                let c = str.clone().chars().count();
-                let fill = iter::repeat_n(' ', N - c).collect::<String>();
-
-                format!("[{fill}{str}]")
+                write!(f, "[{: >1$}]", str, N)
             },
         }
     }
@@ -133,17 +126,17 @@ impl fmt::Debug for Cell
 {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result
     {
-        write!(f, "{}", match self {
-            Self::Solved(d)  => format!("'{d}'"),
+        match self {
+            Self::Solved(d) => write!(f, "'{d}'"),
 
-            Self::Pencil(digits) => format!("[{}]",
+            Self::Pencil(digits) => write!(f, "[{}]",
                 digits.iter()
                     .sorted()
                     .map(|n| n.to_string())
                     .collect::<Vec<String>>()
                     .join("")
             ),
-        })
+        }
     }
 }
 

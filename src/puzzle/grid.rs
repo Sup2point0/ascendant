@@ -300,52 +300,43 @@ impl<const N: usize> fmt::Debug for Grid<N>
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let col_width = N + 5;
 
-        // I don't even know anymore...
-        write!(f, "{}",
-            iter::once(
-                format!("{}| {} |",
-                    util::rep(' ', 3),
-                    self.clues.upper.clone()
-                        .map(|clue|
-                            clue.map(|c| format!(" {}{} ", util::rep(' ', N-1), c))
-                                .unwrap_or(util::rep(' ', N+2).to_string())
-                        ).join(" | ")
-                )
-            )
-            .chain(
-                iter::once( util::rep('-', N * col_width + 7) )
-            ).chain(
-                self.cells.iter().enumerate()
-                    .map(|(i, row)|
-                        iter::once(
-                            self.clues.left.clone()[i].map(|c| c.to_string()).unwrap_or(" ".to_string())
-                        )
-                        .chain(
-                            row.iter()
-                                .map(Cell::render::<N>)
-                        )
-                        .chain(
-                            iter::once( 
-                                self.clues.right.clone()[i].map(|c| c.to_string()).unwrap_or(" ".to_string())
-                            )
-                        )
-                        .collect::<Vec<_>>()
-                        .join(" | ")
-                    )
-                    .map(|row| format!(" {row} "))
-                    .chain(iter::once( util::rep('-', N * col_width + 7) ))
-                    .chain(iter::once( format!(
-                        "{}| {} |",
-                        util::rep(' ', 3),
-                        self.clues.lower.clone()
-                            .map(|clue|
-                                clue.map(|c| format!(" {}{} ", util::rep(' ', N-1), c))
-                                    .unwrap_or(util::rep(' ', N+2).to_string())
-                            ).join(" | ")
-                    ) ))
-            )
-            .collect::<Vec<_>>()
-            .join("\n")
-        )
+        // upper clues
+        write!(f, "   |")?;
+        for clue in &self.clues.upper {
+            let digit = Clues::<N>::render(*clue);
+            write!(f, "  {: ^1$}  |", digit, N)?;
+        }
+
+        // ---
+        write!(f, "\n{}", util::rep('-', N * col_width + 7))?;
+
+        // grid
+        for (y, row) in self.cells.iter().enumerate() {
+            // left clue
+            let digit = Clues::<N>::render(self.clues.left[y]);
+            write!(f, "\n {digit} | ")?;
+
+            // row
+            for cell in row {
+                cell.fmt::<N>(f)?;
+                write!(f, " | ")?;
+            }
+
+            // right clue
+            let digit = Clues::<N>::render(self.clues.right[y]);
+            write!(f, "{digit}")?;
+        }
+
+        // ---
+        write!(f, "\n{}", util::rep('-', N * col_width + 7))?;
+
+        // lower clues
+        write!(f, "\n   |")?;
+        for clue in &self.clues.lower {
+            let digit = Clues::<N>::render(*clue);
+            write!(f, "  {: ^1$}  |", digit, N)?;
+        }
+
+        Ok(())
     }
 }

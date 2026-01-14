@@ -22,6 +22,14 @@ impl<const N: usize> Clues<N>
             lower: [None; N],
         }
     }
+
+    pub fn render(clue: Option<Digit>) -> String
+    {
+        clue.map_or(
+            " ".to_string(),
+            |digit| digit.to_string()
+        )
+    }
 }
 
 impl<const N: usize> fmt::Debug for Clues<N>
