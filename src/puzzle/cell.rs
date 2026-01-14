@@ -6,16 +6,16 @@ use itertools::*;
 use crate::*;
 
 
+/// A cell in the puzzle grid, which may contain either a single `Solved(Digit)` or many possible `Pencil`-marks.
 #[derive(Clone, PartialEq, Eq)]
 pub enum Cell {
     Solved(Digit),
 
-    /// A cell we haven't deduced yet, containing pencil marks of possible digits.
-    /// 
-    /// We use an `Option<>` to allow `.take()` on it, which will allow mutably replacing the value. This field should always atomically be `Some()` by contract.
+    /// A cell that hasn't been solved yet, containing pencil marks of possible digits.
     Pencil(HashSet<Digit>),
 }
 
+/// Construct a `Cell::Pencil` with the provided digits.
 #[macro_export]
 macro_rules! p {
     ( $($digit:expr),* $(,)? ) =>
@@ -36,6 +36,7 @@ macro_rules! p {
 
 impl Cell
 {
+    /// Create a `Cell::Pencil` with all the possible digits of an `n`x`n` grid.
     pub fn new(n: usize) -> Self
     {
         Self::Pencil(
@@ -43,6 +44,7 @@ impl Cell
         )
     }
 
+    /// Create a set of the candidate digits between `lower` and `upper` (inclusive), but if the range is invalid, instead return a full set of 1 to N.
     pub fn cands<const N: usize>(lower: impl Into<Digit>, upper: impl Into<Digit>) -> HashSet<Digit>
     {
         let lower: Digit = lower.into();

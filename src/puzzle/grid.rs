@@ -18,6 +18,7 @@ pub struct Grid<const N: usize>
 // == CONSTRUCTORS == //
 impl<const N: usize> Grid<N>
 {
+    /// Construct a grid from an array representation.
     pub fn construct(data: [[Digit; N+2]; N+2]) -> Self
     {
         let mut clues = Clues::new();
@@ -38,6 +39,7 @@ impl<const N: usize> Grid<N>
         }
     }
 
+    /// Try constructing a grid from a general iterator representation. Panics if the received sizes are incorrect.
     pub fn try_construct<I,J>(data: I, url: Option<String>) -> Self
         where
             I: IntoIterator<Item = J>,
@@ -68,14 +70,17 @@ impl<const N: usize> Grid<N>
 
 impl<const N: usize> Grid<N>
 {
-    fn is_edge(xy: usize) -> bool {
+    /// Is the provided x or y co-ordinate on the edge of a puzzle grid (including clues)?
+    fn is_prep_edge(xy: usize) -> bool {
         xy == 0 || xy == N+1
     }
 
+    /// Produce a clue from a digit, ignoring `0` clues.
     fn clue_from(n: Digit) -> Option<Digit> {
-        if n > 0 { Some(n) } else { None }
+        (n > 0).then_some(n)
     }
 
+    /// (in-place) Extract clues from `row` and assign them to `clue_row`.
     fn prep_clue_row(
         row: [Digit; N + 2],
         clue_row: &mut [Option<Digit>; N]
@@ -83,13 +88,14 @@ impl<const N: usize> Grid<N>
     {
         let row = row.into_iter().enumerate()
             .filter_map(|(x, n)|
-                if Self::is_edge(x) { None }
-                else                { Some(Self::clue_from(n)) }
+                (!Self::is_prep_edge(x))
+                .then(|| Self::clue_from(n))
             );
 
         *clue_row = util::arr(row);
     }
 
+    /// (impure) Extract clues and cells from `row`, assigning clues to `clues` and returning the row of cells.
     fn prep_row(
         y: usize,
         row: [Digit; N + 2],
@@ -111,16 +117,19 @@ impl<const N: usize> Grid<N>
 // == QUERY == //
 impl<const N: usize> Grid<N>
 {
+    /// Have all cells been solved, and if so, is the solution valid?
     pub fn is_solved(&self) -> bool
     {
         (0..N).all(|y| Self::validate_lane(self.look_across_row(y)))
         && (0..N).all(|x| Self::validate_lane(self.look_across_col(x)))
     }
 
+    /// Does a lane contain every digit from 1 to N and satisfy any clues applied to it?
     fn validate_lane((clue_start, lane, clue_end): (Option<Digit>, [&Cell; N], Option<Digit>)) -> bool
     {
         let mut invalid = false;
 
+        /* If a cell is not solved, `.digit()` gives `0`, which is not a valid digit, thus invalidating the lane. Bit cleaner than pattern matching on `Cell::Pencil`! */
         invalid |=
             lane.iter()
                 .map(|cell| cell.digit())
@@ -141,10 +150,12 @@ impl<const N: usize> Grid<N>
 
 impl<const N: usize> Grid<N>
 {
+    /// Get a reference to the cell at (col `x`, row `y`) of the grid.
     pub fn at(&self, x: usize, y: usize) -> &Cell {
         &self.cells[y][x]
     }
     
+    /// Get a mutable reference to the cell at (col `x`, row `y`) of the grid.
     pub fn at_mut(&mut self, x: usize, y: usize) -> &mut Cell {
         &mut self.cells[y][x]
     }
@@ -177,6 +188,7 @@ impl<const N: usize> Grid<N>
         ( self.clues.lower[col], util::arr(self.cells.iter_mut().rev().map(|row| &mut row[col])) )
     }
 
+    /// Get the left clue, cells and right clue of a row.
     pub fn look_across_row(&self, row: usize) -> (Option<Digit>, [&Cell; N], Option<Digit>) {
         (
             self.clues.left[row],
@@ -184,6 +196,7 @@ impl<const N: usize> Grid<N>
             self.clues.right[row],
         )
     }
+    /// Get the left clue, mutable cells and right clue of a row.
     pub fn look_across_row_mut(&mut self, row: usize) -> (Option<Digit>, [&mut Cell; N], Option<Digit>) {
         (
             self.clues.left[row],
@@ -192,6 +205,7 @@ impl<const N: usize> Grid<N>
         )
     }
 
+    /// Get the upper clue, cells and lower clue of a row.
     pub fn look_across_col(&self, col: usize) -> (Option<Digit>, [&Cell; N], Option<Digit>) {
         (
             self.clues.upper[col],
@@ -199,6 +213,7 @@ impl<const N: usize> Grid<N>
             self.clues.lower[col],
         )
     }
+    /// Get the upper clue, mutable cells and lower clue of a row.
     pub fn look_across_col_mut(&mut self, col: usize) -> (Option<Digit>, [&mut Cell; N], Option<Digit>) {
         (
             self.clues.upper[col],
@@ -211,6 +226,7 @@ impl<const N: usize> Grid<N>
 // == PROCESS == //
 impl<const N: usize> Grid<N>
 {
+    /// Looking across a lane of cells (which should be solved), how many skyscrapers are not obscured?
     pub fn count_visible<'a>(lane: impl IntoIterator<Item = &'a Cell>) -> usize
     {
         let mut visible = 0;
@@ -228,6 +244,7 @@ impl<const N: usize> Grid<N>
         visible
     }
 
+    /// Get the indices of the visible cells in a lane.
     pub fn find_visible_indices(lane: &[&mut Cell; N]) -> Vec<usize>
     {
         let mut visible = vec![];
@@ -245,6 +262,7 @@ impl<const N: usize> Grid<N>
         visible
     }
 
+    /// For each digit 1 to N, find the indices of the lane in which it could be present. Returns a `HashMap` of each digit to its list of indices.
     pub fn occurrences(lane: &[&mut Cell; N]) -> HashMap<Digit, Vec<usize>>
     {
         let mut seen_indices: HashMap<Digit, Vec<usize>> =
@@ -270,6 +288,7 @@ impl<const N: usize> Grid<N>
         seen_indices
     }
 
+    /// Try to find a solved cell with an N-skyscraper, if there is one.
     pub fn find_peak(lane: &[impl AsRef<Cell>; N]) -> Option<usize>
     {
         lane.iter().position(|c| *c.as_ref() == Cell::Solved(N))

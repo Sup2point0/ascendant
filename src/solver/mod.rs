@@ -4,10 +4,12 @@ use std::collections::HashSet;
 use crate::*;
 
 
+/// Algorithm for solving puzzles. Call `::solve()` and pass in a puzzle to attempt solving it as far as possible.
 pub struct Solver<const N: usize>;
 
 impl<const N: usize> Solver<N>
 {
+    /// Perform deductions on a puzzle until no further deductions can be made.
     pub fn solve(mut grid: Grid<N>) -> Grid<N>
     {
         let mut did_deduce;
@@ -93,6 +95,7 @@ impl<const N: usize> Solver<N>
         did_deduce
     }
 
+    /// For one cell, calculate candidates based on the lane's clue.
     pub fn calc_cands_from_clue(clue: Option<Digit>, i: usize) -> HashSet<Digit>
     {
         let clue_offset = clue.map(|c| c-1).unwrap_or(0);
@@ -101,6 +104,7 @@ impl<const N: usize> Solver<N>
         (1..=out).collect()
     }
 
+    /// For one cell, calculate candidates based on both the lane's clue and the index of its peak.
     pub fn calc_cands_from_peak(clue: Digit, i: usize, peak_idx: usize) -> HashSet<Digit>
     {
         let lower = 1 + if peak_idx < clue {i} else {0};
@@ -125,6 +129,7 @@ impl<const N: usize> Solver<N>
         (lower..=upper).collect()
     }
 
+    /// Apply the rules of Sudoku to eliminate candidates from a `Cell::Pencil` at (`x`, `y`) of `grid`.
     pub fn deduce_one_cell_sudoku_style(mut grid: Grid<N>, x: usize, y: usize) -> (Grid<N>, bool)
     {
         let mut did_deduce = false;
@@ -155,6 +160,7 @@ impl<const N: usize> Solver<N>
         (grid, did_deduce)
     }
 
+    /// Use the clue and peaks of a lane to narrow down candidates based on ascending sequences.
     pub fn deduce_sequence_in_lane((clue, mut lane): (Option<Digit>, [&mut Cell; N])) -> bool
     {
         let mut did_deduce = false;
@@ -226,6 +232,7 @@ impl<const N: usize> Solver<N>
         did_deduce
     }
 
+    /// For one cell, calculates its candidates based on its place in an ascending sequence..
     pub fn calc_ascending(
         i: usize,               // What index is the current cell we're considering?
         sequence_peak: Digit,   // What's the tallest a skyscraper in the gap can be?
@@ -282,6 +289,7 @@ impl<const N: usize> Solver<N>
         did_deduce
     }
 
+    /// Find cells in a lane that can be solved and turn them from `Cell::Pencil` to `Cell::Solved`.
     pub fn pinpoint_cells_in_lane(mut lane: [&mut Cell; N]) -> bool
     {
         let mut did_deduce = false;
