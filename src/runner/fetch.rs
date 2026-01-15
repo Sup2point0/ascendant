@@ -15,7 +15,8 @@ pub async fn fetch_load_save<const N: usize>(difficulty: Difficulty) -> ah::Resu
     let urls = Fetcher::get_puzzle_urls::<N>(difficulty);
     let mut grids_fetched = Fetcher::fetch::<N>(urls).await?;
 
-    let mut grids = Loader::load_grids::<N>()?;
+    let mut grids = Loader::load_grids::<N>()
+        .unwrap_or(HashMap::new());
 
     grids.entry(difficulty.to_string())
         .or_insert(vec![])
