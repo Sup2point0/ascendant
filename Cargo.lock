@@ -32,6 +32,7 @@ dependencies = [
  "chromiumoxide",
  "futures",
  "itertools",
+ "regex",
  "seq-macro",
  "serde",
  "serde_json",

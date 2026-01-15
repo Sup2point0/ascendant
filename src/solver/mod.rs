@@ -15,7 +15,7 @@ impl<const N: usize> Solver<N>
         let mut did_deduce;
 
         loop {
-            println!("\n{grid:?}\n");
+            // println!("\n{grid:?}\n");
 
             (grid, did_deduce) = Self::deduce_one_pass(grid);
             if !did_deduce { break; }

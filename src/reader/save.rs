@@ -1,6 +1,7 @@
 use std::*;
 
 use anyhow as ah;
+use regex::Regex;
 use serde_json as json;
 
 use crate::*;
@@ -12,8 +13,14 @@ impl Saver
 {
     pub fn save(data: impl serde::Serialize) -> ah::Result<()>
     {
+        println!(".. saving data...");
+        
         let text = json::to_string_pretty(&data)?;
-        fs::write(DATA_ROUTE, text)?;
+
+        let re = Regex::new("\n {8,10}").unwrap();
+        let text = re.replace_all(&text, "");
+
+        fs::write(DATA_ROUTE, text.into_owned())?;
 
         Ok(())
     }

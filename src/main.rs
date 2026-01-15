@@ -4,20 +4,16 @@
 #![allow(dead_code)]
 #![allow(unused_imports)]
 
-use anyhow as ah;
-use itertools::Itertools;
-use tokio as tk;
-
 use ascendant::*;
 
-mod test; use test::*;
+mod runner;
 
 
 fn main()
 {
     // let res = solve();
-    // let res = fetch::<5>();
-    let res = try_solve_stored();
+    let res = runner::fetch_and_save::<5>();
+    // let res = runner::try_solve_stored();
 
     match res {
         Ok(..) => println!(">> done!"),
@@ -52,23 +48,4 @@ fn solve()
         println!("solving grid #{}", i+1);
         Solver::solve(grid);
     }
-}
-
-#[tk::main]
-async fn fetch<const N: usize>() -> ah::Result<()>
-    where [(); N+2]:
-{
-    let urls = Fetcher::get_puzzle_urls::<N>(Difficulty::Sparse);
-    let grids = Fetcher::fetch::<N>(urls).await?;
-
-    // for (url, grid) in grids {
-    //     println!("url = {:?}", url);
-    //     println!("{:?}", grid);
-    // }
-
-    let grids_data = grids.into_iter().map(GridExchange::from);
-    let grids_data = grids_data.into_group_map_by(|grid| grid.clues.upper.len());
-    Saver::save(grids_data)?;
-
-    Ok(())
 }

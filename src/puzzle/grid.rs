@@ -117,6 +117,12 @@ impl<const N: usize> Grid<N>
 // == QUERY == //
 impl<const N: usize> Grid<N>
 {
+    /// What are the dimensions of the puzzle?
+    pub fn size(&self) -> usize
+    {
+        N
+    }
+
     /// Have all cells been solved, and if so, is the solution valid?
     pub fn is_solved(&self) -> bool
     {

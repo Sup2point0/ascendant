@@ -50,8 +50,7 @@ impl Fetcher
     pub fn get_puzzle_urls<const N: usize>(diff: Difficulty) -> Vec<Url>
     {
         [
-            (1, 31),
-            // (1, 31), (2, 28), (3, 31), (4, 30), (5, 31), (6, 30),
+            (1, 31), (2, 28), (3, 31), (4, 30), (5, 31), (6, 30),
             // (7, 31), (8, 31), (9, 30), (10, 31), (11, 30), (12, 31),
         ].into_iter()
         .flat_map(|(month, days)|
@@ -69,7 +68,7 @@ impl Fetcher
         let mut out = vec![];
 
         println!(".. launching browser...");
-        let (browser, mut handler) = cr2o3::Browser::launch(
+        let (mut browser, mut handler) = cr2o3::Browser::launch(
             // cr2o3::BrowserConfig::builder().with_head().build().map_err(|e| ah::anyhow!(e))?
             cr2o3::BrowserConfig::builder().headless_mode(HeadlessMode::True).build().map_err(|e| ah::anyhow!(e))?
         ).await?;
@@ -78,8 +77,8 @@ impl Fetcher
             while let Some(_) = handler.next().await {}
         });
 
-        println!(".. fetching urls...");
         for url in urls {
+            println!(".. fetching {url}...");
             let page = browser.new_page(url.clone()).await?;
 
             let grid = page.find_element("table").await?;
@@ -99,7 +98,7 @@ impl Fetcher
             out.push(res);
         }
 
-        // browser.close().await?;
+        browser.close().await?;
         handle.await?;
         
         Ok(out)
