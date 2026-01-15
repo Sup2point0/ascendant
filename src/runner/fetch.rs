@@ -15,16 +15,16 @@ pub async fn fetch_load_save<const N: usize>(difficulty: Difficulty) -> ah::Resu
     let urls = Fetcher::get_puzzle_urls::<N>(difficulty);
     let mut grids_fetched = Fetcher::fetch::<N>(urls).await?;
 
-    let mut grids = Loader::load_grids()?;
-    grids.append(&mut grids_fetched);
+    let mut grids = Loader::load_grids::<N>()?;
+    grids.get_mut(&difficulty.to_string())
+        .unwrap_or(&mut vec![])
+        .append(&mut grids_fetched);
 
-    let grids_grouped = grids.into_iter().into_group_map_by(Grid::size);
-
-    let grids_data = grids_grouped.into_iter().
+    let grids_data = grids.into_iter().
         map(|(size, grids)|
             (size, grids.into_iter().map(GridExchange::from).collect_vec())
         )
-        .collect::<HashMap<usize, Vec<GridExchange>>>();
+        .collect::<HashMap<String, Vec<GridExchange>>>();
 
     Saver::save(grids_data)?;
 

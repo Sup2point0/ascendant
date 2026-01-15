@@ -33,7 +33,7 @@ impl Fetcher
     pub fn get_puzzle_urls<const N: usize>(diff: Difficulty) -> Vec<Url>
     {
         [
-            // (1, 31), (2, 28), (3, 31), (4, 30), (5, 31), (6, 30),
+            (1, 31), (2, 28), (3, 31), (4, 30), (5, 31), (6, 30),
             (7, 31), (8, 31), (9, 30), (10, 31), (11, 30), (12, 31),
         ].into_iter()
         .flat_map(|(month, days)|

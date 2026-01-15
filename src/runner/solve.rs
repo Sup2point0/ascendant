@@ -6,11 +6,16 @@ use crate::*;
 pub fn try_solve_stored() -> ah::Result<()>
 {
     seq_macro::seq!(N in 4..=9 {
-        if let Ok(grids) = Loader::load_grids::<N>() {
-            let total = grids.len();
-            let solved = try_solve_all::<N>(grids)?;
-
-            println!(".. {}x{} -- solved {solved}/{total}", N, N);
+        if let Ok(difficulties) = Loader::load_grids::<N>() {
+            for (diff, grids) in difficulties {
+                let total = grids.len();
+                match try_solve_all::<N>(grids) {
+                    Ok(solved)
+                        => println!(".. {}x{} -- {} solved {solved}/{total}", N, N, diff.to_string()),
+                    Err(e)
+                        => println!("{e:?}"),
+                }
+            }
         }
     });
 

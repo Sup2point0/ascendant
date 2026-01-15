@@ -2,42 +2,52 @@ use std::*;
 use std::collections::HashMap;
 
 use anyhow as ah;
+use itertools::*;
 use serde_json as json;
 use serde_json::value::Value;
 
 use crate::*;
 
 
+type Difficulties<T> = HashMap<String, Vec<T>>;
+
+
 pub struct Loader;
 
 impl Loader
 {
-    pub fn load_grids<const N: usize>() -> ah::Result<Vec<Grid<N>>>
+    pub fn load_grids<const N: usize>() -> ah::Result<Difficulties<Grid<N>>>
     {
-        let mut grids_data = Self::load_grids_data()?;
-        let grids = grids_data.remove_entry(&N)
-            .ok_or(ah::anyhow!("Failed to find grids of size {N}"))?.1;
+        let grids_data = Self::load_grids_data::<N>()?;
 
-        let out = grids.into_iter()
-            .map(|exchange| exchange.into())
+        let out = grids_data.into_iter()
+            .map(|(diff, grids)|
+                (
+                    diff,
+                    grids.into_iter()
+                        .map(|exchange| exchange.into())
+                        .collect_vec()
+                )
+            )
             .collect();
 
         Ok(out)
     }
 
-    pub fn load_grids_data() -> ah::Result<HashMap<usize, Vec<GridExchange>>>
+    pub fn load_grids_data<const N: usize>() -> ah::Result<Difficulties<GridExchange>>
     {
-        let file = fs::File::open(DATA_ROUTE)?;
+        let route = format!("{DATA_ROUTE}/{N}x{N}-puzzles.json");
+        let file = fs::File::open(route)?;
+
         let reader = io::BufReader::new(file);
         let data = json::from_reader(reader)?;
 
-        if let Value::Object(sizes) = data {
-            Ok(sizes.into_iter()
-                .map(|(size, grids)|
+        if let Value::Object(difficulties) = data {
+            Ok(difficulties.into_iter()
+                .map(|(diff, grids)|
                     (
-                        size.parse::<usize>()
-                            .expect("Failed to parse grid size"),
-                        json::from_value::<Vec<GridExchange>>(grids)
+                        diff,
+                        json::from_value(grids)
                             .expect("Failed to load grid data")
                     )
                 )
