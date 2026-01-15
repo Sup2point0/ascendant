@@ -16,6 +16,7 @@ pub async fn fetch_load_save<const N: usize>(difficulty: Difficulty) -> ah::Resu
     let mut grids_fetched = Fetcher::fetch::<N>(urls).await?;
 
     let mut grids = Loader::load_grids::<N>()?;
+    
     grids.get_mut(&difficulty.to_string())
         .unwrap_or(&mut vec![])
         .append(&mut grids_fetched);

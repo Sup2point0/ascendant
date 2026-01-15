@@ -11,8 +11,8 @@ mod runner;
 
 fn main()
 {
-    // let res = runner::fetch_load_save::<5>(Difficulty::Sparse);
-    let res = runner::try_solve_stored();
+    let res = runner::fetch_load_save::<5>(Difficulty::Full);
+    // let res = runner::try_solve_stored();
 
     match res {
         Ok(..) => println!(">> done!"),

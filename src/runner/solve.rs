@@ -9,6 +9,7 @@ pub fn try_solve_stored() -> ah::Result<()>
         if let Ok(difficulties) = Loader::load_grids::<N>() {
             for (diff, grids) in difficulties {
                 let total = grids.len();
+                
                 match try_solve_all::<N>(grids) {
                     Ok(solved)
                         => println!(".. {}x{} -- {} solved {solved}/{total}", N, N, diff.to_string()),

@@ -16,6 +16,7 @@ pub struct Loader;
 
 impl Loader
 {
+    /// Load `N`x`N` puzzles from JSON into `Grid` objects, grouped by difficulty.
     pub fn load_grids<const N: usize>() -> ah::Result<Difficulties<Grid<N>>>
     {
         let grids_data = Self::load_grids_data::<N>()?;
@@ -34,7 +35,8 @@ impl Loader
         Ok(out)
     }
 
-    pub fn load_grids_data<const N: usize>() -> ah::Result<Difficulties<GridExchange>>
+    /// Load `N`x`N` puzzles into JSON exchange objects, grouped by difficulty.
+    fn load_grids_data<const N: usize>() -> ah::Result<Difficulties<GridExchange>>
     {
         let route = format!("{DATA_ROUTE}/{N}x{N}-puzzles.json");
         let file = fs::File::open(route)?;
