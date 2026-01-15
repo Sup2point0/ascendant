@@ -1,4 +1,5 @@
 use std::*;
+use std::sync::Arc;
 
 use anyhow as ah;
 use chromiumoxide as cr2o3;
@@ -6,6 +7,7 @@ use chromiumoxide::browser::HeadlessMode;
 use futures::StreamExt;
 use itertools::*;
 use tokio as tk;
+use workerpool as wk;
 
 use crate::*;
 
@@ -33,11 +35,10 @@ impl Fetcher
     pub fn get_puzzle_urls<const N: usize>(diff: Difficulty) -> Vec<Url>
     {
         [
-            (1, 31),
-            // (1, 31), (2, 28), (3, 31),
-            // (4, 30), (5, 31), (6, 30),
-            // (7, 31), (8, 31), (9, 30),
-            // (10, 31), (11, 30), (12, 31),
+            (1, 31), (2, 28), (3, 31),
+            (4, 30), (5, 31), (6, 30),
+            (7, 31), (8, 31), (9, 30),
+            (10, 31), (11, 30), (12, 31),
         ].into_iter()
         .flat_map(|(month, days)|
             (1..=days)
@@ -51,40 +52,34 @@ impl Fetcher
     pub async fn fetch<const N: usize>(urls: Vec<Url>) -> ah::Result<Vec<Grid<N>>>
         where [(); N+2]:
     {
-        let mut out = vec![];
-
         println!(".. launching browser...");
-        let (mut browser, mut handler) = cr2o3::Browser::launch(
-            // cr2o3::BrowserConfig::builder().with_head().build().map_err(|e| ah::anyhow!(e))?
+        let (browser, mut handler) = cr2o3::Browser::launch(
             cr2o3::BrowserConfig::builder().headless_mode(HeadlessMode::True).build().map_err(|e| ah::anyhow!(e))?
         ).await?;
+
+        let mut browser = Arc::new(browser);
 
         let handle = tk::spawn(async move {
             while let Some(_) = handler.next().await {}
         });
 
+        let max_workers = thread::available_parallelism().unwrap().get();
+        println!("max_workers = {:?}", max_workers);
+        let jobs = urls.len();
+
+        let pool = wk::Pool::<FetchProcess<N>>::new(max_workers / 2);
+        let (tx, rx) = sync::mpsc::channel();
+
         for url in urls {
-            println!(".. fetching {url}...");
-            let page = browser.new_page(url.clone()).await?;
-
-            let grid = page.find_element("table").await?;
-            let rows = grid.find_elements("tr").await?;
-
-            let mut digits: Vec<Vec<Digit>> = (0..N+2).map(|_| vec![]).collect();
-
-            for (y, row) in rows.into_iter().enumerate() {
-                let cells = row.find_elements("td").await?;
-
-                for cell in cells {
-                    digits[y].push(Self::extract_digit(cell).await?);
-                }
-            }
-
-            let res = Grid::<N>::try_construct(digits, Some(url));
-            out.push(res);
+            pool.execute_to(tx.clone(), (browser.clone(), url));
         }
 
-        browser.close().await?;
+        let out = rx.iter()
+            .take(jobs)
+            .filter_map(|r| r.ok())
+            .collect_vec();
+
+        Arc::get_mut(&mut browser).unwrap().close().await?;
         handle.await?;
         
         Ok(out)
@@ -117,6 +112,47 @@ impl Fetcher
         else {
             out = 0;
         }
+
+        Ok(out)
+    }
+}
+
+struct FetchProcess<const N: usize>;
+
+impl<const N: usize> Default for FetchProcess<N>
+{
+    fn default() -> Self {
+        Self
+    }
+}
+
+impl<const N: usize> wk::Worker for FetchProcess<N>
+    where [(); N+2]:
+{
+    type Input = (Arc<cr2o3::Browser>, String);
+    type Output = ah::Result<Grid<N>>;
+
+    #[tk::main]
+    async fn execute(&mut self, (browser, url): Self::Input) -> Self::Output
+    {
+        println!(".. fetching {url}...");
+
+        let page = browser.new_page(url.clone()).await?;
+
+        let grid = page.find_element("table").await?;
+        let rows = grid.find_elements("tr").await?;
+
+        let mut digits: Vec<Vec<Digit>> = (0..N+2).map(|_| vec![]).collect();
+
+        for (y, row) in rows.into_iter().enumerate() {
+            let cells = row.find_elements("td").await?;
+
+            for cell in cells {
+                digits[y].push(Fetcher::extract_digit(cell).await?);
+            }
+        }
+
+        let out = Grid::<N>::try_construct(digits, Some(url));
 
         Ok(out)
     }

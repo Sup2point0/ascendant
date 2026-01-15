@@ -1,4 +1,3415 @@
 {
+  "2": [
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0101&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,3,2],"lower": [3,1,4,2,3],"left": [1,2,3,3,2],"right": [2,2,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0102&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,1,2],"lower": [3,2,1,3,2],"left": [4,3,1,2,3],"right": [2,1,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0103&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,2],"lower": [2,1,3,2,3],"left": [2,4,1,2,2],"right": [3,1,4,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0104&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,3],"lower": [2,3,2,4,1],"left": [2,2,2,1,4],"right": [2,2,3,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0105&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,4,2,1],"lower": [1,3,2,3,2],"left": [4,2,3,3,1],"right": [1,2,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0106&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,4,1,2],"lower": [1,3,2,3,2],"left": [3,4,2,2,1],"right": [2,1,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0107&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,1,2,3],"lower": [2,1,4,2,2],"left": [3,3,2,1,2],"right": [3,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0108&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,3,2,1],"lower": [4,2,1,2,3],"left": [4,1,2,2,3],"right": [1,4,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0109&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,1,2,2],"lower": [1,2,3,3,2],"left": [2,3,2,4,1],"right": [2,2,2,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0110&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,3,3],"lower": [4,1,2,2,3],"left": [2,1,3,3,2],"right": [3,2,1,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0111&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,1,2,2],"lower": [1,2,4,4,2],"left": [3,3,4,2,1],"right": [3,2,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0112&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,2,1,4],"lower": [4,3,2,2,1],"left": [4,1,2,2,4],"right": [2,3,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0113&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,3,1],"lower": [2,2,1,2,3],"left": [3,2,1,2,2],"right": [1,3,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0114&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,4],"lower": [2,4,2,2,1],"left": [2,1,4,2,3],"right": [4,3,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0115&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,4,3,2,3],"lower": [4,1,2,2,2],"left": [1,2,4,3,2],"right": [3,2,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0116&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,3],"lower": [2,1,3,3,2],"left": [3,3,1,3,2],"right": [3,2,4,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0117&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,2,2,1],"lower": [2,2,3,1,2],"left": [4,2,1,2,2],"right": [1,2,4,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0118&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,3,4],"lower": [1,2,3,2,2],"left": [3,2,3,4,1],"right": [2,2,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0119&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,4,2],"lower": [2,1,3,2,3],"left": [1,3,2,3,2],"right": [3,1,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0120&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,1,2,2],"lower": [1,2,4,2,2],"left": [2,4,3,2,1],"right": [3,1,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0121&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,2,3],"lower": [2,2,3,3,1],"left": [3,1,2,2,2],"right": [3,4,2,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0122&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,2,2,1],"lower": [2,1,3,2,3],"left": [2,3,3,1,2],"right": [1,3,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0123&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,3],"lower": [3,2,2,3,1],"left": [3,3,1,2,3],"right": [2,2,3,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0124&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,4,2,3,2],"lower": [3,2,2,1,2],"left": [1,4,3,2,4],"right": [3,1,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0125&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,4,2,3],"lower": [3,4,2,2,1],"left": [1,2,4,2,4],"right": [3,2,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0126&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,3,3,2],"lower": [1,3,3,2,3],"left": [2,3,2,4,1],"right": [2,1,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0127&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,4,2,2],"lower": [2,3,1,4,3],"left": [2,3,4,1,2],"right": [3,2,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0128&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,2,3],"lower": [3,1,2,4,2],"left": [1,3,2,2,2],"right": [4,2,3,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0129&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,3,1],"lower": [2,3,1,2,4],"left": [2,1,2,3,2],"right": [1,2,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0130&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,2,3,1],"lower": [3,2,3,1,2],"left": [3,1,3,2,2],"right": [1,3,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0131&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,2,2],"lower": [4,3,1,4,2],"left": [1,2,2,3,3],"right": [3,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0103&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,2],"lower": [2,1,3,2,3],"left": [2,4,1,2,2],"right": [3,1,4,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0104&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,3],"lower": [2,3,2,4,1],"left": [2,2,2,1,4],"right": [2,2,3,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0102&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,1,2],"lower": [3,2,1,3,2],"left": [4,3,1,2,3],"right": [2,1,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0101&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,3,2],"lower": [3,1,4,2,3],"left": [1,2,3,3,2],"right": [2,2,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0105&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,4,2,1],"lower": [1,3,2,3,2],"left": [4,2,3,3,1],"right": [1,2,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0106&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,4,1,2],"lower": [1,3,2,3,2],"left": [3,4,2,2,1],"right": [2,1,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0108&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,3,2,1],"lower": [4,2,1,2,3],"left": [4,1,2,2,3],"right": [1,4,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0107&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,1,2,3],"lower": [2,1,4,2,2],"left": [3,3,2,1,2],"right": [3,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0109&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,1,2,2],"lower": [1,2,3,3,2],"left": [2,3,2,4,1],"right": [2,2,2,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0110&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,3,3],"lower": [4,1,2,2,3],"left": [2,1,3,3,2],"right": [3,2,1,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0112&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,2,1,4],"lower": [4,3,2,2,1],"left": [4,1,2,2,4],"right": [2,3,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0111&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,1,2,2],"lower": [1,2,4,4,2],"left": [3,3,4,2,1],"right": [3,2,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0113&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,3,1],"lower": [2,2,1,2,3],"left": [3,2,1,2,2],"right": [1,3,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0116&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,3],"lower": [2,1,3,3,2],"left": [3,3,1,3,2],"right": [3,2,4,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0114&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,4],"lower": [2,4,2,2,1],"left": [2,1,4,2,3],"right": [4,3,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0115&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,4,3,2,3],"lower": [4,1,2,2,2],"left": [1,2,4,3,2],"right": [3,2,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0117&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,2,2,1],"lower": [2,2,3,1,2],"left": [4,2,1,2,2],"right": [1,2,4,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0120&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,1,2,2],"lower": [1,2,4,2,2],"left": [2,4,3,2,1],"right": [3,1,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0118&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,3,4],"lower": [1,2,3,2,2],"left": [3,2,3,4,1],"right": [2,2,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0119&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,4,2],"lower": [2,1,3,2,3],"left": [1,3,2,3,2],"right": [3,1,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0124&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,4,2,3,2],"lower": [3,2,2,1,2],"left": [1,4,3,2,4],"right": [3,1,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0121&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,2,3],"lower": [2,2,3,3,1],"left": [3,1,2,2,2],"right": [3,4,2,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0122&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,2,2,1],"lower": [2,1,3,2,3],"left": [2,3,3,1,2],"right": [1,3,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0123&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,3],"lower": [3,2,2,3,1],"left": [3,3,1,2,3],"right": [2,2,3,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0125&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,4,2,3],"lower": [3,4,2,2,1],"left": [1,2,4,2,4],"right": [3,2,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0128&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,2,3],"lower": [3,1,2,4,2],"left": [1,3,2,2,2],"right": [4,2,3,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0127&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,4,2,2],"lower": [2,3,1,4,3],"left": [2,3,4,1,2],"right": [3,2,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0126&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,3,3,2],"lower": [1,3,3,2,3],"left": [2,3,2,4,1],"right": [2,1,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0201&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,4,1,3],"lower": [2,3,2,3,1],"left": [3,1,2,3,2],"right": [2,3,4,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0130&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,2,3,1],"lower": [3,2,3,1,2],"left": [3,1,3,2,2],"right": [1,3,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0129&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,3,1],"lower": [2,3,1,2,4],"left": [2,1,2,3,2],"right": [1,2,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0131&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,2,2],"lower": [4,3,1,4,2],"left": [1,2,2,3,3],"right": [3,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0205&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,4,2,2],"lower": [1,3,2,2,4],"left": [2,3,4,2,1],"right": [2,1,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0202&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,3,2,2],"lower": [3,1,2,4,2],"left": [1,2,2,3,2],"right": [2,2,3,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0203&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,3,2],"lower": [2,3,4,1,2],"left": [2,2,3,1,3],"right": [2,3,1,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0204&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,4,2],"lower": [2,3,3,1,3],"left": [2,4,2,1,2],"right": [2,1,3,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0209&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,3,2],"lower": [3,2,1,2,2],"left": [1,3,3,2,2],"right": [4,1,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0206&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,3,1,2],"lower": [1,2,3,4,2],"left": [2,2,2,3,1],"right": [2,3,3,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0207&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,4,3,1],"lower": [2,4,1,2,3],"left": [3,2,1,3,2],"right": [1,3,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0208&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,3],"lower": [2,3,2,3,1],"left": [2,4,2,1,3],"right": [2,2,3,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0213&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,3,1],"lower": [1,2,3,3,3],"left": [3,3,4,2,1],"right": [1,3,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0210&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,4,2],"lower": [4,2,3,1,3],"left": [3,1,2,2,3],"right": [2,3,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0211&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,3],"lower": [2,4,1,4,2],"left": [2,3,1,3,2],"right": [4,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0212&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,3,2,1],"lower": [1,3,2,2,2],"left": [4,2,4,3,1],"right": [1,2,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0217&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,2,2,1],"lower": [2,1,3,2,3],"left": [3,3,4,1,2],"right": [1,3,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0214&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,3,1,3],"lower": [2,4,3,2,1],"left": [3,2,3,1,4],"right": [2,3,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0215&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,4,1,2],"lower": [3,1,2,3,3],"left": [3,3,1,2,2],"right": [2,1,2,3,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0216&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,4,4],"lower": [3,3,3,2,1],"left": [1,3,2,2,3],"right": [3,2,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0221&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,3,2],"lower": [2,2,4,1,3],"left": [3,4,2,1,2],"right": [2,1,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0219&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,4,2],"lower": [2,4,2,1,2],"left": [3,2,3,1,3],"right": [2,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0218&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,4,1],"lower": [2,2,2,1,4],"left": [2,2,1,2,3],"right": [1,2,4,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0220&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,2,3,1],"lower": [2,3,2,1,3],"left": [2,2,1,3,4],"right": [1,3,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0222&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,1,2,2],"lower": [2,1,4,2,2],"left": [3,2,3,1,2],"right": [3,2,1,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0225&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,1,2,3],"lower": [1,3,3,3,2],"left": [2,4,2,3,1],"right": [3,2,2,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0223&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,3,1],"lower": [2,4,2,1,3],"left": [3,2,3,1,3],"right": [1,2,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0224&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,3,4],"lower": [3,3,1,2,2],"left": [2,1,4,2,3],"right": [3,3,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0301&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,2,3],"lower": [2,2,3,2,1],"left": [2,2,1,2,4],"right": [3,2,3,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0226&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,3,3,2],"lower": [3,2,1,2,2],"left": [1,3,4,2,2],"right": [3,1,2,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0227&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,2,2],"lower": [3,3,2,3,1],"left": [1,3,2,3,3],"right": [2,2,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0228&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,3,2],"lower": [1,4,4,3,2],"left": [2,2,3,4,1],"right": [2,4,2,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0305&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,4,2],"lower": [4,2,4,1,2],"left": [1,2,3,2,3],"right": [2,3,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0302&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,2,3,1],"lower": [3,2,3,1,2],"left": [4,3,1,2,2],"right": [1,3,3,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0303&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,4,1],"lower": [3,4,2,1,2],"left": [3,2,1,3,4],"right": [1,2,4,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0304&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,2,1],"lower": [4,3,1,2,3],"left": [3,1,2,2,2],"right": [1,4,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0309&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,2],"lower": [1,2,3,4,2],"left": [3,2,2,3,1],"right": [2,2,3,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0306&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,1,4],"lower": [2,3,2,3,1],"left": [4,2,1,2,2],"right": [2,3,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0307&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,3,1,2],"lower": [2,2,1,4,3],"left": [2,3,1,2,3],"right": [2,1,2,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0308&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,2,3],"lower": [3,3,1,2,2],"left": [2,4,1,2,3],"right": [3,2,3,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0313&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,3],"lower": [1,2,3,4,2],"left": [3,4,4,2,1],"right": [2,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0310&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,2,1],"lower": [1,2,3,2,4],"left": [4,3,2,3,1],"right": [1,2,2,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0311&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,2],"lower": [3,1,4,2,3],"left": [2,1,3,2,2],"right": [3,4,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0312&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,4,2,4,2],"lower": [3,1,3,2,2],"left": [1,2,4,3,2],"right": [3,3,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0317&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,2,1],"lower": [3,3,2,1,4],"left": [4,2,1,2,4],"right": [1,2,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0314&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,2,3,1],"lower": [2,1,3,2,4],"left": [3,3,1,3,2],"right": [1,2,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0315&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,3,2],"lower": [2,1,4,2,4],"left": [2,4,1,3,2],"right": [2,1,2,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0316&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,1,3,2],"lower": [2,4,3,1,2],"left": [3,2,2,1,3],"right": [3,4,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0318&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,3,2],"lower": [3,3,3,2,1],"left": [3,1,2,2,3],"right": [2,4,4,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0321&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,1,2,2],"lower": [1,2,4,2,3],"left": [3,3,2,2,1],"right": [3,1,4,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0319&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,1,3],"lower": [3,2,2,2,1],"left": [4,3,1,2,4],"right": [2,3,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0320&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,4],"lower": [1,3,2,3,2],"left": [2,3,2,4,1],"right": [3,2,2,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0325&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,4,2,2,3],"lower": [2,1,2,4,3],"left": [1,2,4,3,2],"right": [3,2,1,3,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0322&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,2],"lower": [3,2,3,1,2],"left": [2,1,3,2,4],"right": [3,4,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0323&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,3,3],"lower": [3,4,3,2,1],"left": [3,2,1,2,4],"right": [2,3,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0324&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,3],"lower": [1,2,3,4,2],"left": [2,2,2,4,1],"right": [2,2,3,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0329&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,3,2,1],"lower": [1,2,2,3,2],"left": [4,4,3,2,1],"right": [1,2,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0326&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,2,1],"lower": [3,2,1,3,3],"left": [4,1,4,2,3],"right": [1,3,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0327&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,4,3,3],"lower": [2,3,2,3,1],"left": [2,1,3,2,3],"right": [2,3,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0328&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,2],"lower": [3,1,4,4,2],"left": [3,4,1,2,2],"right": [2,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0331&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,4,4],"lower": [2,3,3,1,2],"left": [3,2,1,4,2],"right": [3,3,2,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0330&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,1,3,2],"lower": [2,1,2,3,3],"left": [3,4,2,1,2],"right": [2,1,2,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0101&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,3,2],"lower": [3,1,4,2,3],"left": [1,2,3,3,2],"right": [2,2,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0105&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,4,2,1],"lower": [1,3,2,3,2],"left": [4,2,3,3,1],"right": [1,2,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0103&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,2],"lower": [2,1,3,2,3],"left": [2,4,1,2,2],"right": [3,1,4,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0106&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,4,1,2],"lower": [1,3,2,3,2],"left": [3,4,2,2,1],"right": [2,1,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0102&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,1,2],"lower": [3,2,1,3,2],"left": [4,3,1,2,3],"right": [2,1,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0107&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,1,2,3],"lower": [2,1,4,2,2],"left": [3,3,2,1,2],"right": [3,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0104&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,3],"lower": [2,3,2,4,1],"left": [2,2,2,1,4],"right": [2,2,3,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0101&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,3,2],"lower": [3,1,4,2,3],"left": [1,2,3,3,2],"right": [2,2,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0108&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,3,2,1],"lower": [4,2,1,2,3],"left": [4,1,2,2,3],"right": [1,4,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0109&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,1,2,2],"lower": [1,2,3,3,2],"left": [2,3,2,4,1],"right": [2,2,2,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0111&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,1,2,2],"lower": [1,2,4,4,2],"left": [3,3,4,2,1],"right": [3,2,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0110&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,3,3],"lower": [4,1,2,2,3],"left": [2,1,3,3,2],"right": [3,2,1,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0112&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,2,1,4],"lower": [4,3,2,2,1],"left": [4,1,2,2,4],"right": [2,3,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0114&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,4],"lower": [2,4,2,2,1],"left": [2,1,4,2,3],"right": [4,3,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0113&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,3,1],"lower": [2,2,1,2,3],"left": [3,2,1,2,2],"right": [1,3,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0115&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,4,3,2,3],"lower": [4,1,2,2,2],"left": [1,2,4,3,2],"right": [3,2,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0118&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,3,4],"lower": [1,2,3,2,2],"left": [3,2,3,4,1],"right": [2,2,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0116&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,3],"lower": [2,1,3,3,2],"left": [3,3,1,3,2],"right": [3,2,4,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0117&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,2,2,1],"lower": [2,2,3,1,2],"left": [4,2,1,2,2],"right": [1,2,4,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0119&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,4,2],"lower": [2,1,3,2,3],"left": [1,3,2,3,2],"right": [3,1,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0120&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,1,2,2],"lower": [1,2,4,2,2],"left": [2,4,3,2,1],"right": [3,1,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0121&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,2,3],"lower": [2,2,3,3,1],"left": [3,1,2,2,2],"right": [3,4,2,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0122&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,2,2,1],"lower": [2,1,3,2,3],"left": [2,3,3,1,2],"right": [1,3,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0123&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,3],"lower": [3,2,2,3,1],"left": [3,3,1,2,3],"right": [2,2,3,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0124&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,4,2,3,2],"lower": [3,2,2,1,2],"left": [1,4,3,2,4],"right": [3,1,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0125&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,4,2,3],"lower": [3,4,2,2,1],"left": [1,2,4,2,4],"right": [3,2,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0126&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,3,3,2],"lower": [1,3,3,2,3],"left": [2,3,2,4,1],"right": [2,1,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0127&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,4,2,2],"lower": [2,3,1,4,3],"left": [2,3,4,1,2],"right": [3,2,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0128&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,2,3],"lower": [3,1,2,4,2],"left": [1,3,2,2,2],"right": [4,2,3,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0129&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,3,1],"lower": [2,3,1,2,4],"left": [2,1,2,3,2],"right": [1,2,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0202&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,3,2,2],"lower": [3,1,2,4,2],"left": [1,2,2,3,2],"right": [2,2,3,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0131&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,2,2],"lower": [4,3,1,4,2],"left": [1,2,2,3,3],"right": [3,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0130&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,2,3,1],"lower": [3,2,3,1,2],"left": [3,1,3,2,2],"right": [1,3,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0201&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,4,1,3],"lower": [2,3,2,3,1],"left": [3,1,2,3,2],"right": [2,3,4,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0203&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,3,2],"lower": [2,3,4,1,2],"left": [2,2,3,1,3],"right": [2,3,1,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0204&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,4,2],"lower": [2,3,3,1,3],"left": [2,4,2,1,2],"right": [2,1,3,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0205&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,4,2,2],"lower": [1,3,2,2,4],"left": [2,3,4,2,1],"right": [2,1,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0206&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,3,1,2],"lower": [1,2,3,4,2],"left": [2,2,2,3,1],"right": [2,3,3,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0210&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,4,2],"lower": [4,2,3,1,3],"left": [3,1,2,2,3],"right": [2,3,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0209&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,3,2],"lower": [3,2,1,2,2],"left": [1,3,3,2,2],"right": [4,1,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0207&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,4,3,1],"lower": [2,4,1,2,3],"left": [3,2,1,3,2],"right": [1,3,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0208&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,3],"lower": [2,3,2,3,1],"left": [2,4,2,1,3],"right": [2,2,3,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0211&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,3],"lower": [2,4,1,4,2],"left": [2,3,1,3,2],"right": [4,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0212&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,3,2,1],"lower": [1,3,2,2,2],"left": [4,2,4,3,1],"right": [1,2,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0217&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,2,2,1],"lower": [2,1,3,2,3],"left": [3,3,4,1,2],"right": [1,3,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0213&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,3,1],"lower": [1,2,3,3,3],"left": [3,3,4,2,1],"right": [1,3,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0215&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,4,1,2],"lower": [3,1,2,3,3],"left": [3,3,1,2,2],"right": [2,1,2,3,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0214&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,3,1,3],"lower": [2,4,3,2,1],"left": [3,2,3,1,4],"right": [2,3,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0216&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,4,4],"lower": [3,3,3,2,1],"left": [1,3,2,2,3],"right": [3,2,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0218&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,4,1],"lower": [2,2,2,1,4],"left": [2,2,1,2,3],"right": [1,2,4,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0220&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,2,3,1],"lower": [2,3,2,1,3],"left": [2,2,1,3,4],"right": [1,3,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0219&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,4,2],"lower": [2,4,2,1,2],"left": [3,2,3,1,3],"right": [2,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0221&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,3,2],"lower": [2,2,4,1,3],"left": [3,4,2,1,2],"right": [2,1,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0222&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,1,2,2],"lower": [2,1,4,2,2],"left": [3,2,3,1,2],"right": [3,2,1,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0223&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,3,1],"lower": [2,4,2,1,3],"left": [3,2,3,1,3],"right": [1,2,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0225&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,1,2,3],"lower": [1,3,3,3,2],"left": [2,4,2,3,1],"right": [3,2,2,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0224&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,3,4],"lower": [3,3,1,2,2],"left": [2,1,4,2,3],"right": [3,3,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0226&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,3,3,2],"lower": [3,2,1,2,2],"left": [1,3,4,2,2],"right": [3,1,2,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0227&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,2,2],"lower": [3,3,2,3,1],"left": [1,3,2,3,3],"right": [2,2,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0304&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,2,1],"lower": [4,3,1,2,3],"left": [3,1,2,2,2],"right": [1,4,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0228&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,3,2],"lower": [1,4,4,3,2],"left": [2,2,3,4,1],"right": [2,4,2,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0302&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,2,3,1],"lower": [3,2,3,1,2],"left": [4,3,1,2,2],"right": [1,3,3,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0301&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,2,3],"lower": [2,2,3,2,1],"left": [2,2,1,2,4],"right": [3,2,3,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0303&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,4,1],"lower": [3,4,2,1,2],"left": [3,2,1,3,4],"right": [1,2,4,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0311&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,2],"lower": [3,1,4,2,3],"left": [2,1,3,2,2],"right": [3,4,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0305&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,4,2],"lower": [4,2,4,1,2],"left": [1,2,3,2,3],"right": [2,3,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0306&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,1,4],"lower": [2,3,2,3,1],"left": [4,2,1,2,2],"right": [2,3,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0309&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,2],"lower": [1,2,3,4,2],"left": [3,2,2,3,1],"right": [2,2,3,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0307&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,3,1,2],"lower": [2,2,1,4,3],"left": [2,3,1,2,3],"right": [2,1,2,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0310&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,2,1],"lower": [1,2,3,2,4],"left": [4,3,2,3,1],"right": [1,2,2,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0308&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,2,3],"lower": [3,3,1,2,2],"left": [2,4,1,2,3],"right": [3,2,3,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0313&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,3],"lower": [1,2,3,4,2],"left": [3,4,4,2,1],"right": [2,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0312&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,4,2,4,2],"lower": [3,1,3,2,2],"left": [1,2,4,3,2],"right": [3,3,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0314&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,2,3,1],"lower": [2,1,3,2,4],"left": [3,3,1,3,2],"right": [1,2,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0318&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,3,2],"lower": [3,3,3,2,1],"left": [3,1,2,2,3],"right": [2,4,4,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0316&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,1,3,2],"lower": [2,4,3,1,2],"left": [3,2,2,1,3],"right": [3,4,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0315&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,3,2],"lower": [2,1,4,2,4],"left": [2,4,1,3,2],"right": [2,1,2,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0317&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,2,1],"lower": [3,3,2,1,4],"left": [4,2,1,2,4],"right": [1,2,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0319&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,1,3],"lower": [3,2,2,2,1],"left": [4,3,1,2,4],"right": [2,3,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0320&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,4],"lower": [1,3,2,3,2],"left": [2,3,2,4,1],"right": [3,2,2,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0321&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,1,2,2],"lower": [1,2,4,2,3],"left": [3,3,2,2,1],"right": [3,1,4,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0322&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,2],"lower": [3,2,3,1,2],"left": [2,1,3,2,4],"right": [3,4,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0325&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,4,2,2,3],"lower": [2,1,2,4,3],"left": [1,2,4,3,2],"right": [3,2,1,3,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0323&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,3,3],"lower": [3,4,3,2,1],"left": [3,2,1,2,4],"right": [2,3,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0324&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,3],"lower": [1,2,3,4,2],"left": [2,2,2,4,1],"right": [2,2,3,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0327&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,4,3,3],"lower": [2,3,2,3,1],"left": [2,1,3,2,3],"right": [2,3,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0329&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,3,2,1],"lower": [1,2,2,3,2],"left": [4,4,3,2,1],"right": [1,2,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0326&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,2,1],"lower": [3,2,1,3,3],"left": [4,1,4,2,3],"right": [1,3,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0401&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,3,2,2],"lower": [3,1,3,2,4],"left": [1,2,3,4,2],"right": [2,1,2,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0328&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,2],"lower": [3,1,4,4,2],"left": [3,4,1,2,2],"right": [2,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0330&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,1,3,2],"lower": [2,1,2,3,3],"left": [3,4,2,1,2],"right": [2,1,2,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0331&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,4,4],"lower": [2,3,3,1,2],"left": [3,2,1,4,2],"right": [3,3,2,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0402&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,3,2,1],"lower": [3,2,2,1,2],"left": [4,1,3,2,3],"right": [1,4,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0408&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,3,3],"lower": [2,1,3,3,2],"left": [1,3,2,3,2],"right": [3,3,2,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0403&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,3,2,1],"lower": [2,3,1,2,4],"left": [4,1,2,3,2],"right": [1,2,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0404&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,4,3,2],"lower": [1,2,2,2,3],"left": [2,4,4,2,1],"right": [3,1,2,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0406&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,3,1,2],"lower": [3,2,1,4,2],"left": [4,2,1,2,3],"right": [2,1,3,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0405&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,2,2,1],"lower": [1,4,2,3,3],"left": [4,2,3,2,1],"right": [1,2,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0407&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,2,1,3],"lower": [1,2,3,2,2],"left": [4,3,2,2,1],"right": [2,2,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0410&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,3],"lower": [3,3,4,1,2],"left": [3,1,2,3,2],"right": [3,4,2,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0409&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,2,1,2],"lower": [2,1,2,4,3],"left": [3,3,3,1,2],"right": [2,1,3,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0411&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,2,2,1],"lower": [4,3,1,2,3],"left": [4,1,2,3,2],"right": [1,2,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0412&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,1,2],"lower": [3,1,2,4,4],"left": [3,4,1,2,2],"right": [2,1,2,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0413&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,2,4,1],"lower": [4,1,3,2,2],"left": [2,1,2,4,2],"right": [1,3,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0415&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,4,4,1],"lower": [3,3,2,1,3],"left": [2,1,2,3,4],"right": [1,2,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0414&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,3,2],"lower": [3,3,2,1,3],"left": [1,4,2,3,3],"right": [2,1,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0417&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,2,1],"lower": [2,4,3,1,4],"left": [3,2,3,1,2],"right": [1,2,2,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0416&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,2,1],"lower": [2,3,1,2,3],"left": [2,2,3,1,2],"right": [1,4,2,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0422&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,4,3,2],"lower": [3,2,1,2,2],"left": [1,4,3,2,2],"right": [3,1,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0421&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,1,2],"lower": [3,2,4,2,1],"left": [4,3,1,2,4],"right": [2,2,3,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0419&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,2,1,3],"lower": [3,2,2,4,1],"left": [3,2,1,2,3],"right": [2,3,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0418&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,3,1,4],"lower": [2,4,2,2,1],"left": [3,2,1,3,4],"right": [2,2,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0420&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,1,2,3],"lower": [2,1,4,2,2],"left": [2,2,4,1,2],"right": [3,2,1,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0423&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,2,1,2],"lower": [3,2,1,4,2],"left": [3,4,1,2,3],"right": [2,1,3,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0425&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,4,3],"lower": [3,3,4,1,2],"left": [2,3,1,2,3],"right": [3,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0424&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,3,2],"lower": [2,3,1,2,3],"left": [1,2,3,2,2],"right": [3,3,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0429&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,3],"lower": [2,1,4,2,2],"left": [2,1,2,3,2],"right": [3,3,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0427&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,4,2,3],"lower": [1,2,2,3,2],"left": [2,3,3,2,1],"right": [2,2,1,3,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0426&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,3],"lower": [3,3,3,2,1],"left": [2,1,3,4,4],"right": [3,2,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0428&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,4,2,3],"lower": [1,2,2,3,2],"left": [2,3,4,2,1],"right": [3,2,1,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0503&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,4,3],"lower": [3,1,3,2,3],"left": [1,2,3,4,2],"right": [3,2,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0505&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,3,2],"lower": [4,1,2,2,3],"left": [1,2,2,4,2],"right": [4,1,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0501&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,3,2,1],"lower": [2,3,1,3,4],"left": [4,2,2,1,2],"right": [1,2,4,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0430&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,4,1,2],"lower": [2,2,1,2,4],"left": [2,2,1,2,3],"right": [2,1,3,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0502&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,2,3],"lower": [4,1,2,3,2],"left": [1,2,4,3,2],"right": [3,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0504&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,3,1,2],"lower": [3,1,2,4,2],"left": [2,1,3,3,2],"right": [2,4,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0506&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,2,3,1],"lower": [3,2,3,1,2],"left": [3,1,2,2,2],"right": [1,4,3,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0512&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,2,3],"lower": [3,2,3,3,1],"left": [1,2,3,2,3],"right": [3,3,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0511&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,3],"lower": [3,2,1,4,2],"left": [2,2,1,3,3],"right": [3,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0510&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,2,3],"lower": [2,2,4,2,1],"left": [2,1,2,4,2],"right": [3,4,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0507&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,4,4,3],"lower": [2,2,2,1,3],"left": [2,1,3,3,3],"right": [2,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0509&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,4,2,3],"lower": [3,2,1,3,2],"left": [1,2,2,2,3],"right": [3,2,4,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0508&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,4,3,1,2],"lower": [2,1,2,2,4],"left": [4,4,2,1,2],"right": [2,1,2,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0513&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,3,3,1],"lower": [3,1,2,2,3],"left": [2,1,3,2,2],"right": [1,4,3,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0520&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,4,2,1],"lower": [2,1,2,2,3],"left": [3,2,1,3,2],"right": [1,2,4,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0514&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,4,3,1],"lower": [2,2,1,2,3],"left": [3,2,1,4,3],"right": [1,2,4,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0515&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,4,2,2],"lower": [3,4,2,1,2],"left": [2,3,1,2,2],"right": [3,1,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0516&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,1,2,2],"lower": [1,2,2,3,2],"left": [3,3,2,3,1],"right": [2,2,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0518&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,2],"lower": [1,4,2,4,3],"left": [2,3,3,3,1],"right": [3,2,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0517&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,3,2,2],"lower": [1,4,3,2,2],"left": [2,2,3,4,1],"right": [2,1,2,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0519&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,1,2,2],"lower": [2,1,3,3,3],"left": [3,3,3,1,2],"right": [3,1,2,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0522&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,4],"lower": [2,2,4,2,1],"left": [2,2,4,1,3],"right": [3,4,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0521&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,4,2],"lower": [3,2,3,1,3],"left": [1,2,2,2,3],"right": [3,1,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0523&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,2,1],"lower": [4,3,1,2,2],"left": [3,1,2,3,3],"right": [1,4,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0524&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,2,2,4],"lower": [1,2,4,3,2],"left": [2,2,4,3,1],"right": [4,2,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0527&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,4,1,2],"lower": [2,1,2,4,2],"left": [2,3,1,3,2],"right": [2,1,4,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0525&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,3,2,3],"lower": [1,3,2,4,3],"left": [2,4,3,2,1],"right": [3,2,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0526&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,1,2,2],"lower": [2,3,3,1,2],"left": [2,4,2,1,3],"right": [3,1,3,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0602&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,4,2,1],"lower": [2,2,1,2,4],"left": [4,1,2,2,2],"right": [1,4,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0603&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,3,1],"lower": [3,3,1,2,3],"left": [2,1,2,3,2],"right": [1,2,4,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0529&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,1,4],"lower": [1,4,2,3,2],"left": [2,2,3,3,1],"right": [2,4,2,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0530&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,2,3],"lower": [2,3,3,2,1],"left": [2,3,1,3,2],"right": [3,3,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0531&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,4,3],"lower": [3,2,2,1,2],"left": [1,3,2,2,3],"right": [4,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0528&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,3,4],"lower": [1,2,3,2,2],"left": [2,2,2,4,1],"right": [3,3,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0601&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,3,1,2],"lower": [1,2,2,3,2],"left": [2,2,4,3,1],"right": [2,2,1,3,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0610&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,3,3],"lower": [2,4,3,3,1],"left": [3,2,3,1,2],"right": [2,4,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0604&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,4],"lower": [2,3,4,2,1],"left": [2,2,3,1,4],"right": [3,3,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0609&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,4,2,2],"lower": [3,2,1,3,2],"left": [1,2,3,4,3],"right": [2,4,2,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0608&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,1,2,3],"lower": [2,3,3,2,1],"left": [3,3,2,1,3],"right": [2,2,3,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0605&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,1,4],"lower": [2,4,2,2,1],"left": [2,2,1,3,4],"right": [2,4,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0607&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,4],"lower": [3,2,4,2,1],"left": [3,3,1,2,4],"right": [2,2,2,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0606&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,3,2,1],"lower": [3,2,2,1,3],"left": [3,1,2,3,4],"right": [1,4,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0617&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,4,2,1],"lower": [3,2,1,2,4],"left": [4,1,2,3,3],"right": [1,2,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0611&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,2,1,3],"lower": [2,1,2,4,2],"left": [4,1,3,3,2],"right": [2,2,3,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0612&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,1,2,2],"lower": [3,2,3,4,1],"left": [3,3,1,2,3],"right": [2,2,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0614&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,4],"lower": [2,3,2,2,1],"left": [2,4,2,1,4],"right": [3,2,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0613&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,3,2],"lower": [3,4,2,1,3],"left": [2,1,4,2,3],"right": [2,3,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0615&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,2],"lower": [1,2,2,4,3],"left": [2,3,4,2,1],"right": [2,2,1,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0616&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,2],"lower": [4,1,3,2,2],"left": [2,1,2,3,2],"right": [3,3,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0618&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,3,1,2],"lower": [3,4,2,3,1],"left": [2,2,1,3,4],"right": [2,2,4,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0620&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,4,2],"lower": [2,2,2,1,3],"left": [1,3,3,2,2],"right": [3,1,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0619&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,2],"lower": [2,2,3,1,3],"left": [2,4,1,2,2],"right": [3,1,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0621&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,4,4,3],"lower": [2,3,1,2,3],"left": [1,2,4,4,2],"right": [3,2,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0622&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,3,4],"lower": [3,1,2,2,2],"left": [1,3,2,2,2],"right": [4,3,2,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0624&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,1,3,2],"lower": [1,2,2,2,3],"left": [3,3,2,3,1],"right": [3,1,2,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0623&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,4,2,1],"lower": [2,3,1,3,3],"left": [4,4,2,1,2],"right": [1,2,3,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0626&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,2,1,2],"lower": [3,1,4,3,2],"left": [2,2,1,3,2],"right": [2,3,4,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0629&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,4,3,3],"lower": [3,2,1,3,2],"left": [1,2,4,2,3],"right": [4,3,2,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0628&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,1,3],"lower": [3,3,2,2,1],"left": [3,2,1,2,3],"right": [2,4,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0625&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,2,4,3],"lower": [2,3,3,2,1],"left": [2,3,1,2,2],"right": [3,3,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0627&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,3,2,4],"lower": [3,2,3,3,1],"left": [1,4,2,2,3],"right": [3,2,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0630&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,1,4],"lower": [1,2,3,3,2],"left": [2,2,3,3,1],"right": [2,4,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0701&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,4,3],"lower": [3,1,2,2,3],"left": [2,1,3,4,2],"right": [2,3,1,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0703&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,3,2],"lower": [1,4,3,2,3],"left": [2,3,4,2,1],"right": [2,3,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0705&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,3,1,2],"lower": [2,4,2,3,1],"left": [3,2,1,3,2],"right": [2,4,4,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0706&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,2,1],"lower": [3,4,2,1,3],"left": [4,2,1,2,4],"right": [1,2,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0704&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,4,3,3],"lower": [2,4,2,1,3],"left": [2,1,4,3,3],"right": [3,3,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0702&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,2,1,2],"lower": [3,1,2,4,2],"left": [3,3,1,2,2],"right": [2,3,3,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0707&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,4,2],"lower": [3,2,2,1,2],"left": [3,1,2,4,3],"right": [2,3,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0708&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,1,3],"lower": [3,2,2,3,1],"left": [3,2,1,2,3],"right": [2,2,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0714&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,3,4,2],"lower": [1,3,3,2,2],"left": [2,4,3,2,1],"right": [2,1,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0711&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,1,3],"lower": [1,2,4,4,2],"left": [3,2,2,2,1],"right": [2,3,4,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0712&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,1,2],"lower": [2,1,3,3,3],"left": [3,3,3,1,2],"right": [2,1,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0713&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,4,2,2],"lower": [4,3,1,2,2],"left": [1,3,2,3,2],"right": [3,1,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0710&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,4,3,2],"lower": [2,2,1,3,3],"left": [2,4,4,1,3],"right": [2,1,2,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0709&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,3,2,1],"lower": [3,1,2,3,2],"left": [3,1,4,2,2],"right": [1,3,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0715&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,2,3],"lower": [3,4,3,1,2],"left": [2,2,1,2,3],"right": [3,3,4,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0721&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,4,3],"lower": [3,3,2,1,2],"left": [2,1,4,3,4],"right": [4,2,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0716&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,1,4,2,2],"lower": [2,3,1,3,4],"left": [2,3,2,1,2],"right": [3,1,2,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0719&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,1,4,2],"lower": [2,3,2,1,2],"left": [2,2,2,1,3],"right": [2,1,3,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0717&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,3,4,2],"lower": [3,1,2,2,3],"left": [1,2,3,4,2],"right": [3,1,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0720&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,3,1],"lower": [2,2,3,1,2],"left": [3,3,2,1,2],"right": [1,3,3,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0718&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,2,4,2],"lower": [1,2,2,2,3],"left": [2,2,3,3,1],"right": [3,3,1,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0722&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,2,1],"lower": [1,2,3,2,4],"left": [3,3,2,4,1],"right": [1,2,2,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0728&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,3,2,3],"lower": [2,2,2,3,1],"left": [1,2,2,3,2],"right": [4,2,4,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0723&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,1,4,2,2],"lower": [2,3,1,3,2],"left": [2,3,2,1,3],"right": [3,2,1,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0725&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,3],"lower": [3,2,4,3,1],"left": [3,3,1,2,3],"right": [3,2,4,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0724&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,3,2,1],"lower": [2,1,3,2,3],"left": [4,3,3,1,2],"right": [1,2,2,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0726&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,3,1],"lower": [3,2,2,1,2],"left": [4,2,1,2,3],"right": [1,3,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0727&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,4,2],"lower": [2,2,4,1,4],"left": [2,4,1,2,3],"right": [2,1,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0729&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,2,3,2],"lower": [2,4,2,1,3],"left": [2,3,2,1,2],"right": [4,1,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0730&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,4,2],"lower": [2,2,3,1,3],"left": [3,4,1,2,2],"right": [2,1,3,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0731&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,4,2],"lower": [4,1,2,2,3],"left": [1,2,3,3,2],"right": [2,2,1,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0802&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,4,1,3],"lower": [1,3,2,3,2],"left": [3,2,4,3,1],"right": [2,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0804&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,4,1,2],"lower": [3,2,1,3,2],"left": [2,2,1,4,3],"right": [2,2,4,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0803&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,1,2,2],"lower": [1,2,4,3,2],"left": [3,3,2,3,1],"right": [2,2,3,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0801&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,4],"lower": [1,2,3,3,2],"left": [2,2,3,3,1],"right": [3,3,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0805&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,3,2],"lower": [4,2,1,2,3],"left": [1,2,3,3,3],"right": [4,4,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0811&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,3,1],"lower": [4,2,1,2,2],"left": [3,1,2,3,3],"right": [1,3,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0807&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,4,1,3],"lower": [2,3,2,3,1],"left": [3,1,2,3,2],"right": [2,3,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0809&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,4,2,3],"lower": [2,1,2,3,2],"left": [1,3,4,2,2],"right": [4,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0808&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,2,1,2],"lower": [1,3,2,3,2],"left": [4,3,2,4,1],"right": [2,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0810&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,3,2],"lower": [1,3,2,3,4],"left": [2,4,2,3,1],"right": [2,1,2,3,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0806&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,3,2,3],"lower": [4,2,1,2,2],"left": [1,3,2,2,2],"right": [4,2,1,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0812&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,3,3,3],"lower": [4,4,2,1,3],"left": [1,2,2,2,3],"right": [4,3,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0818&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,3,3],"lower": [1,3,2,3,2],"left": [2,3,2,4,1],"right": [2,3,2,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0813&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,4,2,3],"lower": [1,4,2,2,2],"left": [2,3,4,2,1],"right": [3,2,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0815&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,3,2,1],"lower": [2,1,3,4,4],"left": [3,3,2,1,2],"right": [1,2,3,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0814&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,2,1,3],"lower": [2,3,1,3,2],"left": [3,2,1,4,2],"right": [2,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0816&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,2,2,1],"lower": [3,1,2,2,3],"left": [3,2,1,3,2],"right": [1,3,3,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0817&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,4,2,1],"lower": [4,1,2,2,3],"left": [4,1,2,2,2],"right": [1,4,2,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0819&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,3,3],"lower": [2,3,3,3,1],"left": [3,2,2,1,2],"right": [2,4,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0820&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,3,3,2],"lower": [3,2,1,2,2],"left": [1,3,2,4,3],"right": [2,1,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0821&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,4,2,2],"lower": [4,2,1,2,3],"left": [1,2,4,2,2],"right": [4,1,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0822&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,3,4],"lower": [2,4,3,2,1],"left": [2,2,3,1,4],"right": [2,4,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0824&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,3],"lower": [1,4,3,3,2],"left": [2,2,3,2,1],"right": [3,4,2,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0823&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,2,3],"lower": [3,2,1,2,2],"left": [1,4,3,2,2],"right": [3,2,1,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0825&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,2,1,3],"lower": [2,1,2,3,2],"left": [3,2,1,4,2],"right": [2,2,4,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0827&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,2],"lower": [2,3,4,1,2],"left": [2,2,4,1,3],"right": [3,4,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0901&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,2,1,3],"lower": [3,2,3,2,1],"left": [4,3,1,2,3],"right": [2,2,4,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0826&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,1,3,2],"lower": [2,2,4,1,2],"left": [2,3,2,1,3],"right": [2,1,4,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0829&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,1,2,3,3],"lower": [1,4,2,2,2],"left": [2,3,2,2,1],"right": [3,3,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0828&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,3,1,2],"lower": [2,3,1,3,2],"left": [2,4,2,1,3],"right": [2,1,4,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0830&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,4,3],"lower": [2,3,3,1,2],"left": [2,3,3,1,3],"right": [3,2,1,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0831&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,2],"lower": [3,2,3,2,1],"left": [2,4,1,2,4],"right": [2,2,3,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0908&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,1,2,3],"lower": [1,2,3,4,2],"left": [3,2,2,2,1],"right": [3,2,4,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0902&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,2,3,4],"lower": [1,2,3,3,2],"left": [2,3,3,2,1],"right": [4,3,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0903&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,4,2,3],"lower": [3,2,1,2,2],"left": [1,2,4,2,3],"right": [3,2,1,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0906&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,3,3,2],"lower": [3,2,1,2,2],"left": [1,3,2,2,3],"right": [3,1,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0904&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,2,2,3],"lower": [3,3,4,2,1],"left": [2,3,1,2,4],"right": [4,3,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0907&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,4,2,1],"lower": [2,2,1,2,4],"left": [3,3,2,1,3],"right": [1,2,4,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0905&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,1,2,3],"lower": [1,3,3,2,2],"left": [3,4,2,2,1],"right": [3,2,3,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0909&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,3,3],"lower": [2,3,4,2,1],"left": [2,2,1,4,4],"right": [2,3,4,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0910&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,3,2],"lower": [3,1,3,2,2],"left": [1,4,2,3,2],"right": [3,1,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0911&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,1,3],"lower": [2,3,2,3,1],"left": [3,2,3,1,2],"right": [2,4,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0915&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,3,3,2],"lower": [3,2,2,1,3],"left": [1,4,3,2,4],"right": [2,1,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0914&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,4,2,2,1],"lower": [1,2,3,4,3],"left": [3,2,3,2,1],"right": [1,2,3,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0912&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,3,3],"lower": [2,2,4,3,1],"left": [3,2,3,1,2],"right": [2,2,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0913&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,3,1,2],"lower": [3,2,2,3,1],"left": [2,1,2,3,3],"right": [2,4,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0922&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,2,3],"lower": [1,2,4,3,2],"left": [2,4,2,4,1],"right": [2,2,2,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0916&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,2,2,1],"lower": [3,2,1,2,4],"left": [4,3,1,2,2],"right": [1,2,3,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0919&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,2,1],"lower": [1,3,3,2,4],"left": [3,3,2,3,1],"right": [1,2,2,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0917&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,4,2,2],"lower": [3,2,2,1,3],"left": [1,2,3,3,3],"right": [3,3,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0920&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,4,2,3,1],"lower": [2,1,2,2,3],"left": [4,2,1,3,2],"right": [1,3,2,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0918&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,2],"lower": [1,2,2,4,3],"left": [2,4,3,3,1],"right": [3,2,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0921&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,2,1,2],"lower": [3,2,2,3,1],"left": [2,3,1,2,4],"right": [2,3,3,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0929&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,4,3],"lower": [4,2,4,1,2],"left": [2,1,3,2,3],"right": [2,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0923&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,3,4],"lower": [2,1,2,3,2],"left": [2,1,3,3,2],"right": [3,3,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0924&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,2,3,1],"lower": [1,2,4,2,4],"left": [3,2,2,2,1],"right": [1,2,4,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0927&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,2,4],"lower": [2,2,4,3,1],"left": [2,3,2,1,2],"right": [3,2,4,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0926&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,4,3,1],"lower": [2,1,2,3,2],"left": [2,1,4,3,2],"right": [1,3,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0925&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,2,3,3],"lower": [3,4,2,1,2],"left": [2,2,1,3,3],"right": [4,3,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0928&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,2,3],"lower": [2,3,4,2,1],"left": [2,3,2,1,3],"right": [2,2,4,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0930&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,3,3],"lower": [2,4,3,2,1],"left": [2,1,3,4,3],"right": [2,3,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1001&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,4,3],"lower": [3,2,3,1,2],"left": [2,2,1,4,3],"right": [4,2,4,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1003&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,3,3],"lower": [3,2,2,2,1],"left": [1,3,3,2,4],"right": [3,2,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1006&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,3,4],"lower": [3,2,2,2,1],"left": [1,3,2,2,4],"right": [3,2,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1002&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,2,3],"lower": [3,2,2,3,1],"left": [2,4,1,2,3],"right": [2,2,3,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1005&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,1,3],"lower": [2,3,2,2,1],"left": [3,2,1,3,4],"right": [2,3,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1004&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,3,3],"lower": [2,3,4,2,1],"left": [2,2,4,1,3],"right": [2,4,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1007&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,1,4],"lower": [2,2,4,2,1],"left": [4,3,2,1,3],"right": [2,2,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1008&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,3,2],"lower": [3,2,2,1,3],"left": [2,1,2,2,3],"right": [2,4,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1010&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,2,3,1],"lower": [2,2,3,1,4],"left": [2,2,1,2,3],"right": [1,3,2,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1009&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,3,3,3],"lower": [2,2,1,3,2],"left": [1,2,3,3,2],"right": [3,4,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1011&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,3,3],"lower": [2,1,4,3,2],"left": [1,3,3,3,2],"right": [3,2,2,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1013&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,2,1,2],"lower": [2,1,2,4,3],"left": [2,3,3,1,2],"right": [2,1,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1012&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,1,4,2],"lower": [1,3,2,2,2],"left": [3,3,2,2,1],"right": [2,1,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1014&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,1,4],"lower": [3,4,2,2,1],"left": [3,2,1,2,4],"right": [2,4,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1017&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,2,1],"lower": [3,4,2,1,2],"left": [3,2,1,2,4],"right": [1,4,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1015&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,4,2,2],"lower": [2,4,1,2,4],"left": [2,3,2,1,2],"right": [3,1,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1016&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,2],"lower": [3,4,3,1,2],"left": [2,2,1,2,4],"right": [3,4,4,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1020&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,2,2,2],"lower": [2,4,3,4,1],"left": [2,3,3,1,2],"right": [2,2,3,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1018&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,1,2],"lower": [1,2,3,3,2],"left": [3,2,4,2,1],"right": [2,2,1,4,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1019&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,4,2],"lower": [1,3,3,2,2],"left": [2,3,3,4,1],"right": [3,3,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1021&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,1,2],"lower": [2,2,1,3,3],"left": [3,2,1,2,3],"right": [2,1,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1026&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,4,4,2],"lower": [2,4,1,2,3],"left": [2,1,4,4,2],"right": [2,3,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1024&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,2,3,1],"lower": [1,2,3,2,4],"left": [3,3,3,2,1],"right": [1,3,2,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1027&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,3,2,3],"lower": [3,2,1,2,3],"left": [2,1,2,3,3],"right": [3,3,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1022&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,4,2,2,3],"lower": [4,1,2,2,2],"left": [1,2,4,3,2],"right": [3,2,2,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1025&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,4,2,2,3],"lower": [4,1,4,2,3],"left": [1,2,3,2,2],"right": [4,2,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1023&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,4,2,4],"lower": [3,3,1,2,2],"left": [2,1,3,3,3],"right": [3,3,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1029&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,4,2],"lower": [4,2,2,1,3],"left": [1,2,4,2,3],"right": [3,3,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1028&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,2,3],"lower": [1,2,3,4,2],"left": [2,3,2,4,1],"right": [2,2,3,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1103&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,3,3,2],"lower": [3,2,1,2,3],"left": [1,3,2,2,3],"right": [3,1,2,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1031&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,3,3],"lower": [2,1,2,3,2],"left": [2,1,3,4,2],"right": [2,2,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1101&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,2,3,1],"lower": [3,2,2,1,2],"left": [3,3,1,2,3],"right": [1,3,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1030&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,2,3,1],"lower": [4,2,1,3,4],"left": [4,1,2,2,3],"right": [1,2,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1102&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,1,3,3,2],"lower": [2,2,3,1,3],"left": [2,4,2,1,3],"right": [2,1,2,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1105&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,3,2,1],"lower": [3,2,1,4,3],"left": [4,2,1,2,3],"right": [1,2,4,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1104&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,4,3],"lower": [4,4,2,1,2],"left": [2,1,2,2,4],"right": [4,4,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1106&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,4,2,2],"lower": [3,4,1,2,2],"left": [2,2,1,3,2],"right": [2,1,4,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1109&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,2,1],"lower": [1,3,3,2,3],"left": [3,3,2,3,1],"right": [1,2,3,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1107&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,4,2,2],"lower": [4,2,1,2,2],"left": [1,2,3,2,2],"right": [3,1,2,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1108&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,2],"lower": [2,1,3,3,4],"left": [2,3,3,1,2],"right": [3,1,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1110&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,3,3],"lower": [3,3,3,2,1],"left": [2,1,3,4,4],"right": [4,2,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1112&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,4,2],"lower": [3,2,3,1,2],"left": [3,1,4,2,3],"right": [2,4,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1116&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,4,2,3],"lower": [2,3,2,3,1],"left": [2,2,1,3,2],"right": [3,2,4,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1111&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,4,3,4,2],"lower": [2,1,3,2,2],"left": [1,3,3,3,2],"right": [2,1,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1113&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,2,3,1],"lower": [2,2,2,1,4],"left": [3,2,1,3,3],"right": [1,2,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1115&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,2],"lower": [3,1,4,2,3],"left": [2,4,1,3,2],"right": [3,1,2,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1114&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,1,2,3],"lower": [2,1,2,4,3],"left": [3,4,2,1,2],"right": [3,2,1,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1117&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,3,3],"lower": [3,2,4,2,1],"left": [2,1,2,4,4],"right": [2,4,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1118&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,2,3],"lower": [4,4,2,1,3],"left": [1,2,3,3,3],"right": [3,3,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1119&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,1,2,3],"lower": [1,2,4,3,2],"left": [2,2,4,2,1],"right": [2,2,1,3,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1120&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,4,2,3],"lower": [3,1,2,2,2],"left": [1,4,3,2,2],"right": [4,2,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1123&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,1,2,3],"lower": [2,1,4,4,2],"left": [2,4,4,1,2],"right": [3,2,1,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1122&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,3,2,4],"lower": [3,1,2,3,2],"left": [1,2,3,3,2],"right": [3,2,2,1,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1121&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,3,3,2],"lower": [4,2,1,3,2],"left": [1,2,3,2,2],"right": [4,1,2,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1124&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,3,2],"lower": [2,3,2,1,3],"left": [3,2,2,1,4],"right": [2,1,3,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1125&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,4,2,4],"lower": [4,3,1,2,2],"left": [1,3,2,3,2],"right": [3,2,2,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1126&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,3,3,1],"lower": [1,2,2,2,3],"left": [3,2,3,2,1],"right": [1,3,2,3,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1130&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,4,2,1],"lower": [3,2,1,2,2],"left": [3,3,1,2,2],"right": [1,2,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1128&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,3,4,3],"lower": [4,2,1,2,3],"left": [1,2,4,2,3],"right": [4,2,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1127&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,1,2,2,3],"lower": [2,3,1,2,2],"left": [2,2,2,1,3],"right": [4,2,1,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1129&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,2,3,1,2],"lower": [2,3,2,3,1],"left": [3,2,2,1,4],"right": [2,3,2,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1201&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,1,2,3,4],"lower": [2,3,2,3,1],"left": [2,3,3,1,2],"right": [3,3,2,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1207&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,1,3,2],"lower": [2,2,4,1,4],"left": [2,2,1,2,3],"right": [2,1,3,3,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1202&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,2,3,2],"lower": [3,2,3,1,3],"left": [1,4,2,2,3],"right": [4,1,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1203&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,2,2,2],"lower": [2,3,1,2,3],"left": [2,2,3,1,2],"right": [3,1,2,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1205&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,2,3,1],"lower": [3,2,2,1,4],"left": [4,1,3,2,3],"right": [1,3,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1204&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,3],"lower": [1,3,3,4,2],"left": [3,4,2,2,1],"right": [2,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1206&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,3,2],"lower": [1,2,4,2,4],"left": [3,4,3,2,1],"right": [2,1,2,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1208&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,3,1,2],"lower": [4,2,3,2,1],"left": [2,1,2,2,4],"right": [2,4,2,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1209&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,2,3,2,2],"lower": [3,1,2,2,3],"left": [1,4,2,2,2],"right": [3,2,1,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1210&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,3,3,1,2],"lower": [2,2,1,4,4],"left": [3,2,1,2,3],"right": [2,1,3,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1211&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,3,3,3,1],"lower": [3,2,1,3,3],"left": [2,1,2,2,3],"right": [1,3,2,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1212&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,1,4,3],"lower": [2,2,4,1,2],"left": [3,2,1,4,2],"right": [3,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1213&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,2,3,4],"lower": [2,2,3,2,1],"left": [2,2,2,1,3],"right": [4,3,2,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1214&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,4],"lower": [2,3,2,2,1],"left": [2,2,3,1,3],"right": [3,2,2,4,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1215&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,4,3],"lower": [1,2,2,2,3],"left": [3,2,4,2,1],"right": [2,2,1,2,4]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1221&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,4,3],"lower": [3,2,4,1,2],"left": [1,3,4,2,2],"right": [4,3,1,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1217&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,3,2,2,1],"lower": [2,2,2,1,3],"left": [4,3,2,1,3],"right": [1,2,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1218&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,3,3,1],"lower": [2,3,1,2,4],"left": [2,2,1,4,3],"right": [1,2,4,2,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1219&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,4,3],"lower": [3,3,2,1,2],"left": [1,3,2,2,3],"right": [3,2,3,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1216&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,4,2,1],"lower": [2,2,1,3,3],"left": [3,2,2,1,3],"right": [1,2,4,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1220&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,2,1,2,3],"lower": [1,2,4,2,2],"left": [3,3,3,2,1],"right": [2,2,1,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1222&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,2,2],"lower": [3,2,1,3,2],"left": [1,3,4,2,2],"right": [3,2,1,4,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1223&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,2,3,4],"lower": [2,3,4,2,1],"left": [2,2,4,1,4],"right": [4,3,2,3,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1228&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,2,3,1],"lower": [3,2,1,2,2],"left": [4,1,3,2,2],"right": [1,3,2,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1225&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,2,1,4],"lower": [2,2,2,4,1],"left": [2,3,1,2,3],"right": [2,3,3,2,1]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1227&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,4,3,2,1],"lower": [2,1,3,2,3],"left": [3,1,3,4,2],"right": [1,3,3,2,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1226&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [1,3,2,4,2],"lower": [3,3,3,1,2],"left": [1,3,2,4,2],"right": [3,3,4,1,2]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1224&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,4,2,1],"lower": [3,2,1,2,4],"left": [3,1,4,2,2],"right": [1,2,2,4,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1231&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [4,1,3,2,3],"lower": [1,2,2,4,2],"left": [2,3,2,2,1],"right": [3,2,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1229&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [3,1,4,2,3],"lower": [2,4,1,2,2],"left": [2,3,1,4,2],"right": [3,2,2,1,3]
+      }
+    },
+    {
+      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=1230&size=5&diff=2",
+      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
+      ],
+      "clues": {"upper": [2,2,2,1,3],"lower": [2,1,3,3,2],"left": [3,3,1,3,2],"right": [2,2,4,1,2]
+      }
+    }
+  ],
   "3": [
     {
       "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0701&size=5&diff=3",
@@ -2553,225 +5964,6 @@
       "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
       ],
       "clues": {"upper": [0,3,0,2,0],"lower": [0,0,0,0,2],"left": [3,2,2,0,2],"right": [1,0,0,4,0]
-      }
-    }
-  ],
-  "2": [
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0101&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [1,3,2,3,2],"lower": [3,1,4,2,3],"left": [1,2,3,3,2],"right": [2,2,1,2,3]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0102&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [3,3,2,1,2],"lower": [3,2,1,3,2],"left": [4,3,1,2,3],"right": [2,1,4,2,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0103&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [2,4,1,2,2],"lower": [2,1,3,2,3],"left": [2,4,1,2,2],"right": [3,1,4,2,3]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0104&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [2,2,1,2,3],"lower": [2,3,2,4,1],"left": [2,2,2,1,4],"right": [2,2,3,4,1]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0105&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [3,2,4,2,1],"lower": [1,3,2,3,2],"left": [4,2,3,3,1],"right": [1,2,2,3,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0106&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [3,2,4,1,2],"lower": [1,3,2,3,2],"left": [3,4,2,2,1],"right": [2,1,3,2,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0107&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [4,3,1,2,3],"lower": [2,1,4,2,2],"left": [3,3,2,1,2],"right": [3,2,1,3,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0108&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [2,4,3,2,1],"lower": [4,2,1,2,3],"left": [4,1,2,2,3],"right": [1,4,2,2,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0109&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [4,3,1,2,2],"lower": [1,2,3,3,2],"left": [2,3,2,4,1],"right": [2,2,2,1,4]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0110&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [2,3,1,3,3],"lower": [4,1,2,2,3],"left": [2,1,3,3,2],"right": [3,2,1,2,4]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0111&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [4,2,1,2,2],"lower": [1,2,4,4,2],"left": [3,3,4,2,1],"right": [3,2,1,2,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0112&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [2,3,2,1,4],"lower": [4,3,2,2,1],"left": [4,1,2,2,4],"right": [2,3,3,2,1]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0113&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [2,2,3,3,1],"lower": [2,2,1,2,3],"left": [3,2,1,2,2],"right": [1,3,3,2,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0114&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [2,1,3,2,4],"lower": [2,4,2,2,1],"left": [2,1,4,2,3],"right": [4,3,2,2,1]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0115&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [1,4,3,2,3],"lower": [4,1,2,2,2],"left": [1,2,4,3,2],"right": [3,2,1,2,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0116&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [3,2,1,2,3],"lower": [2,1,3,3,2],"left": [3,3,1,3,2],"right": [3,2,4,1,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0117&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [3,4,2,2,1],"lower": [2,2,3,1,2],"left": [4,2,1,2,2],"right": [1,2,4,3,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0118&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [3,2,1,3,4],"lower": [1,2,3,2,2],"left": [3,2,3,4,1],"right": [2,2,2,1,3]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0119&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [1,3,2,4,2],"lower": [2,1,3,2,3],"left": [1,3,2,3,2],"right": [3,1,3,2,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0120&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [3,4,1,2,2],"lower": [1,2,4,2,2],"left": [2,4,3,2,1],"right": [3,1,2,2,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0121&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [2,3,1,2,3],"lower": [2,2,3,3,1],"left": [3,1,2,2,2],"right": [3,4,2,4,1]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0122&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [2,3,2,2,1],"lower": [2,1,3,2,3],"left": [2,3,3,1,2],"right": [1,3,2,3,3]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0123&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [2,2,1,2,3],"lower": [3,2,2,3,1],"left": [3,3,1,2,3],"right": [2,2,3,4,1]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0124&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [1,4,2,3,2],"lower": [3,2,2,1,2],"left": [1,4,3,2,4],"right": [3,1,2,3,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0125&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [1,2,4,2,3],"lower": [3,4,2,2,1],"left": [1,2,4,2,4],"right": [3,2,2,3,1]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0126&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [3,1,3,3,2],"lower": [1,3,3,2,3],"left": [2,3,2,4,1],"right": [2,1,3,2,3]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0127&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [3,1,4,2,2],"lower": [2,3,1,4,3],"left": [2,3,4,1,2],"right": [3,2,1,2,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0128&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [1,2,2,2,3],"lower": [3,1,2,4,2],"left": [1,3,2,2,2],"right": [4,2,3,1,4]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0129&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [2,2,3,3,1],"lower": [2,3,1,2,4],"left": [2,1,2,3,2],"right": [1,2,3,2,3]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0130&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [2,4,2,3,1],"lower": [3,2,3,1,2],"left": [3,1,3,2,2],"right": [1,3,2,3,2]
-      }
-    },
-    {
-      "url": "https://www.brainbashers.com/showskyscrapers.asp?date=0131&size=5&diff=2",
-      "cells": [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]
-      ],
-      "clues": {"upper": [1,3,2,2,2],"lower": [4,3,1,4,2],"left": [1,2,2,3,3],"right": [3,2,3,1,2]
       }
     }
   ]

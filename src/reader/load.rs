@@ -21,6 +21,13 @@ impl Loader
     {
         let grids_data = Self::load_grids_data::<N>()?;
 
+        for (diff, grids) in &grids_data {
+            println!(
+                ".. loaded {len} {N}x{N} puzzles of difficulty {diff}",
+                len = grids.len()
+            );
+        }
+
         let out = grids_data.into_iter()
             .map(|(diff, grids)|
                 (

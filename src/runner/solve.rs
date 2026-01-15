@@ -9,12 +9,14 @@ pub fn try_solve_stored() -> ah::Result<()>
         if let Ok(difficulties) = Loader::load_grids::<N>() {
             for (diff, grids) in difficulties {
                 let total = grids.len();
-                
+
                 match try_solve_all::<N>(grids) {
-                    Ok(solved)
-                        => println!(".. {}x{} -- {} solved {solved}/{total}", N, N, diff.to_string()),
-                    Err(e)
-                        => println!("{e:?}"),
+                    Ok(solved) => println!(
+                        ".. {n}x{n} -- difficulty {diff} -- solved {solved}/{total}",
+                        n = N,
+                        diff = diff.to_string()
+                    ),
+                    Err(e) => println!("{e:?}"),
                 }
             }
         }
@@ -28,6 +30,7 @@ pub fn try_solve_all<const N: usize>(puzzles: Vec<Grid<N>>) -> ah::Result<u32>
 {
     let mut solved = 0;
     let t = puzzles.len();
+    let j = t / 10;
 
     for (i, puzzle) in puzzles.into_iter().enumerate() {
         let grid = Solver::solve(puzzle);
@@ -35,7 +38,7 @@ pub fn try_solve_all<const N: usize>(puzzles: Vec<Grid<N>>) -> ah::Result<u32>
         if grid.is_solved() {
             solved += 1;
         }
-        if i % 10 == 0 {
+        if i % j == 0 {
             println!(".. attempted {i} of {t}");
         }
     }
