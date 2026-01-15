@@ -11,11 +11,14 @@ mod runner;
 
 fn main()
 {
-    // let res = runner::fetch_load_save::<5>(Difficulty::Full);
-    let res = runner::try_solve_stored();
+    let start = std::time::Instant::now();
+
+    // let res = runner::fetch_load_save::<6>(Difficulty::Full);
+    // let res = runner::try_solve_stored_all();
+    let res = runner::try_solve_stored::<6>();
 
     match res {
-        Ok(..) => println!(">> done!"),
+        Ok(..) => println!(">> finished in {} secs", start.elapsed().as_secs()),
         Err(e) => println!("!! {:?}", e),
     }
 }

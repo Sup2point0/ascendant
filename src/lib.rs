@@ -8,6 +8,7 @@ mod reader;  pub use reader::*;
 
 pub mod examples;
 pub mod util;
+pub use util::{ MapValues };
 
 
 pub type Digit = usize;

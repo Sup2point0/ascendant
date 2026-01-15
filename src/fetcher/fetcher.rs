@@ -64,7 +64,6 @@ impl Fetcher
         });
 
         let max_workers = thread::available_parallelism().unwrap().get();
-        println!("max_workers = {:?}", max_workers);
         let jobs = urls.len();
 
         let pool = wk::Pool::<FetchProcess<N>>::new(max_workers / 2);

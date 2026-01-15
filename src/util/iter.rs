@@ -1,6 +1,36 @@
 use std::*;
 use std::collections::HashMap;
 
+use arrayvec::ArrayVec;
+
+use crate::*;
+
+
+pub fn arr<I, T, const N: usize>(iter: I) -> [T; N]
+    where
+        I: IntoIterator<Item = T>,
+        T: fmt::Debug
+{
+    iter.into_iter()
+        .collect::<ArrayVec<T, N>>()
+        .into_inner()
+        .unwrap()
+}
+
+
+pub fn rep(c: char, n: usize) -> String
+{
+    std::iter::repeat_n(c, n).collect::<String>()
+}
+
+
+pub fn clone_lane<const N: usize>(lane: &[&mut Cell; N]) -> [Cell; N]
+{
+    arr(
+        lane.iter().map(|cell| (*cell).clone())
+    )
+}
+
 
 pub trait MapValues<V,W>
 {

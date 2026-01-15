@@ -3,24 +3,32 @@ use anyhow as ah;
 use crate::*;
 
 
-pub fn try_solve_stored() -> ah::Result<()>
+pub fn try_solve_stored_all() -> ah::Result<()>
 {
     seq_macro::seq!(N in 4..=9 {
-        if let Ok(difficulties) = Loader::load_grids::<N>() {
-            for (diff, grids) in difficulties {
-                let total = grids.len();
+        try_solve_stored::<N>()?;
+    });
 
-                match try_solve_all::<N>(grids) {
-                    Ok(solved) => println!(
-                        ".. {n}x{n} -- difficulty {diff} -- solved {solved}/{total}",
-                        n = N,
-                        diff = diff.to_string()
-                    ),
-                    Err(e) => println!("{e:?}"),
-                }
+    Ok(())
+}
+
+
+pub fn try_solve_stored<const N: usize>() -> ah::Result<()>
+{
+    if let Ok(difficulties) = Loader::load_grids::<N>() {
+        for (diff, grids) in difficulties {
+            let total = grids.len();
+
+            match try_solve_all::<N>(grids) {
+                Ok(solved) => println!(
+                    ".. {n}x{n} -- difficulty {diff} -- solved {solved}/{total}",
+                    n = N,
+                    diff = diff.to_string()
+                ),
+                Err(e) => println!("{e:?}"),
             }
         }
-    });
+    }
 
     Ok(())
 }
@@ -30,7 +38,7 @@ pub fn try_solve_all<const N: usize>(puzzles: Vec<Grid<N>>) -> ah::Result<u32>
 {
     let mut solved = 0;
     let t = puzzles.len();
-    let j = t / 10;
+    let j = t / 4;
 
     for (i, puzzle) in puzzles.into_iter().enumerate() {
         let grid = Solver::solve(puzzle);
@@ -38,7 +46,7 @@ pub fn try_solve_all<const N: usize>(puzzles: Vec<Grid<N>>) -> ah::Result<u32>
         if grid.is_solved() {
             solved += 1;
         }
-        if i % j == 0 {
+        if i % j == 0 && i > 0 {
             println!(".. attempted {i} of {t}");
         }
     }
