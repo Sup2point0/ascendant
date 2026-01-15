@@ -21,12 +21,16 @@ pub fn try_solve_stored() -> ah::Result<()>
 pub fn try_solve_all<const N: usize>(puzzles: Vec<Grid<N>>) -> ah::Result<u32>
 {
     let mut solved = 0;
+    let t = puzzles.len();
 
-    for puzzle in puzzles {
+    for (i, puzzle) in puzzles.into_iter().enumerate() {
         let grid = Solver::solve(puzzle);
 
         if grid.is_solved() {
             solved += 1;
+        }
+        if i % 10 == 0 {
+            println!(".. attempted {i} of {t}");
         }
     }
 

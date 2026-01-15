@@ -3,7 +3,7 @@ use std::*;
 use crate::*;
 
 
-#[derive(PartialEq, Eq)]
+#[derive(Copy, Clone, PartialEq, Eq)]
 pub struct Clues<const N: usize>
 {
     pub upper: [Option<Digit>; N],

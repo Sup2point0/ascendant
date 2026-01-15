@@ -33,7 +33,7 @@ Bear in mind most human-oriented puzzles are 5x5 or 6x6 ;)
 | size | full easy | full hard | sparse |
 | :--- | :-------- | :-------- | :----- |
 | 4x4  | solvable  | solvable  | solvable
-| 5x5  | solvable  | solvable  | solvable
+| 5x5  | solvable  | solvable  | work
 | 6x6  | solvable  | solvable  | –
 | 7x7  | solvable  | solvable  |
 | 8x8  | –         |

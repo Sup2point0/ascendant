@@ -7,7 +7,7 @@ use std::collections::{
 use crate::*;
 
 
-#[derive(PartialEq, Eq)]
+#[derive(Clone, PartialEq, Eq)]
 pub struct Grid<const N: usize>
 {
     pub url:   Option<String>,
