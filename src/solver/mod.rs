@@ -67,21 +67,23 @@ impl<const N: usize> Solver<N>
         (grid, did_deduce)
     }
 
-    pub fn deduce_cells_in_lane((clue, lane): (Option<Digit>, [&mut Cell<N>; N])) -> bool
+    pub fn deduce_cells_in_lane((clue, mut lane): (Option<Digit>, [&mut Cell<N>; N])) -> bool
     {
         let mut did_deduce = false;
-        let lane_snap = util::snap_lane(&lane);
 
-        for (i, cell) in lane.into_iter().enumerate()
+        for i in 0..lane.len()
         {
+            let lane_snap = util::snap_lane(&lane);
+            let cell = &mut lane[i];
+
             if let Cell::Solved{..} = cell { continue; }
 
             if let Some(1) = clue && i == 0 {
-                *cell = Cell::Solved(N);
+                **cell = Cell::Solved(N);
                 continue;
             }
             else if let Some(c) = clue && c == N {
-                *cell = Cell::Solved(i+1);
+                **cell = Cell::Solved(i+1);
             }
 
             if let Cell::Pencil{..} = cell
@@ -234,12 +236,12 @@ impl<const N: usize> Solver<N>
             let sequence_peak = first_peak - 1;
             let cells_visible = clue - peaks;
 
-            let lane_snap = util::snap_lane(&lane);
-
-            for (i, cell) in lane[0..first_peak_idx].iter_mut().enumerate()
+            for i in 0..first_peak_idx
             {
-                if let Cell::Pencil(..) = cell
-                {
+                let lane_snap = util::snap_lane(&lane);
+                let cell = &mut lane[i];
+
+                if let Cell::Pencil(..) = cell {
                     let cands = Self::calc_ascending(i, sequence_peak, cells_visible, first_peak_idx);
                     did_deduce = cell.intersect(cands, lane_snap);
                 }
