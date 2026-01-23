@@ -42,33 +42,19 @@ impl<const N: usize> Solver<N>
         for y in 0..N { did_deduce |= Self::deduce_cells_in_lane(grid.look_left_mut(y)); }
         if debug { println!("post-deduce:\n{grid:?}"); }
 
-        let mut deduced;
-        for x in 0..N {
-            for y in 0..N {
-                (grid, deduced) = Self::deduce_one_cell_sudoku_style(grid, x, y);
-                did_deduce |= deduced;
-            }
-        }
+        did_deduce |= Self::deduce_all_sudoku_style(&mut grid);
 
         for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_down_mut(x)) }
         for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_up_mut(x)) }
         if debug { println!("post-seq-up-down:\n{grid:?}"); }
 
-        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_down_mut(x).1) }
-        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_up_mut(x).1) }
-        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_right_mut(y).1) }
-        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_left_mut(y).1) }
-        if debug { println!("post-pinpoint:\n{grid:?}"); }
+        did_deduce |= Self::pinpoint_all_in_grid(&mut grid);
 
         for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_right_mut(y)) }
         for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_left_mut(y)) }
         if debug { println!("post-seq-left-right:\n{grid:?}"); }
 
-        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_down_mut(x).1) }
-        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_up_mut(x).1) }
-        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_right_mut(y).1) }
-        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_left_mut(y).1) }
-        if debug { println!("post-pinpoint:\n{grid:?}"); }
+        did_deduce |= Self::pinpoint_all_in_grid(&mut grid);
         
         (grid, did_deduce)
     }
