@@ -5,7 +5,7 @@ use ascendant::*;
 macro_rules! set {
     ( $($digit: expr),* $(,)? ) =>
     {
-        std::collections::HashSet::from(
+        natbitset::Bitset::from_iter(
             [ $( $digit, )* ]
         )
     };

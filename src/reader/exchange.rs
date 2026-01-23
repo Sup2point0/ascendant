@@ -66,9 +66,9 @@ pub struct GridExchange
 
 impl GridExchange
 {
-    fn digit_into_cell<const N: usize>(digit: Digit) -> Cell
+    fn digit_into_cell<const N: usize>(digit: Digit) -> Cell<N>
     {
-        if digit == 0 { Cell::new(N) }
+        if digit == 0 { Cell::new() }
         else          { Cell::Solved(digit) }
     }
 }

@@ -3,6 +3,7 @@
 
 #![allow(dead_code)]
 #![allow(unused_imports)]
+#![allow(unused_parens)]
 
 use ascendant::*;
 
@@ -15,10 +16,12 @@ fn main()
 
     // let res = runner::fetch_load_save::<6>(Difficulty::Full);
     // let res = runner::try_solve_stored_all();
-    let res = runner::try_solve_stored::<6>();
+    let res = runner::try_solve_stored::<5>();
 
     match res {
-        Ok(..) => println!(">> finished in {} secs", start.elapsed().as_secs()),
+        Ok(..) => println!(">> finished in {} secs",
+            (start.elapsed().as_millis() as f64 / 100.0).round() / 10.0
+        ),
         Err(e) => println!("!! {:?}", e),
     }
 }

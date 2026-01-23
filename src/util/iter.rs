@@ -24,10 +24,10 @@ pub fn rep(c: char, n: usize) -> String
 }
 
 
-pub fn clone_lane<const N: usize>(lane: &[&mut Cell; N]) -> [Cell; N]
+pub fn snap_lane<const N: usize>(lane: &[&mut Cell<N>; N]) -> [Cell<N>; N]
 {
     arr(
-        lane.iter().map(|cell| (*cell).clone())
+        lane.iter().map(|cell| **cell)
     )
 }
 

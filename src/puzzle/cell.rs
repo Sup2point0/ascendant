@@ -1,18 +1,18 @@
 use std::*;
-use std::collections::HashSet;
 
 use itertools::*;
+use natbitset::Bitset;
 
 use crate::*;
 
 
 /// A cell in the puzzle grid, which may contain either a single `Solved(Digit)` or many possible `Pencil`-marks.
-#[derive(Clone, PartialEq, Eq)]
-pub enum Cell {
+#[derive(Copy, Clone, PartialEq, Eq)]
+pub enum Cell<const N: usize> {
     Solved(Digit),
 
     /// A cell that hasn't been solved yet, containing pencil marks of possible digits.
-    Pencil(HashSet<Digit>),
+    Pencil(Bitset<N>),
 }
 
 /// Construct a `Cell::Pencil` with the provided digits.
@@ -21,7 +21,7 @@ macro_rules! p {
     ( $($digit:expr),* $(,)? ) =>
     {
         Cell::Pencil(
-            std::collections::HashSet::from(
+            natbitset::Bitset::from(
                 [ $($digit,)* ]
             )
         )
@@ -34,18 +34,18 @@ macro_rules! p {
     }
 }
 
-impl Cell
+impl<const N: usize> Cell<N>
 {
-    /// Create a `Cell::Pencil` with all the possible digits of an `n`x`n` grid.
-    pub fn new(n: usize) -> Self
+    /// Create a [`Cell::Pencil`] with all the possible digits of an `N`x`N` grid.
+    pub fn new() -> Self
     {
         Self::Pencil(
-            (1..=n).collect()
+            (1..=N).collect()
         )
     }
 
     /// Create a set of the candidate digits between `lower` and `upper` (inclusive), but if the range is invalid, instead return a full set of 1 to N.
-    pub fn cands<const N: usize>(lower: impl Into<Digit>, upper: impl Into<Digit>) -> HashSet<Digit>
+    pub fn cands(lower: impl Into<Digit>, upper: impl Into<Digit>) -> Bitset<{N}>
     {
         let lower: Digit = lower.into();
         let upper: Digit = upper.into();
@@ -55,7 +55,7 @@ impl Cell
     }
 }
 
-impl Cell
+impl<const N: usize> Cell<N>
 {
     /// For a `Cell::Solved`, extract the solved digit, otherwise return `0`.
     pub fn digit(&self) -> Digit
@@ -71,49 +71,44 @@ impl Cell
     {
         match self {
             Self::Solved(digit)  => *digit,
-            Self::Pencil(digits) => *digits.iter().max().unwrap(),
+            Self::Pencil(digits) => digits.max().expect("Cell cannot have 0 candidates"),
         }
     }
 
     /// For a `Cell::Pencil`, combine its current candidates with `candidates`. Returns `true` if a deduction was made as a result.
     /// 
-    /// Panics if the set of candidates is not present (contract violation), or is empty (logic error).
-    pub fn intersect(&mut self, candidates: &HashSet<Digit>) -> bool
+    /// Panics if the set of candidates is empty (logic error).
+    pub fn intersect(&mut self, candidates: Bitset<N>, lane: [Cell<N>; N]) -> bool
     {
-        let mut did_deduce = false;
+        let Self::Pencil(digits) = self else { return false; };
+        let before = *digits;
+        
+        if let Err(e) = digits.intersect_nonempty(candidates) {
+            panic!("Conflicting deductions in lane: `{lane:?}`, caused by: {e}");
+        }
 
-        if let Self::Pencil(digits) = self
-        {
-            let deduced: HashSet<Digit> =
-                digits.intersection(&candidates).copied().collect();
-            
-            if deduced != *digits {
-                did_deduce = true;
-            }
+        let did_deduce = (*digits != before);
 
-            match deduced.len() {
-                0 => panic!("Conflicting deductions! Old: {digits:?}; New: {candidates:?}"),
-                1 => *self = Cell::Solved(*deduced.iter().next().unwrap()),
-                _ => *digits = deduced,
-            }
+        if let Some(digit) = digits.single() {
+            *self = Cell::Solved(digit);
         }
 
         did_deduce
     }
 }
 
-impl Cell
+impl<const N: usize> Cell<N>
 {
-    pub fn fmt<const N: usize>(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result
+    pub fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result
     {
         match self {
             Self::Solved(digit) => write!(f, " {: ^1$} ", digit, N),
 
             Self::Pencil(digits) => {
-                let str = digits.iter()
+                let str = digits
+                    .members().into_iter()
                     .sorted()
                     .map(|n| n.to_string())
-                    .collect::<Vec<String>>()
                     .join("");
 
                 write!(f, "[{: >1$}]", str, N)
@@ -122,7 +117,7 @@ impl Cell
     }
 }
 
-impl fmt::Debug for Cell
+impl<const N: usize> fmt::Debug for Cell<N>
 {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result
     {
@@ -130,19 +125,12 @@ impl fmt::Debug for Cell
             Self::Solved(d) => write!(f, "'{d}'"),
 
             Self::Pencil(digits) => write!(f, "[{}]",
-                digits.iter()
+                digits
+                    .members().into_iter()
                     .sorted()
                     .map(|n| n.to_string())
-                    .collect::<Vec<String>>()
                     .join("")
             ),
         }
-    }
-}
-
-impl AsRef<Cell> for Cell
-{
-    fn as_ref(&self) -> &Cell {
-        &self
     }
 }

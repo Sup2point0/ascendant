@@ -1,5 +1,9 @@
 #![allow(incomplete_features)]
 #![feature(generic_const_exprs)]
+#![feature(never_type)]
+
+#![allow(dead_code)]
+#![allow(unused_parens)]
 
 mod puzzle;  pub use puzzle::*;
 mod solver;  pub use solver::*;

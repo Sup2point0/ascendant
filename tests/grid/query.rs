@@ -31,10 +31,10 @@ use crate::*;
 {
     let grid = test_grid();
 
-    assert_eq!( *grid.at(0, 0), p!(1,2,3,4,5) );
-    assert_eq!( *grid.at(0, 1), Sv(01) );
-    assert_eq!( *grid.at(1, 0), Sv(10) );
-    assert_eq!( *grid.at(1, 1), Sv(11) );
+    assert_eq!( grid.at(0, 0), p!(1,2,3,4,5) );
+    assert_eq!( grid.at(0, 1), Sv(01) );
+    assert_eq!( grid.at(1, 0), Sv(10) );
+    assert_eq!( grid.at(1, 1), Sv(11) );
 }
 
 #[test] pub fn look()
@@ -65,10 +65,10 @@ use crate::*;
     let (clue_start, row, clue_end) = grid.look_across_row(1);
     assert_eq!( clue_start, Some(2) );
     assert_eq!( clue_end, Some(7) );
-    assert_eq!( row, [&Sv(01), &Sv(11), &Sv(21), &Sv(31), &Sv(41)] );
+    assert_eq!( row, [Sv(01), Sv(11), Sv(21), Sv(31), Sv(41)] );
 
     let (clue_start, col, clue_end) = grid.look_across_col(3);
     assert_eq!( clue_start, Some(4) );
     assert_eq!( clue_end, Some(9) );
-    assert_eq!( col, [&Sv(30), &Sv(31), &Sv(32), &Sv(33), &Sv(34)] );
+    assert_eq!( col, [Sv(30), Sv(31), Sv(32), Sv(33), Sv(34)] );
 }
