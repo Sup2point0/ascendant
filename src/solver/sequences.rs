@@ -1,81 +1,11 @@
-use std::*;
-use std::cell::LazyCell;
-
 use natbitset::Bitset;
 
 use crate::*;
 
 
-/// Algorithm for solving puzzles. Call `::solve()` and pass in a puzzle to attempt solving it as far as possible.
-pub struct Solver<const N: usize>;
-
+/// Deductions made by enforcing ascending sequences, following the rules of Skyscrapers.
 impl<const N: usize> Solver<N>
 {
-    /// Perform deductions on a puzzle until no further deductions can be made.
-    pub fn solve(mut grid: Grid<N>) -> Grid<N>
-    {
-        let mut did_deduce;
-        let debug = util::args("debug") || util::args("DEBUG");
-
-        if debug && let Some(ref url) = grid.url {
-            println!("\nsolving grid from {url}");
-        }
-
-        loop {
-            if debug {
-                println!("\n{grid:?}\n");
-            }
-
-            (grid, did_deduce) = Self::deduce_one_pass(grid);
-            if !did_deduce { break; }
-        }
-
-        grid
-    }
-
-    /// Perform one pass of deductions through the grid. Returns the updated grid and a `bool` indicating if any deductions were successfully made.
-    pub fn deduce_one_pass(mut grid: Grid<N>) -> (Grid<N>, bool)
-    {
-        let mut did_deduce = false;
-        let debug = util::args("DEBUG");
-
-        for x in 0..N { did_deduce |= Self::deduce_cells_in_lane(grid.look_down_mut(x)); }
-        for x in 0..N { did_deduce |= Self::deduce_cells_in_lane(grid.look_up_mut(x)); }
-        for y in 0..N { did_deduce |= Self::deduce_cells_in_lane(grid.look_right_mut(y)); }
-        for y in 0..N { did_deduce |= Self::deduce_cells_in_lane(grid.look_left_mut(y)); }
-        if debug { println!("post-deduce:\n{grid:?}"); }
-
-        let mut deduced;
-        for x in 0..N {
-            for y in 0..N {
-                (grid, deduced) = Self::deduce_one_cell_sudoku_style(grid, x, y);
-                did_deduce |= deduced;
-            }
-        }
-
-        for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_down_mut(x)) }
-        for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_up_mut(x)) }
-        if debug { println!("post-seq-up-down:\n{grid:?}"); }
-
-        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_down_mut(x).1) }
-        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_up_mut(x).1) }
-        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_right_mut(y).1) }
-        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_left_mut(y).1) }
-        if debug { println!("post-pinpoint:\n{grid:?}"); }
-
-        for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_right_mut(y)) }
-        for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_left_mut(y)) }
-        if debug { println!("post-seq-left-right:\n{grid:?}"); }
-
-        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_down_mut(x).1) }
-        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_up_mut(x).1) }
-        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_right_mut(y).1) }
-        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_left_mut(y).1) }
-        if debug { println!("post-pinpoint:\n{grid:?}"); }
-        
-        (grid, did_deduce)
-    }
-
     pub fn deduce_cells_in_lane((clue, mut lane): (Option<Digit>, [&mut Cell<N>; N])) -> bool
     {
         let mut did_deduce = false;
@@ -154,42 +84,6 @@ impl<const N: usize> Solver<N>
             .expect(&format!(
                 "Produced no candidates for cell at idx: `{i}`, deducing from clue: `{clue}` and peak-idx: `{peak_idx}`, caused by"
             ))
-    }
-
-    /// Apply the rules of Sudoku to eliminate candidates from a `Cell::Pencil` at (`x`, `y`) of `grid`.
-    pub fn deduce_one_cell_sudoku_style(mut grid: Grid<N>, x: usize, y: usize) -> (Grid<N>, bool)
-    {
-        let mut did_deduce = false;
-
-        /* Would make this a little more structured, but then we end up in borrowing conflicts =( */
-        if let Cell::Solved{..} = grid.at(x, y) {
-            return (grid, did_deduce);
-        }
-
-        let mut seen = Bitset::<N>::none();
-
-        for cell in grid.look_right_mut(y).1 {
-            // TODO FIXME fix `+=` implementation for Bitset
-            if let Cell::Solved(digit) = cell { seen |= Bitset::from([*digit]); }
-        }
-        for cell in grid.look_down_mut(x).1 {
-            if let Cell::Solved(digit) = cell { seen |= Bitset::from([*digit]); }
-        }
-
-        if let Cell::Pencil(digits) = grid.at_mut(x, y) {
-            for d in seen {
-                // TODO FIXME add `.has()` method for Bitset
-                did_deduce |= digits.members().contains(&d);
-                // TODO FIXME fix `-=` implementation for Bitset
-                *digits /= Bitset::from([d]);
-
-                if digits.len() == 0 {
-                    panic!("Deleted all candidates while performing Sudoku deductions!");
-                }
-            }
-        }
-
-        (grid, did_deduce)
     }
 
     /// Use the clue and peaks of a lane to narrow down candidates based on ascending sequences.
@@ -290,56 +184,5 @@ impl<const N: usize> Solver<N>
             .expect(&format!(
                 "Produced no candidates for cell at idx: `{i}`, deducing from ascending sequence with peak: `{sequence_peak}`, cells-visible: `{cells_visible}`, first-peak-idx: `{first_peak_idx}`, caused by"
             ))
-    }
-
-    pub fn deduce_haven_in_lane(
-        mut lane: [&mut Cell<N>; N],
-        peak: Digit,
-        peak_idx: usize,
-    ) -> bool
-    {
-        let mut did_deduce = false;
-        if peak_idx == 0 { return false; }
-
-        let lane_snap = util::snap_lane(&lane);
-        let blockade = lane[0].max().min(peak - 1);
-
-        /* Head must obscure all of tail */
-        let lower = peak_idx.max(
-            lane[1..peak_idx].iter()
-                .filter_map(|cell| cell.solved_digit())
-                .max()
-                .unwrap_or(1)
-        );
-        
-        if let cell@Cell::Pencil(_) = &mut lane[0]
-        {
-            let cands = Cell::cands(lower, blockade)
-                .expect(&format!(
-                    "Produced no candidates using 2-haven for head cell in lane: `{lane_snap:?}`, with peak: `{peak}` at idx: `{peak_idx}`, caused by"
-                ));
-            
-            did_deduce |= cell.intersect(cands, lane_snap);
-        }
-
-        /* Tail can be arbitrarily low */
-        let cands = LazyCell::new(||
-            Cell::cands(1 as usize, blockade - 1)
-            .expect(&format!(
-                "Produced no candidates using 2-haven for tail cells in lane: `{lane_snap:?}`, with peak: `{peak}` at idx: `{peak_idx}`, caused by"
-            ))
-        );
-    
-        let mut lane_snap = util::snap_lane(&lane);
-
-        for i in 1..peak_idx
-        {
-            if let cell@Cell::Pencil(_) = &mut lane[i] {
-                did_deduce |= cell.intersect(*cands, lane_snap);
-                lane_snap = util::snap_lane(&lane);
-            }
-        }
-
-        did_deduce
     }
 }

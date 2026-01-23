@@ -1,4 +1,6 @@
-pub use core::Solver;
+pub use solver::Solver;
 
-mod core;
+mod solver;
+mod sequences;
+mod skyscrapers;
 mod sudoku;
