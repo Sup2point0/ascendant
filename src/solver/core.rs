@@ -342,7 +342,7 @@ impl<const N: usize> Solver<N>
 
         did_deduce
     }
-
+    
     /// Find cells in a lane that can be solved and turn them from `Cell::Pencil` to `Cell::Solved`.
     pub fn pinpoint_cells_in_lane(mut lane: [&mut Cell<N>; N]) -> bool
     {
