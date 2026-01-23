@@ -64,11 +64,20 @@ pub fn try_solve_all<const N: usize>(puzzles: Vec<Grid<N>>) -> ah::Result<u32>
     let j = t / 4;
 
     for (i, puzzle) in puzzles.into_iter().enumerate() {
+        let orig = puzzle.clone();
         let grid = Solver::solve(puzzle);
 
         if grid.is_solved() {
             solved += 1;
         }
+        else if util::args("show-fail") {
+            if let Some(ref url) = orig.url {
+                println!("\nsolving grid from {url}");
+            }
+            println!("{orig:?}");
+            println!("{grid:?}");
+        }
+
         if i % j == 0 && i > 0 {
             println!(".. attempted {i} of {t}");
         }

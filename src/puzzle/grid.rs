@@ -342,6 +342,8 @@ impl<const N: usize> fmt::Debug for Grid<N>
             let digit = Clues::<N>::render(*clue);
             write!(f, "  {: ^1$}  |", digit, N)?;
         }
+        
+        write!(f, "\n")?;
 
         Ok(())
     }

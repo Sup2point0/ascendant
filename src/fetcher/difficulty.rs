@@ -1,15 +1,18 @@
-#[derive(Copy, Clone, PartialEq, Eq)]
+#[derive(Copy, Clone, Hash, PartialEq, Eq, Debug)]
 pub enum Difficulty {
-    Full,
+    FullEasy,
+    FullHard,
     Sparse,
 }
 
 impl ToString for Difficulty
 {
-    fn to_string(&self) -> String {
+    fn to_string(&self) -> String
+    {
         match self {
-            Self::Full   => "2",
-            Self::Sparse => "3",
+            Self::FullEasy => "1",
+            Self::FullHard => "2",
+            Self::Sparse   => "3",
         }.to_string()
     }
 }
