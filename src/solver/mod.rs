@@ -1,4 +1,5 @@
 use std::*;
+use std::cell::LazyCell;
 
 use natbitset::Bitset;
 
@@ -54,9 +55,17 @@ impl<const N: usize> Solver<N>
 
         for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_down_mut(x)) }
         for x in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_up_mut(x)) }
+        if debug { println!("post-seq-up-down:\n{grid:?}"); }
+
+        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_down_mut(x).1) }
+        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_up_mut(x).1) }
+        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_right_mut(y).1) }
+        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_left_mut(y).1) }
+        if debug { println!("post-pinpoint:\n{grid:?}"); }
+
         for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_right_mut(y)) }
         for y in 0..N { did_deduce |= Self::deduce_sequence_in_lane(grid.look_left_mut(y)) }
-        if debug { println!("post-seq:\n{grid:?}"); }
+        if debug { println!("post-seq-left-right:\n{grid:?}"); }
 
         for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_down_mut(x).1) }
         for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_up_mut(x).1) }
@@ -74,9 +83,9 @@ impl<const N: usize> Solver<N>
         for i in 0..lane.len()
         {
             let lane_snap = util::snap_lane(&lane);
-            let cell = &mut lane[i];
 
-            if let Cell::Solved{..} = cell { continue; }
+            let cell = &mut lane[i];
+            if let Cell::Solved(_) = cell { continue; }
 
             if let Some(1) = clue && i == 0 {
                 **cell = Cell::Solved(N);
@@ -86,7 +95,7 @@ impl<const N: usize> Solver<N>
                 **cell = Cell::Solved(i+1);
             }
 
-            if let Cell::Pencil{..} = cell
+            if let Cell::Pencil(_) = cell
             {
                 let cands = {
                     if let Some(c) = clue
@@ -190,7 +199,7 @@ impl<const N: usize> Solver<N>
 
         'exit: {
             /* 1st pass from end: Descend peaks */
-            let peak_index = match Grid::find_peak(&util::snap_lane(&lane)) {
+            let peak_index = match Grid::find_peak(&lane) {
                 None    => break 'exit,
                 Some(i) => i,
             };
@@ -198,7 +207,7 @@ impl<const N: usize> Solver<N>
             let clue = match clue {
                 None    => break 'exit,
                 Some(1) => break 'exit,
-                Some(2) => return Self::deduce_haven_for_2_clue(lane, N, peak_index),
+                Some(2) => return Self::deduce_haven_in_lane(lane, N, peak_index),
                 Some(c) => c,
             };
             
@@ -208,27 +217,34 @@ impl<const N: usize> Solver<N>
             let mut first_peak = N;
             let mut peaks = 1;
 
-            for digit in (2..N).rev()
+            // println!("lane = {:?}", lane);
+
+            for d in (2..N).rev()
             {
-                let indices = &seen_indices[&digit];
+                let indices = &seen_indices[&d];
+                // println!("-- d={d}, indices={indices:?}, first-peak={first_peak}, peaks={peaks}");
 
                 /* If this is a solved skyscraper left of our current first peak, set it as the new first peak. */
                 if indices.len() == 1 {
+                    // println!("PEAK");
                     if indices[0] < first_peak_idx {
                         first_peak_idx = indices[0];
-                        first_peak = digit;
+                        first_peak = d;
                         peaks += 1;
 
                         if peaks == clue {
-                            return Self::deduce_haven_for_2_clue(lane, N, first_peak_idx);
+                            // println!("DELEGATING");
+                            return Self::deduce_haven_in_lane(lane, N, first_peak_idx);
                         }
                     }
                 }
-                /* If we encounter an uncertain peak that may or may not contribute to the sequence, then we can't determine the bounds of the sequence with certainty. */
-                else if !indices.iter().all(|i| *i > first_peak_idx || *i == 0)
-                    && (0..first_peak_idx).any(|i| matches!(lane[i], Cell::Solved{..}))
-                {
-                    break 'exit;
+                /* If this skyscraper may appear earlier than the current first peak, it may or may not contribute to the sequence. */
+                else if !indices.iter().all(|i| *i > first_peak_idx || *i == 0) {
+                    /* If  */
+                    if (0..first_peak_idx).any(|i| matches!(lane[i], Cell::Solved{..})) {
+                        break 'exit;
+                    }
+                    break;
                 }
             }
 
@@ -236,7 +252,7 @@ impl<const N: usize> Solver<N>
             if first_peak_idx == 0 { break 'exit; }
 
             if peaks == clue - 1 {
-                return Self::deduce_haven_for_2_clue(lane, first_peak, first_peak_idx);
+                return Self::deduce_haven_in_lane(lane, first_peak, first_peak_idx);
             }
 
             let sequence_peak = first_peak - 1;
@@ -247,7 +263,7 @@ impl<const N: usize> Solver<N>
                 let lane_snap = util::snap_lane(&lane);
                 let cell = &mut lane[i];
 
-                if let Cell::Pencil(..) = cell {
+                if let Cell::Pencil(_) = cell {
                     let cands = Self::calc_ascending(i, sequence_peak, cells_visible, first_peak_idx);
                     did_deduce = cell.intersect(cands, lane_snap);
                 }
@@ -276,52 +292,51 @@ impl<const N: usize> Solver<N>
             ))
     }
 
-    pub fn deduce_haven_for_2_clue(
+    pub fn deduce_haven_in_lane(
         mut lane: [&mut Cell<N>; N],
         peak: Digit,
         peak_idx: usize,
     ) -> bool
     {
         let mut did_deduce = false;
+        if peak_idx == 0 { return false; }
 
-        'exit: {
-            if peak_idx == 0 { break 'exit; }
+        let lane_snap = util::snap_lane(&lane);
+        let blockade = lane[0].max().min(peak - 1);
 
-            let blockade = lane[0].max().min(peak - 1);
-
-            /* Head must obscure all of tail */
-            let lower = peak_idx.max(
-                lane[1..peak_idx].iter()
-                    .filter_map(|digit|
-                        if let Cell::Solved(d) = digit {Some(*d)} else {None}
-                    )
-                    .max()
-                    .unwrap_or(1)
-            );
-            
+        /* Head must obscure all of tail */
+        let lower = peak_idx.max(
+            lane[1..peak_idx].iter()
+                .filter_map(|cell| cell.solved_digit())
+                .max()
+                .unwrap_or(1)
+        );
+        
+        if let cell@Cell::Pencil(_) = &mut lane[0]
+        {
             let cands = Cell::cands(lower, blockade)
                 .expect(&format!(
-                    "Produced no candidates for head cell, deducing from `2` clue, with peak: `{peak}` at idx: `{peak_idx}`, caused by"
+                    "Produced no candidates using 2-haven for head cell in lane: `{lane_snap:?}`, with peak: `{peak}` at idx: `{peak_idx}`, caused by"
                 ));
-
-            let lane_snap = util::snap_lane(&lane);
             
-            if let cell@Cell::Pencil{..} = &mut lane[0] {
-                did_deduce |= cell.intersect(cands, lane_snap);
-            }
+            did_deduce |= cell.intersect(cands, lane_snap);
+        }
 
-            /* Tail can be arbitrarily low */
-            let cands = Cell::cands(1 as usize, blockade - 1)
-                .expect(&format!(
-                    "Produced no candidates for tail cells, deducing from `2` clue, with peak: `{peak}` at idx: `{peak_idx}`, caused by"
-                ));
-        
-            for i in 1..peak_idx {
-                let lane_snap = util::snap_lane(&lane);
+        /* Tail can be arbitrarily low */
+        let cands = LazyCell::new(||
+            Cell::cands(1 as usize, blockade - 1)
+            .expect(&format!(
+                "Produced no candidates using 2-haven for tail cells in lane: `{lane_snap:?}`, with peak: `{peak}` at idx: `{peak_idx}`, caused by"
+            ))
+        );
+    
+        let mut lane_snap = util::snap_lane(&lane);
 
-                if let cell@Cell::Pencil{..} = &mut lane[i] {
-                    did_deduce |= cell.intersect(cands, lane_snap);
-                }
+        for i in 1..peak_idx
+        {
+            if let cell@Cell::Pencil(_) = &mut lane[i] {
+                did_deduce |= cell.intersect(*cands, lane_snap);
+                lane_snap = util::snap_lane(&lane);
             }
         }
 
@@ -337,7 +352,7 @@ impl<const N: usize> Solver<N>
             if indices.len() == 1 {
                 let idx = indices.into_iter().next().unwrap();
 
-                if let cell@Cell::Pencil{..} = &mut lane[idx] {
+                if let cell@Cell::Pencil(_) = &mut lane[idx] {
                     **cell = Cell::Solved(digit);
                     did_deduce = true;
                 }

@@ -58,13 +58,23 @@ use ascendant::Cell::Solved as Sv;
 #[test] fn deduce_sequence_in_lane_36()
 {
     const N: usize = 6;
-    let clue = 3;
+    let clue = Some(3);
 
     // 3 | _ 2 5 1 _ 6
     let mut lane = [ p![3,4], Sv(2), Sv(5), Sv(1), p![3,4], Sv(6) ];
 
-    Solver::<N>::deduce_sequence_in_lane((Some(clue), util::arr(lane.iter_mut())));
+    let snap = util::arr(lane.iter_mut());
+    Solver::<N>::deduce_sequence_in_lane((clue, snap));
     assert_eq!(lane, [ p![3,4], Sv(2), Sv(5), Sv(1), p![3,4], Sv(6) ]);
+
+    // 3 | _ _ _ _ 6 4
+    let mut lane = [ p![1,2], p![1,2,5], p![2,5], p![1,2,3], Sv(6), Sv(4) ];
+
+    let snap = util::arr(lane.iter_mut());
+    Solver::<N>::deduce_sequence_in_lane((clue, snap));
+    assert_eq!( lane, [ p![1,2], p![1,2,5], p![2,5], p![1,2,3], Sv(6), Sv(4) ]);
+    // No deductions possible since 5 could be in any place
+
 }
 
 #[test] fn deduce_sequence_in_lane_46()
