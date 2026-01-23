@@ -68,13 +68,19 @@ impl<const N: usize> Cell<N>
 
 impl<const N: usize> Cell<N>
 {
-    /// For a `Cell::Solved`, extract the solved digit, otherwise return `0`.
-    pub fn digit(&self) -> Digit
+    /// Extract the solved digit of a `Cell::Solved`.
+    pub fn solved_digit(&self) -> Option<Digit>
     {
         match self {
-            Cell::Solved(digit) => *digit,
-            Cell::Pencil(..)    => 0,
+            Cell::Solved(digit) => Some(*digit),
+            Cell::Pencil(..)    => None,
         }
+    }
+
+    /// If the cell is solved, extract the digit, otherwise return `0`.
+    pub fn digit(&self) -> Digit
+    {
+        self.solved_digit().unwrap_or(0)
     }
 
     /// Return the maximum digit a cell could be, whether it is solved or pencil marks.
@@ -143,5 +149,12 @@ impl<const N: usize> fmt::Debug for Cell<N>
                     .join("")
             ),
         }
+    }
+}
+
+impl<const N: usize> AsRef<Cell<N>> for Cell<N>
+{
+    fn as_ref(&self) -> &Cell<N> {
+        &self
     }
 }

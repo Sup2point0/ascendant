@@ -295,9 +295,9 @@ impl<const N: usize> Grid<N>
     }
 
     /// Try to find a solved cell with an N-skyscraper, if there is one.
-    pub fn find_peak(lane: &[Cell<N>; N]) -> Option<usize>
+    pub fn find_peak(lane: &[impl AsRef<Cell<N>>; N]) -> Option<usize>
     {
-        lane.iter().position(|c| *c == Cell::Solved(N))
+        lane.iter().position(|c| *c.as_ref() == Cell::Solved(N))
     }
 }
 
