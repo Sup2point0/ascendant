@@ -113,7 +113,10 @@ impl<const N: usize> Solver<N>
         let clue_offset = clue.map(|c| c-1).unwrap_or(0);
         let out = N + i - clue_offset;
 
-        (1..=out).collect()
+        Cell::cands(1 as usize, out)
+            .expect(&format!(
+                "Produced no candidates for cell at idx: `{i}`, deducing from clue: `{clue:?}`, caused by"
+            ))
     }
 
     /// For one cell, calculate candidates based on both the lane's clue and the index of its peak.
@@ -138,7 +141,10 @@ impl<const N: usize> Solver<N>
             }
         };
         
-        (lower..=upper).collect()
+        Cell::cands(lower, upper)
+            .expect(&format!(
+                "Produced no candidates for cell at idx: `{i}`, deducing from clue: `{clue}` and peak-idx: `{peak_idx}`, caused by"
+            ))
     }
 
     /// Apply the rules of Sudoku to eliminate candidates from a `Cell::Pencil` at (`x`, `y`) of `grid`.
@@ -265,6 +271,9 @@ impl<const N: usize> Solver<N>
         let upper = sequence_peak - j;
 
         Cell::cands(lower, upper)
+            .expect(&format!(
+                "Produced no candidates for cell at idx: `{i}`, deducing from ascending sequence with peak: `{sequence_peak}`, cells-visible: `{cells_visible}`, first-peak-idx: `{first_peak_idx}`, caused by"
+            ))
     }
 
     pub fn deduce_haven_for_2_clue(
@@ -290,7 +299,10 @@ impl<const N: usize> Solver<N>
                     .unwrap_or(1)
             );
             
-            let cands: Bitset<N> = (lower..=blockade).collect();
+            let cands = Cell::cands(lower, blockade)
+                .expect(&format!(
+                    "Produced no candidates for head cell, deducing from `2` clue, with peak: `{peak}` at idx: `{peak_idx}`, caused by"
+                ));
 
             let lane_snap = util::snap_lane(&lane);
             
@@ -299,7 +311,10 @@ impl<const N: usize> Solver<N>
             }
 
             /* Tail can be arbitrarily low */
-            let cands: Bitset<N> = (1..blockade).collect();
+            let cands = Cell::cands(1 as usize, blockade - 1)
+                .expect(&format!(
+                    "Produced no candidates for tail cells, deducing from `2` clue, with peak: `{peak}` at idx: `{peak_idx}`, caused by"
+                ));
         
             for i in 1..peak_idx {
                 let lane_snap = util::snap_lane(&lane);

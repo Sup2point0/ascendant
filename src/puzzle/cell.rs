@@ -44,14 +44,25 @@ impl<const N: usize> Cell<N>
         )
     }
 
-    /// Create a set of the candidate digits between `lower` and `upper` (inclusive), but if the range is invalid, instead return a full set of 1 to N.
-    pub fn cands(lower: impl Into<Digit>, upper: impl Into<Digit>) -> Bitset<{N}>
+    /// Create a set of the candidate digits `lower..=upper`, but if the range is invalid, instead return a full set of 1 to N.
+    pub fn cands(lower: impl Into<Digit>, upper: impl Into<Digit>) -> Result<Bitset<{N}>, String>
     {
         let lower: Digit = lower.into();
         let upper: Digit = upper.into();
 
-        if upper >= lower { lower..= upper } else { 1..=N }
-            .collect()
+        Ok((
+            if upper >= lower {
+                lower..= upper
+            }
+            else {
+                if util::args("CRASH") {
+                    return Err(format!(
+                        "Deduced no candidates for cell, calculated lower: `{lower}`, upper: `{upper}`"
+                    ));
+                }
+                1..=N
+            }
+        ).collect())
     }
 }
 
