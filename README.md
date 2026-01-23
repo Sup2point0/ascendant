@@ -28,16 +28,29 @@ Some example puzzles are provided in `src/examples.rs`.
 
 ## Progress
 
+> [!Note]
+> Test puzzles sourced from [brainbashers.com<sup>↗</sup>](https://brainbashers.com/skyscrapers.asp), a wonderful puzzles site!
+
 Bear in mind most human-oriented puzzles are 5x5 or 6x6 ;)
+
+`Full` puzzles have clues along every lane in both directions. `Sparse` puzzles have much fewer clues, and are significantly more difficult.
 
 | size | full easy | full hard | sparse |
 | :--- | :-------- | :-------- | :----- |
 | 4x4  | solvable  | solvable  | solvable
-| 5x5  | solvable  | solvable  | work
+| 5x5  | solvable  | solvable  | solvable
 | 6x6  | solvable  | solvable  | –
 | 7x7  | solvable  | solvable  |
 | 8x8  | –         |
 | 9x9  | –         |
+
+### Metrics
+
+| size | difficulty | solved  | as of |
+| :--- | :--------- | :------ | :---- |
+| 5x5  | full hard  | 484/487 | 2026 January
+|      | sparse     | 48/365  | 2026 January
+| 6x6  | full hard  | unknown | 2026 January
 
 
 <br>
