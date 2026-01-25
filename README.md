@@ -35,23 +35,13 @@ Bear in mind most human-oriented puzzles are 5x5 or 6x6 ;)
 
 `Full` puzzles have clues along every lane in both directions. `Sparse` puzzles have much fewer clues, and are significantly more difficult.
 
-| size | full easy | full hard | sparse |
-| :--- | :-------- | :-------- | :----- |
-| 4x4  | solvable  | solvable  | solvable
-| 5x5  | solvable  | solvable  | solvable
-| 6x6  | solvable  | solvable  | –
-| 7x7  | solvable  | solvable  |
-| 8x8  | –         |
-| 9x9  | –         |
-
-### Metrics
-
 | size | difficulty | solved  | time  | as of |
 | :--- | :--------- | :------ | :---- | :---- |
-| 4x4  | full easy  | 365/365 |       | 2026 January
+| 4x4  | full       | 365/365 |       | 2026 January
 |      | sparse     | 127/365 | 0.7 s | 2026 January
-| 5x5  | full hard  | 478/487 |       | 2026 January
-|      | sparse     | 48/365  | 1.5 s | 2026 January
+| 5x5  | full easy  | 361/365 |       | 2026 January
+|      | full hard  | 357/365 |       | 2026 January
+|      | sparse     |  48/365 | 1.5 s | 2026 January
 | 6x6  | full easy  | 309/365 |       | 2026 January
 |      | full hard  | 305/365 | 1.6 s | 2026 January
 | 7x7  | full easy  | 248/365 |       | 2026 January
