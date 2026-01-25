@@ -84,26 +84,26 @@ These are the steps in each pass-through:[^order]
 [^order]: The algorithm steps are executed in this order to optimise deduction rate, but you could theoretically use any order.
 
 - **Ascent**: Use the clues to establish a foundation of candidates for each cell.
-  - e.g. A lane $\text{4 | \_ \_ \_ \_ \_ \_ |}$ in a 6x6 puzzle could start with any of $[123]$, but not $[456]$.
+  - e.g. A lane $`\text{4 | \_ \_ \_ \_ \_ \_ |}`$ in a 6x6 puzzle could start with any of $`[123]`$, but not $`[456]`$.
 - **Peak Descent**: Enforce ascending sequences by descending peaks.
   - If a [peak](#terminology) has been found in a lane, step down from the peak towards the clue, calculating how many skyscrapers are currently guaranteed to be visible.
   - Subtract this from the clue to find how many *more* skyscrapers should be visible in front of the first peak.
   - Use this to restrict the candidates of the sequence.
-    - e.g. In a lane $\text{4 | \_ \_ 4 \_ 6 5 |}$ this deduces $\text{4 | [12] [23] 4 6 \_ 5 |}$.
-    - e.g. In a lane $\text{3 | \_ \_ \_ 5 \_ 6 |}$ this deduces $\text{3 | 4 [123] [123] 5 \_ 6 |}$.
+    - e.g. In a lane $`\text{4 | \_ \_ 4 \_ 6 5 |}`$ this deduces $`\text{4 | [12] [23] 4 6 \_ 5 |}`$.
+    - e.g. In a lane $`\text{3 | \_ \_ \_ 5 \_ 6 |}`$ this deduces $`\text{3 | 4 [123] [123] 5 \_ 6 |}`$.
 - **Sudoku**: Eliminate invalid candidates by the rules of Sudoku.
-  - e.g. A lane $\text{| 3 [36] [123] \_ \_ \_ |}$ can be eliminated to $\text{| 3 [6] [12] \_ \_ \_ |}$.
+  - e.g. A lane $`\text{| 3 [36] [123] \_ \_ \_ |}`$ can be eliminated to $`\text{| 3 [6] [12] \_ \_ \_ |}`$.
 - **Pinpoint**: Mark cells which are the only place in their lane for a digit to go as solved.
-  - e.g. A lane $\text{| 3 [6] [12] \_ \_ \_ |}$ can be eliminated to $\text{| 3 6 [12] \_ \_ \_ |}$.
+  - e.g. A lane $`\text{| 3 [6] [12] \_ \_ \_ |}`$ can be eliminated to $`\text{| 3 6 [12] \_ \_ \_ |}`$.
 - **Solve**: Mark cells with only 1 candidate left as solved.
 
 ### Terminology
 - **Skyscraper**: One number in a cell. For instance, the “5-skyscraper”.
   - **Candidates**: “Pencil marks” to indicate what skyscrapers *could* go in a cell. 
-- **Lane**: A straight line of cells in the $x$ or $y$ direction.
+- **Lane**: A straight line of cells in the $`x`$ or $`y`$ direction.
   - **Row**: A horizontal lane.
   - **Col**: A vertical lane.
-- **Peak**: An $N$-skyscraper in an $N$×$N$ puzzle, or more generally, a skyscraper guaranteed to be visible.[^peak]
+- **Peak**: An $`N`$-skyscraper in an $`N`$×$`N`$ puzzle, or more generally, a skyscraper guaranteed to be visible.[^peak]
   - Akin to a ‘maximum’ in mathematics.
 - **Sequence**: An ascending sequence of skyscrapers, looking from a clue across the lane towards the peak. Ideally strictly ascending, but not always so.
 
