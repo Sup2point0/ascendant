@@ -33,19 +33,16 @@ impl<const N: usize> Solver<N>
         let mut seen = Bitset::<N>::none();
 
         for cell in grid.look_right_mut(y).1 {
-            // TODO FIXME fix `+=` implementation for Bitset
-            if let Cell::Solved(digit) = cell { seen |= Bitset::from([*digit]); }
+            if let Cell::Solved(digit) = cell { seen += *digit; }
         }
         for cell in grid.look_down_mut(x).1 {
-            if let Cell::Solved(digit) = cell { seen |= Bitset::from([*digit]); }
+            if let Cell::Solved(digit) = cell { seen += *digit; }
         }
 
         if let Cell::Pencil(digits) = grid.at_mut(x, y) {
             for d in seen {
-                // TODO FIXME add `.has()` method for Bitset
-                did_deduce |= digits.members().contains(&d);
-                // TODO FIXME fix `-=` implementation for Bitset
-                *digits /= Bitset::from([d]);
+                did_deduce |= digits.contains(d);
+                *digits -= d;
 
                 if digits.len() == 0 {
                     panic!("Deleted all candidates while performing Sudoku deductions!");
@@ -91,7 +88,7 @@ impl<const N: usize> Solver<N>
 
         for cell in lane {
             if let Cell::Pencil(digits) = cell
-            && let Some(d) = digits.single()
+            && let Some(d) = digits.only()
             {
                 *cell = Cell::Solved(d);
                 did_deduce = true;

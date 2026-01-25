@@ -106,7 +106,7 @@ impl<const N: usize> Cell<N>
 
         let did_deduce = (*digits != before);
 
-        if let Some(digit) = digits.single() {
+        if let Some(digit) = digits.only() {
             *self = Cell::Solved(digit);
         }
 

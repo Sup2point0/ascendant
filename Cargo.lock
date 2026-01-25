@@ -699,9 +699,9 @@ dependencies = [
 
 [[package]]
 name = "natbitset"
-version = "0.1.0"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1b7d647e3ef7952cc629826fca1a01ba422a8267326ee8102d3f12849529c0aa"
+checksum = "d686a846ed9512214342d6b293ddfeb8f6f24270a80cf06fd647e370e5bdad54"
 dependencies = [
  "num-traits",
 ]
