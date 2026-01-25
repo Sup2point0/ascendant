@@ -2,7 +2,7 @@
 
 An automated solver for [*Skyscrapers*<sup>↗</sup>](https://sup2point0.github.io/skyscraping/walk/primer) puzzles, relying only on pure logic.
 
-For a rundown of the algorithm, jump to [§ Algorithm](#algorithm).
+For a rundown of the algorithm, jump to [§ Algorithm](#algorithm). For an explanation of how Skyscrapers puzzles work, I have a [quickfire explanation on Skyscraping<sup>↗</sup>](https://sup2point0.github.io/skyscraping/walk/primer).
 
 
 <br>
@@ -74,31 +74,45 @@ You can configure the puzzle size to be solved in `src/main.rs`.[^cli]
 
 ## Algorithm
 
+I affectionally call it *peak descent*!
+
 ### Outline
 The solving algorithm is iterative – it’ll keep passing over the grid, trying to make logical deductions, until it can no longer find any.
 
-The steps in each pass-through are as follows (they are executed in this order to optimise deduction rate, but the order is irrelevant, really):
+These are the steps in each pass-through:[^order]
 
-- Use the clues to establish a foundation of what digits each cell might take on.
-  - For instance, a lane with a clue of $4$ in a $6 \times 6$ puzzle could start with any of $\{ 1, 2, 3 \}$, but not $\{ 4, 5, 6 \}$.
-- If a peak has been found, further use the clues to establish ascending sequences of candidates.
-- Use the rules of Sudoku to eliminate invalid candidates.
-- Find cells which are the only place in their lane for a digit to go.
-  - For instance, if the middle cell of a row is the only one with $2$ as a candidate, then we know $2$ must go in that middle cell.
-- Find cells with only 1 candidate left – these cells have been solved.
+[^order]: The algorithm steps are executed in this order to optimise deduction rate, but you could theoretically use any order.
+
+- **Ascent**: Use the clues to establish a foundation of candidates for each cell.
+  - e.g. A lane $\text{4 | \_ \_ \_ \_ \_ \_ |}$ in a 6x6 puzzle could start with any of $[123]$, but not $[456]$.
+- **Peak Descent**: Enforce ascending sequences by descending peaks.
+  - If a [peak](#terminology) has been found in a lane, step down from the peak towards the clue, calculating how many skyscrapers are currently guaranteed to be visible.
+  - Subtract this from the clue to find how many *more* skyscrapers should be visible in front of the first peak.
+  - Use this to restrict the candidates of the sequence.
+    - e.g. In a lane $\text{4 | \_ \_ 4 \_ 6 5 |}$ this deduces $\text{4 | [12] [23] 4 6 \_ 5 |}$.
+    - e.g. In a lane $\text{3 | \_ \_ \_ 5 \_ 6 |}$ this deduces $\text{3 | 4 [123] [123] 5 \_ 6 |}$.
+- **Sudoku**: Eliminate invalid candidates by the rules of Sudoku.
+  - e.g. A lane $\text{| 3 [36] [123] \_ \_ \_ |}$ can be eliminated to $\text{| 3 [6] [12] \_ \_ \_ |}$.
+- **Pinpoint**: Mark cells which are the only place in their lane for a digit to go as solved.
+  - e.g. A lane $\text{| 3 [6] [12] \_ \_ \_ |}$ can be eliminated to $\text{| 3 6 [12] \_ \_ \_ |}$.
+- **Solve**: Mark cells with only 1 candidate left as solved.
+
+### Terminology
+- **Skyscraper**: One number in a cell. For instance, the “5-skyscraper”.
+  - **Candidates**: “Pencil marks” to indicate what skyscrapers *could* go in a cell. 
+- **Lane**: A straight line of cells in the $x$ or $y$ direction.
+  - **Row**: A horizontal lane.
+  - **Col**: A vertical lane.
+- **Peak**: An $N$-skyscraper in an $N$×$N$ puzzle, or more generally, a skyscraper guaranteed to be visible.[^peak]
+  - Akin to a ‘maximum’ in mathematics.
+- **Sequence**: An ascending sequence of skyscrapers, looking from a clue across the lane towards the peak. Ideally strictly ascending, but not always so.
+
+[^peak]: Named this way because, if you were to look at the skyline of skyscrapers, you would see them taller than other buildings!
 
 ### Philosophy
 - The goal is to get as far as possible with purely logical deductions, i.e. no ‘guesswork’ or ‘backtracking’. Even though guesswork [isn’t well-defined<sup>↗</sup>](https://sup2point0.github.io/skyscraping/thoughts/imagination-vs-guesswork)...
 - The strategies I plan on implementing are mostly those covered in [Skyscraping<sup>↗</sup>](https://sup2point0.github.io/skyscraping/cases).
 - If we stick firmly to this, then we may be able to also generate new skyscrapers puzzles!
-
-### Terminology
-- *Skyscraper*: One value in a cell. For instance, the “5-skyscraper”.
-- *Lane*: A straight line of cells in the $x$ or $y$ direction.
-- *Row*: A horizontal lane, determined by a $y$ index.
-- *Col*: A vertical lane, determined by an $x$ index.
-- *Peak*: An $N$-skyscraper in an $N \times N$ puzzle. Akin to a ‘maximum’ in mathematics.
-- *Sequence*: An ascending sequence of skyscrapers, looking from a clue across the lane towards the peak. Ideally strictly ascending, but not always so.
 
 
 <br>
