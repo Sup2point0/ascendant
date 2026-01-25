@@ -52,7 +52,12 @@ Bear in mind most human-oriented puzzles are 5x5 or 6x6 ;)
 |      | sparse     | 127/365 | 0.7 s | 2026 January
 | 5x5  | full hard  | 478/487 |       | 2026 January
 |      | sparse     | 48/365  | 1.5 s | 2026 January
-| 6x6  | full hard  | 305/365 | 0.9 s | 2026 January
+| 6x6  | full easy  | 309/365 |       | 2026 January
+|      | full hard  | 305/365 | 1.6 s | 2026 January
+| 7x7  | full easy  | 248/365 |       | 2026 January
+|      | full hard  | 234/365 | 2.8 s | 2026 January
+| 8x8  | full easy  | 173/365 |       | 2026 January
+|      | full hard  | 155/365 | 4.6 s | 2026 January
 
 
 <br>
