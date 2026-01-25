@@ -86,15 +86,15 @@ These are the steps in each pass-through:[^order]
 - **Ascent**: Use the clues to establish a foundation of candidates for each cell.
   - e.g. A lane $`\text{4 | \_ \_ \_ \_ \_ \_ |}`$ in a 6x6 puzzle could start with any of $`[123]`$, but not $`[456]`$.
 - **Peak Descent**: Enforce ascending sequences by descending peaks.
-  - If a [peak](#terminology) has been found in a lane, step down from the peak towards the clue, calculating how many skyscrapers are currently guaranteed to be visible.
+  - If a peak has been found in a lane, step down from the peak towards the clue, calculating how many skyscrapers are currently guaranteed to be visible.
   - Subtract this from the clue to find how many *more* skyscrapers should be visible in front of the first peak.
   - Use this to restrict the candidates of the sequence.
-    - e.g. In a lane $`\text{4 | \_ \_ 4 \_ 6 5 |}`$ this deduces $`\text{4 | [12] [23] 4 6 \_ 5 |}`$.
-    - e.g. In a lane $`\text{3 | \_ \_ \_ 5 \_ 6 |}`$ this deduces $`\text{3 | 4 [123] [123] 5 \_ 6 |}`$.
+    - e.g. In a lane $`\text{4 | \_ \_ 4 \_ 6 5 |}`$ this deduces $`\text{4 | [12] [23] 4 \_ 6 5 |}`$.
+    - e.g. In a lane $`\text{3 | \_ \_ \_ 5 \_ 6 |}`$ this deduces $`\text{3 | [4] [123] [123] 5 \_ 6 |}`$.
 - **Sudoku**: Eliminate invalid candidates by the rules of Sudoku.
   - e.g. A lane $`\text{| 3 [36] [123] \_ \_ \_ |}`$ can be eliminated to $`\text{| 3 [6] [12] \_ \_ \_ |}`$.
 - **Pinpoint**: Mark cells which are the only place in their lane for a digit to go as solved.
-  - e.g. A lane $`\text{| 3 [6] [12] \_ \_ \_ |}`$ can be eliminated to $`\text{| 3 6 [12] \_ \_ \_ |}`$.
+  - e.g. A lane $`\text{| [123] [23] [24] [34] 5 6 |}`$ can be solved to $`\text{| 1 [23] [24] [34] 5 6 |}`$
 - **Solve**: Mark cells with only 1 candidate left as solved.
 
 ### Terminology
@@ -108,6 +108,14 @@ These are the steps in each pass-through:[^order]
 - **Sequence**: An ascending sequence of skyscrapers, looking from a clue across the lane towards the peak. Ideally strictly ascending, but not always so.
 
 [^peak]: Named this way because, if you were to look at the skyline of skyscrapers, you would see them taller than other buildings!
+
+### Development
+
+Future strategies to implement include:
+
+- Twin/triplet/... elimination: 2 $`[xy]`$ cells eliminate $x$ and $y$ as candidates from all other cells in the lane.
+  - (more advanced) Closed set elimination: Any set of cells which *between them* consume $`[xyz...]`$ eliminate $`[xyz]`$ as candidates from all other cells in the lane.
+- Solve cells with 2 candidates where one would be visible and the other obscured.
 
 ### Philosophy
 - The goal is to get as far as possible with purely logical deductions, i.e. no ‘guesswork’ or ‘backtracking’. Even though guesswork [isn’t well-defined<sup>↗</sup>](https://sup2point0.github.io/skyscraping/thoughts/imagination-vs-guesswork)...
