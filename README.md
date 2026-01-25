@@ -1,6 +1,8 @@
 <h1 align="center"> <code> ascendant </code> </h1>
 
-An automated solver for [*Skyscrapers*<sup>↗</sup>](https://sup2point0.github.io/skyscraping/walk/primer) puzzles.
+An automated solver for [*Skyscrapers*<sup>↗</sup>](https://sup2point0.github.io/skyscraping/walk/primer) puzzles, relying only on pure logic.
+
+For a rundown of the algorithm, jump to [§ Algorithm](#algorithm).
 
 
 <br>
@@ -20,7 +22,9 @@ You will need [Rust nightly<sup>↗</sup>](https://doc.rust-lang.org/book/append
 ascendant> cargo run
 ```
 
-Some example puzzles are provided in `src/examples.rs`.
+You can configure the puzzle size to be solved in `src/main.rs`.[^cli]
+
+[^cli]: I might add a CLI soon to allow features like seeing the algorithm in action for one particular puzzle.
 
 
 <br>
@@ -31,9 +35,9 @@ Some example puzzles are provided in `src/examples.rs`.
 > [!Note]
 > Test puzzles sourced from [brainbashers.com<sup>↗</sup>](https://brainbashers.com/skyscrapers.asp), a wonderful puzzles site!
 
-Bear in mind most human-oriented puzzles are 5x5 or 6x6 ;)
+`Full` puzzles have clues along every lane in both directions. `Sparse` puzzles have much fewer clues, and are significantly more difficult. Bear in mind most human-oriented puzzles[^human] are sparse 5x5 or 6x6 ;)
 
-`Full` puzzles have clues along every lane in both directions. `Sparse` puzzles have much fewer clues, and are significantly more difficult.
+[^human]: After many years solving Skyscrapers (on-off, granted), I can speedrun some sparse 5x5, will need to spend maybe a good hour on sparse 6x6, and have only ever solved 1 sparse 7x7, which took many sittings over many days. Ofc, you may find easier large puzzles with specially designed tricks on sites other than Brainbashers, but this is the only site I’ve really used, so it’s all I have to go off =)
 
 | size | difficulty | solved      | time  | as of |
 | :--- | :--------- | :---------- | :---- | :---- |
@@ -95,3 +99,6 @@ The steps in each pass-through are as follows (they are executed in this order t
 - *Col*: A vertical lane, determined by an $x$ index.
 - *Peak*: An $N$-skyscraper in an $N \times N$ puzzle. Akin to a ‘maximum’ in mathematics.
 - *Sequence*: An ascending sequence of skyscrapers, looking from a clue across the lane towards the peak. Ideally strictly ascending, but not always so.
+
+
+<br>
