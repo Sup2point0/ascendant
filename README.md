@@ -35,19 +35,34 @@ Bear in mind most human-oriented puzzles are 5x5 or 6x6 ;)
 
 `Full` puzzles have clues along every lane in both directions. `Sparse` puzzles have much fewer clues, and are significantly more difficult.
 
-| size | difficulty | solved  | time  | as of |
-| :--- | :--------- | :------ | :---- | :---- |
-| 4x4  | full       | 365/365 |       | 2026 January
-|      | sparse     | 127/365 | 0.7 s | 2026 January
-| 5x5  | full easy  | 361/365 |       | 2026 January
-|      | full hard  | 357/365 |       | 2026 January
-|      | sparse     |  48/365 | 1.5 s | 2026 January
-| 6x6  | full easy  | 309/365 |       | 2026 January
-|      | full hard  | 305/365 | 1.6 s | 2026 January
-| 7x7  | full easy  | 248/365 |       | 2026 January
-|      | full hard  | 234/365 | 2.8 s | 2026 January
-| 8x8  | full easy  | 173/365 |       | 2026 January
-|      | full hard  | 155/365 | 4.6 s | 2026 January
+| size | difficulty | solved      | time  | as of |
+| :--- | :--------- | :---------- | :---- | :---- |
+| 4x4  | full       | **365/365** | 0.7 s | 2026 January
+|      | sparse     |   127/365   | ^     | 2026 January
+| 5x5  | full easy  |   361/365   | 1.5 s | 2026 January
+|      | full hard  |   357/365   | ^     | 2026 January
+|      | sparse     |    48/365   | ^     | 2026 January
+| 6x6  | full easy  |   309/365   | 4.3 s | 2026 January
+|      | full hard  |   305/365   | ^     | 2026 January
+|      | sparse     |     5/365   | ^     | 2026 January
+| 7x7  | full easy  |   248/365   | 2.8 s | 2026 January
+|      | full hard  |   234/365   | ^     | 2026 January
+| 8x8  | full easy  |   173/365   | 4.6 s | 2026 January
+|      | full hard  |   155/365   | ^     | 2026 January
+
+### Notes
+
+<details>
+  <summary> <strong>show</strong> </summary>
+
+- The algorithm is not strong at all on sparse puzzles, although it is fairly impressive how far it can get on sparse 5x5 puzzles.
+  - Only 5/365 on the sparse 6x6 puzzles... 🤣
+- Despite the increase in information with larger puzzle sizes, the increase in complexity is much more significant.
+  - That being said, the algorithm often reaches an *almost*-solved state.
+  - I’m currently figuring out how to improve the algorithm to handle these final near-solved states. Many of them need only a single push before the rules of Sudoku can clear the rest of the puzzle!
+- I’m still torn over whether to implement a weak version of lane-isolated backtracking, because humans can do this mentally, so it's arguably not beyond the reach of “logic”. But it’s so ambiguous...
+
+</details>
 
 
 <br>

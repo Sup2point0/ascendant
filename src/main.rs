@@ -14,10 +14,10 @@ fn main()
 {
     let start = std::time::Instant::now();
 
-    // let res = runner::fetch_load_save::<5>(Difficulty::Sparse);
+    // let res = runner::fetch_load_save::<6>(Difficulty::Sparse);
 
     // let res = runner::try_solve_stored_all();
-    let res = runner::try_solve_stored::<5>();
+    let res = runner::try_solve_stored::<6>();
     // let res = runner::try_solve_stored_single::<6>(Difficulty::Full, "0316");
 
     match res {
