@@ -18,12 +18,6 @@ pub struct Cli
 
     #[clap(
         long, global = true,
-        help = "Show failed puzzle solution attempts?"
-    )]
-    pub show_fail: bool,
-
-    #[clap(
-        long, global = true,
         help = "Show steps when solving puzzles?"  // passes
     )]
     pub show_steps: bool,
@@ -48,12 +42,12 @@ pub enum Mode
 
         #[arg(long,
             value_parser = Cli::try_read_diff,
-            help = "Difficulty of the puzzle to solve (1, 2 or 3)"
+            help = "Difficulty of the puzzle to solve (1/2/3)"
         )]
         diff: Option<Difficulty>,
 
         #[arg(long,
-            help = "Date of the puzzle in the format `mmdd` (e.g. `0420` for April 20)"
+            help = "Date of the puzzle in `mmdd` format (e.g. `0420` for April 20)"
         )]
         date: Option<String>,
 
@@ -70,6 +64,12 @@ pub enum Mode
             help = "Sizes of puzzles to solve"
         )]
         sizes: Option<Vec<usize>>,
+
+        #[clap(
+            long, global = true,
+            help = "Show failed puzzle solution attempts?"
+        )]
+        show_fail: bool,
     },
 
     #[command(about = "Fetch puzzles from brainbashers.com")]
@@ -92,11 +92,12 @@ impl Cli
 {
     pub fn exec(self)
     {
+        println!(">> Running ascendant...");
+
         // SAFE: This is not multithreaded, and is only for logging anyway.
         unsafe {
             if      self.debug      { OUTPUT_DETAIL = OutputDetail::DEBUG_STEPS; }
             else if self.show_steps { OUTPUT_DETAIL = OutputDetail::SHOW_PASSES; }
-            else if self.show_fail  { OUTPUT_DETAIL = OutputDetail::SHOW_FAIL; }
         }
 
         let start = std::time::Instant::now();
@@ -156,9 +157,16 @@ impl Cli
 
     fn solve_all(self) -> ah::Result<()>
     {
-        let Mode::SolveAll { sizes } = &self.mode else { unreachable!() };
+        let Mode::SolveAll { sizes, show_fail } = self.mode else { unreachable!() };
 
         if let Some(sizes) = sizes {
+            // SAFE: This is not multithreaded, and is only for logging anyway.
+            unsafe {
+                if show_fail {
+                    OUTPUT_DETAIL = OUTPUT_DETAIL.max(OutputDetail::SHOW_FAIL);
+                }
+            }
+
             seq_macro::seq!(N in 4..=9 {
                 if sizes.contains(&N) {
                     runner::try_solve_stored::<N>()?;

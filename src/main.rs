@@ -11,8 +11,6 @@ use ascendant::*;
 
 fn main()
 {
-    println!(">> Running ascendant...");
-
     let cli = cli::Cli::parse();
     cli.exec();
 }
