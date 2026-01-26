@@ -82,7 +82,7 @@ use ascendant::Cell::Solved as Sv;
     const N: usize = 6;
     let clue = 4;
 
-    // 4 | _ _ 4 _ 6 _
+    // 4 | _ _ 4 _ 6 5
     let mut lane = [ p![1,2,3], p![1,2,3], Sv(4), p![1,2,3], Sv(6), Sv(5) ];
 
     Solver::<N>::deduce_sequence_in_lane((Some(clue), util::arr(lane.iter_mut())));

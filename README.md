@@ -94,7 +94,12 @@ These are the steps in each pass-through:[^order]
 - **Sudoku**: Eliminate invalid candidates by the rules of Sudoku.
   - e.g. A lane $`\text{| 3 [36] [123] \_ \_ \_ |}`$ can be eliminated to $`\text{| 3 [6] [12] \_ \_ \_ |}`$.
 - **Pinpoint**: Mark cells which are the only place in their lane for a digit to go as solved.
-  - e.g. A lane $`\text{| [123] [23] [24] [34] 5 6 |}`$ can be solved to $`\text{| 1 [23] [24] [34] 5 6 |}`$
+  - e.g. A lane $`\text{| [123] [23] [24] [34] 5 6 |}`$ can be solved to $`\text{| 1 [23] [24] [34] 5 6 |}`$.
+- **Isolate**: Eliminate candidates outside of “isolates” (couples, triplets, etc.)
+  - Two $`[12]`$ cells between them are guaranteed to use both $1$ and $2$.
+    - We might not know which way round, but we can still deduce that $1$ and $2$ cannot go in any other cells in the lane.
+  - This can be thought of as a “pseudo-pinpoint” followed by sudoku elimination.
+  - e.g. A lane $`\text{| [12] [12] [123] [26] \_ \_ |}`$ can be eliminated to $`\text{| [12] [12] [3] [6] \_ \_ |}`$.
 - **Solve**: Mark cells with only 1 candidate left as solved.
 
 ### Terminology
