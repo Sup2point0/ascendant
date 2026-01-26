@@ -8,6 +8,7 @@ anyhow = "1.0.100"
 arrayvec = "0.7.6"
 bit-set = "0.8.0"
 chromiumoxide = "0.8.0"
+clap = { version = "4.5.54", features = ["derive"] }
 futures = "0.3.31"
 itertools = "0.14.0"
 lazy_static = "1.5.0"
