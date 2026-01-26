@@ -75,7 +75,7 @@ pub fn try_solve_all<const N: usize>(puzzles: Vec<Grid<N>>) -> ah::Result<u32>
             debug! {
                 OutputDetail::SHOW_FAIL => {
                     if let Some(ref url) = orig.url {
-                        println!("\nsolving grid from {url}");
+                        println!("\nsolving puzzle from {url}");
                     }
                     println!("{orig:?}");
                     println!("{grid:?}");

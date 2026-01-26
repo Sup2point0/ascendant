@@ -18,14 +18,17 @@ pub enum OutputDetail
     DEBUG_STEPS,
 }
 
-impl Default for OutputDetail {
+impl Default for OutputDetail
+{
     fn default() -> Self {
         Self::DEFAULT
     }
 }
 
-impl Into<usize> for OutputDetail {
-    fn into(self) -> usize {
+impl Into<usize> for OutputDetail
+{
+    fn into(self) -> usize
+    {
         match self {
             Self::DEFAULT     => 0,
             Self::SHOW_FAIL   => 1,

@@ -57,10 +57,10 @@ pub enum Mode
         )]
         date: Option<String>,
 
-        #[arg(long, action,
+        #[arg(short = 'r', long, action,
             help = "Pick a random puzzle of the given size and difficulty"
         )]
-        random: bool,
+        random_date: bool,
     },
 
     #[command(about = "Solve all stored puzzles")]
@@ -95,14 +95,14 @@ impl Cli
         // SAFE: This is not multithreaded, and is only for logging anyway.
         unsafe {
             if      self.debug      { OUTPUT_DETAIL = OutputDetail::DEBUG_STEPS; }
-            if      self.show_steps { OUTPUT_DETAIL = OutputDetail::SHOW_PASSES; }
+            else if self.show_steps { OUTPUT_DETAIL = OutputDetail::SHOW_PASSES; }
             else if self.show_fail  { OUTPUT_DETAIL = OutputDetail::SHOW_FAIL; }
         }
 
         let start = std::time::Instant::now();
 
         let res = match self.mode {
-            Mode::SolveOne{..} => self.solve(),
+            Mode::SolveOne{..} => self.solve_one(),
             Mode::SolveAll{..} => self.solve_all(),
             Mode::Fetch{..}    => self.fetch(),
         };
@@ -118,16 +118,16 @@ impl Cli
         }
     }
 
-    fn solve(self) -> ah::Result<()>
+    fn solve_one(self) -> ah::Result<()>
     {
-        let Mode::SolveOne { size, diff, date, random } = self.mode else { unreachable!() };
+        let Mode::SolveOne { size, diff, date, random_date } = self.mode else { unreachable!() };
 
         let Some(diff) = diff
             else { Err(ah::anyhow!(
                 "No puzzle difficulty specified - please pass in the difficulty of the puzzle via `--diff`"
             ))? };
 
-        let date = if random {
+        let date = if random_date {
             let mut rng = rand::rng();
 
             let (month, upper) = DATE_RANGES[rng.random_range(0..12)];
@@ -144,6 +144,9 @@ impl Cli
 
         seq_macro::seq!(N in 4..=9 {
             if size == N {
+                // SAFE: This is not multithreaded, and is only for logging anyway.
+                unsafe { OUTPUT_DETAIL = OUTPUT_DETAIL.max(OutputDetail::SHOW_PASSES) }
+
                 runner::try_solve_stored_single::<N>(diff, &date)?;
             }
         });

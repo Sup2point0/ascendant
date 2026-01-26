@@ -22,7 +22,7 @@ Clone the repository:
 See the algorithm in action:
 
 ```bash
-ascendant> cargo run -- solve-one 7 --diff 2 --random
+ascendant> cargo run -- solve-one 7 --diff=2 --random-date
 ```
 
 See what else you can do:
@@ -49,8 +49,8 @@ ascendant> cargo run -- solve-all 4 5 6
 View the steps in solving one puzzle:
 
 ```bash
-# solve the 7x7 full hard (difficulty 2) puzzle from April 1, showing all solution steps
-ascendant> cargo run -- solve-one 7 --diff 2 --date 0401 --show-steps
+# solve the 7x7 full hard (difficulty 2) puzzle from April 1, showing all solution substeps
+ascendant> cargo run -- solve-one 7 --diff=2 --date=0401 --debug
 ```
 
 
