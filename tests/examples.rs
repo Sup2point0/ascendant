@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use crate::*;
+use ascendant::*;
 
 
 const CC: Digit = 0;
@@ -18,7 +18,7 @@ pub fn grid_4x4_full_1() -> Grid<4> {
         [  4,  00, 00, 00, 00,   1 ],
 
         [ 00,   3,  2,  2,  1,  00 ],
-    ])
+    ].into())
 }
 
 pub fn grid_4x4_sparse_1() -> Grid<4> {
@@ -31,7 +31,7 @@ pub fn grid_4x4_sparse_1() -> Grid<4> {
         [ 00,  00, 00, 00, 00,   3 ],
 
         [ 00,  00, 00, 00, 00,  00 ],
-    ])
+    ].into())
 }
 
 /// https://www.brainbashers.com/showskyscrapers.asp?date=0107&size=4&diff=3
@@ -45,7 +45,7 @@ pub fn grid_4x4_sparse_2() -> Grid<4> {
         [ 00,  00, 00, 00,  2,  00 ],
 
         [ 00,   1, 00, 00, 00,  00 ],
-    ])
+    ].into())
 }
 
 
@@ -62,7 +62,7 @@ pub fn grid_5x5_full_easy_1() -> Grid<5> {
         [  2,  00, 00, 00, 00, 00,   2 ],
 
         [ 00,   2,  4,  4,  1,  2,  00 ],
-    ])
+    ].into())
 }
 
 pub fn grid_5x5_full_hard_1() -> Grid<5> {
@@ -76,7 +76,7 @@ pub fn grid_5x5_full_hard_1() -> Grid<5> {
         [  2,  00, 00, 00, 00, 00,   2 ],
 
         [ 00,   2,  1,  4,  2,  2,  00 ],
-    ])
+    ].into())
 }
 
 pub fn grid_5x5_sparse_1() -> Grid<5> {
@@ -90,7 +90,7 @@ pub fn grid_5x5_sparse_1() -> Grid<5> {
         [ 00,  00, 00, 00, 00, 00,   2 ],
 
         [ 00,  00, 00,  4, 00, 00,  00 ],
-    ])
+    ].into())
 }
 
 pub fn grid_5x5_sparse_2() -> Grid<5> {
@@ -104,7 +104,7 @@ pub fn grid_5x5_sparse_2() -> Grid<5> {
         [  4,  00, 00, 00, 00, 00,  00 ],
 
         [ 00,  00, 00,  2, 00, 00,  00 ],
-    ])
+    ].into())
 }
 
 
@@ -122,7 +122,7 @@ pub fn grid_6x6_full_easy_1() -> Grid<6> {
         [  4,   3, 00, 00, 00, 00, 00,   1 ],
 
         [ 00,   4,  3,  2,  3,  2,  1,  00 ],
-    ])
+    ].into())
 }
 
 pub fn grid_6x6_full_hard_1() -> Grid<6> {
@@ -137,7 +137,7 @@ pub fn grid_6x6_full_hard_1() -> Grid<6> {
         [  1,  00, 00, 00, 00, 00, 00,   3 ],
 
         [ 00,   1,  3,  2,  2,  2,  3,  00 ],
-    ])
+    ].into())
 }
 
 pub fn grid_6x6_sparse_1() -> Grid<6> {
@@ -152,7 +152,7 @@ pub fn grid_6x6_sparse_1() -> Grid<6> {
         [ 00,  00, 00, 00, 00, 00, 00,  00 ],
 
         [ 00,  00, 00,  3, 00, 00, 00,  00 ],
-    ])
+    ].into())
 }
 
 
@@ -171,7 +171,7 @@ pub fn grid_7x7_full_easy_1() -> Grid<7> {
         [  2,  00, 00, 00, 00, 00, 00,  4,   4 ],
 
         [ 00,   3,  1,  4,  2,  4,  2,  3,  00 ],
-    ])
+    ].into())
 }
 
 pub fn grid_7x7_full_hard_1() -> Grid<7> {
@@ -187,7 +187,7 @@ pub fn grid_7x7_full_hard_1() -> Grid<7> {
         [  2,  00, 00, 00, 00,  5, 00, 00,   2 ],
 
         [ 00,   3,  1,  3,  3,  2,  3,  2,  00 ],
-    ])
+    ].into())
 }
 
 
@@ -207,7 +207,7 @@ pub fn grid_8x8_full_easy_1() -> Grid<8> {
         [  5,  00, 00, 00,  4, 00, 00, 00, 00,   1 ],
 
         [ 00,   2,  4,  3,  2,  3,  2,  3,  1,  00 ],
-    ])
+    ].into())
 }
 pub fn sol_8x8_full_easy_1() -> Grid<8> {
     Grid::<8>::construct([
@@ -221,7 +221,7 @@ pub fn sol_8x8_full_easy_1() -> Grid<8> {
         [ CC,  1,  2,  3,  8,  5,  6,  7,  4, CC ],
         [ CC,  3,  1,  2,  4,  6,  7,  5,  8, CC ],
         [ CC, CC, CC, CC, CC, CC, CC, CC, CC, CC ],
-    ])
+    ].into())
 }
 
 
@@ -243,7 +243,7 @@ pub fn grid_9x9_full_1() -> Grid<9> {
         [  2,  00, 00, 00, 00, 00,  5, 00, 00, 00,   3 ],
 
         [ 00,   2,  3,  2,  1,  3,  3,  3,  4,  3,  00 ],
-    ])
+    ].into())
 }
 pub fn sol_9x9_full_1() -> Grid<9> {
     Grid::construct([
@@ -258,5 +258,5 @@ pub fn sol_9x9_full_1() -> Grid<9> {
         [ CC,   6,  2,  9,  1,  4,  8,  3,  5,  7,  CC ],
         [ CC,   8,  4,  1,  9,  2,  5,  7,  3,  6,  CC ],
         [ CC,  CC, CC, CC, CC, CC, CC, CC, CC, CC,  CC ],
-    ])
+    ].into())
 }

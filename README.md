@@ -2,7 +2,7 @@
 
 An automated solver for [*Skyscrapers*<sup>↗</sup>](https://sup2point0.github.io/skyscraping/walk/primer) puzzles, relying only on pure logic.
 
-For a rundown of the algorithm, jump to [§ Algorithm](#algorithm). For an explanation of how Skyscrapers puzzles work, I have a [quickfire explanation on Skyscraping<sup>↗</sup>](https://sup2point0.github.io/skyscraping/walk/primer) you can check out.
+For a rundown of the algorithm, jump to [§ Algorithm](#algorithm). For an explanation of how Skyscrapers puzzles work, I have a [quickfire explanation on *Skyscraping*<sup>↗</sup>](https://sup2point0.github.io/skyscraping/walk/primer) you can check out.
 
 
 <br>
