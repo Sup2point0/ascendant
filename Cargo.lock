@@ -86,6 +86,7 @@ dependencies = [
  "itertools",
  "lazy_static",
  "natbitset",
+ "rand",
  "regex",
  "seq-macro",
  "serde",

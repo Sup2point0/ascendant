@@ -1,6 +1,7 @@
 use anyhow as ah;
 
 use crate::*;
+use crate::cli::detail::OutputDetail;
 
 
 pub fn try_solve_stored_single<const N: usize>(difficulty: Difficulty, date: &str) -> ah::Result<()>
@@ -70,12 +71,16 @@ pub fn try_solve_all<const N: usize>(puzzles: Vec<Grid<N>>) -> ah::Result<u32>
         if grid.is_solved() {
             solved += 1;
         }
-        else if util::args("show-fail") {
-            if let Some(ref url) = orig.url {
-                println!("\nsolving grid from {url}");
-            }
-            println!("{orig:?}");
-            println!("{grid:?}");
+        else {
+            debug! {
+                OutputDetail::SHOW_FAIL => {
+                    if let Some(ref url) = orig.url {
+                        println!("\nsolving grid from {url}");
+                    }
+                    println!("{orig:?}");
+                    println!("{grid:?}");
+                }
+            };
         }
 
         if i % j == 0 && i > 0 {

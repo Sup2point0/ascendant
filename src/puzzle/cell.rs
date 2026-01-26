@@ -55,11 +55,14 @@ impl<const N: usize> Cell<N>
                 lower..= upper
             }
             else {
-                if util::args("CRASH") {
-                    return Err(format!(
-                        "Deduced no candidates for cell, calculated lower: `{lower}`, upper: `{upper}`"
-                    ));
-                }
+                debug! {
+                    {
+                        return Err(format!(
+                            "Deduced no candidates for cell, calculated lower: `{lower}`, upper: `{upper}`"
+                        ));
+                    }
+                };
+                
                 1..=N
             }
         ).collect())

@@ -44,10 +44,7 @@ impl<const N: usize> Solver<N>
 
         for x in 0..N { did_deduce |= Self::isolate_groups_in_lane(grid.look_across_row_mut(x).1) }
         for y in 0..N { did_deduce |= Self::isolate_groups_in_lane(grid.look_across_col_mut(y).1) }
-        
-        if util::args("DEBUG") {
-            println!("post-isolate:\n{grid:?}");
-        }
+        debug!("post-isolate:\n{grid:?}");
 
         did_deduce
     }
@@ -147,10 +144,7 @@ impl<const N: usize> Solver<N>
 
         for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_across_row_mut(x).1) }
         for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_across_col_mut(y).1) }
-        
-        if util::args("DEBUG") {
-            println!("post-pinpoint:\n{grid:?}");
-        }
+        debug!("post-pinpoint:\n{grid:?}");
 
         did_deduce
     }

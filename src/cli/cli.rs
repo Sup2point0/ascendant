@@ -1,7 +1,12 @@
 use anyhow as ah;
 use clap;
+use rand::Rng;
 
 use crate::*;
+use crate::cli::detail::*;
+
+
+pub static mut OUTPUT_DETAIL: OutputDetail = OutputDetail::DEFAULT;
 
 
 #[derive(Debug, clap::Parser)]
@@ -12,23 +17,29 @@ pub struct Cli
     pub mode: Mode,
 
     #[clap(
-        short = 'd', long = "debug", global = true,
-        help = "Enable debug output?"
-    )]
-    pub debug: bool,
-
-    #[clap(
         long, global = true,
         help = "Show failed puzzle solution attempts?"
     )]
     pub show_fail: bool,
+
+    #[clap(
+        long, global = true,
+        help = "Show steps when solving puzzles?"  // passes
+    )]
+    pub show_steps: bool,
+
+    #[clap(
+        short = 'd', long = "debug", global = true,
+        help = "Show all sub-steps when solving puzzles?"  // steps
+    )]
+    pub debug: bool,
 }
 
 #[derive(Clone, Debug, clap::Subcommand)]
 pub enum Mode
 {
-    #[command(about = "Solve a single puzzle, showing all steps")]
-    SOLVE
+    #[command(about = "Solve a single puzzle")]
+    SolveOne
     {
         #[arg(
             help = "Size of the puzzle to solve"
@@ -45,10 +56,15 @@ pub enum Mode
             help = "Date of the puzzle in the format `mmdd` (e.g. `0420` for April 20)"
         )]
         date: Option<String>,
+
+        #[arg(long, action,
+            help = "Pick a random puzzle of the given size and difficulty"
+        )]
+        random: bool,
     },
 
-    #[command(about = "Solve all stored puzzles of a given size(s), showing overall performance")]
-    SOLVE_ALL
+    #[command(about = "Solve all stored puzzles")]
+    SolveAll
     {
         #[arg(
             help = "Sizes of puzzles to solve"
@@ -56,8 +72,8 @@ pub enum Mode
         sizes: Option<Vec<usize>>,
     },
 
-    #[command(about = "Fetch puzzles of a given size from brainbashers.com")]
-    FETCH
+    #[command(about = "Fetch puzzles from brainbashers.com")]
+    Fetch
     {
         #[arg(
             help = "Sizes of puzzles to fetch"
@@ -76,12 +92,19 @@ impl Cli
 {
     pub fn exec(self)
     {
+        // SAFE: This is not multithreaded, and is only for logging anyway.
+        unsafe {
+            if      self.debug      { OUTPUT_DETAIL = OutputDetail::DEBUG_STEPS; }
+            if      self.show_steps { OUTPUT_DETAIL = OutputDetail::SHOW_PASSES; }
+            else if self.show_fail  { OUTPUT_DETAIL = OutputDetail::SHOW_FAIL; }
+        }
+
         let start = std::time::Instant::now();
 
         let res = match self.mode {
-            Mode::SOLVE{..}     => self.solve(),
-            Mode::SOLVE_ALL{..} => self.solve_all(),
-            Mode::FETCH{..}     => self.fetch(),
+            Mode::SolveOne{..} => self.solve(),
+            Mode::SolveAll{..} => self.solve_all(),
+            Mode::Fetch{..}    => self.fetch(),
         };
 
         match res {
@@ -97,17 +120,27 @@ impl Cli
 
     fn solve(self) -> ah::Result<()>
     {
-        let Mode::SOLVE { size, diff, date } = self.mode else { unreachable!() };
+        let Mode::SolveOne { size, diff, date, random } = self.mode else { unreachable!() };
 
         let Some(diff) = diff
             else { Err(ah::anyhow!(
                 "No puzzle difficulty specified - please pass in the difficulty of the puzzle via `--diff`"
             ))? };
 
-        let Some(date) = date
-            else { Err(ah::anyhow!(
-                "No puzzle date specified - please pass in the date of the puzzle via `--date`"
-            ))? };
+        let date = if random {
+            let mut rng = rand::rng();
+
+            let (month, upper) = DATE_RANGES[rng.random_range(0..12)];
+            let day = rng.random_range(0..=upper);
+            format!("{:0>2}{:0>2}", month, day)
+        }
+        else {
+            date.ok_or(
+                ah::anyhow!(
+                    "No puzzle date specified - please pass in the date of the puzzle via `--date`"
+                )
+            )?
+        };
 
         seq_macro::seq!(N in 4..=9 {
             if size == N {
@@ -120,7 +153,7 @@ impl Cli
 
     fn solve_all(self) -> ah::Result<()>
     {
-        let Mode::SOLVE_ALL { sizes } = &self.mode else { unreachable!() };
+        let Mode::SolveAll { sizes } = &self.mode else { unreachable!() };
 
         if let Some(sizes) = sizes {
             seq_macro::seq!(N in 4..=9 {
@@ -137,7 +170,7 @@ impl Cli
 
     fn fetch(self) -> ah::Result<()>
     {
-        let Mode::FETCH { sizes, diffs } = self.mode else { unreachable!() };
+        let Mode::Fetch { sizes, diffs } = self.mode else { unreachable!() };
 
         let diffs = diffs.unwrap_or_else(|| {
             println!("!! Warning: No difficulties specified, defaulting to fetching Sparse puzzles...");

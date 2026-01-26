@@ -21,7 +21,7 @@ impl Fetcher
 {
     pub fn get_puzzle_url<const N: usize>(
         diff: Difficulty,
-        (month, day): (usize, usize),
+        (month, day): (usize, u8),
     ) -> Url
     {
         format!(
@@ -34,19 +34,13 @@ impl Fetcher
 
     pub fn get_puzzle_urls<const N: usize>(diff: Difficulty) -> Vec<Url>
     {
-        [
-            (1, 31), (2, 28), (3, 31),
-            (4, 30), (5, 31), (6, 30),
-            (7, 31), (8, 31), (9, 30),
-            (10, 31), (11, 30), (12, 31),
-        ].into_iter()
-        .flat_map(|(month, days)|
-            (1..=days)
-            .map(|d|
-                Self::get_puzzle_url::<N>(diff, (month, d))
+        DATE_RANGES.into_iter()
+            .flat_map(|(month, days)|
+                (1..=days)
+                    .map(|d| Self::get_puzzle_url::<N>(diff, (month, d)))
+                    .collect_vec()
             )
-            .collect_vec()
-        ).collect()
+            .collect()
     }
 
     pub async fn fetch<const N: usize>(urls: Vec<Url>) -> ah::Result<Vec<Grid<N>>>

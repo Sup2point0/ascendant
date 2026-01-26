@@ -2,7 +2,7 @@
 
 An automated solver for [*Skyscrapers*<sup>↗</sup>](https://sup2point0.github.io/skyscraping/walk/primer) puzzles, relying only on pure logic.
 
-For a rundown of the algorithm, jump to [§ Algorithm](#algorithm). For an explanation of how Skyscrapers puzzles work, I have a [quickfire explanation on Skyscraping<sup>↗</sup>](https://sup2point0.github.io/skyscraping/walk/primer).
+For a rundown of the algorithm, jump to [§ Algorithm](#algorithm). For an explanation of how Skyscrapers puzzles work, I have a [quickfire explanation on Skyscraping<sup>↗</sup>](https://sup2point0.github.io/skyscraping/walk/primer) you can check out.
 
 
 <br>
@@ -16,15 +16,42 @@ Clone the repository:
 > git clone https://github.com/Sup2point0/ascendant
 ```
 
-You will need [Rust nightly<sup>↗</sup>](https://doc.rust-lang.org/book/appendix-07-nightly-rust.html) since the project uses [`generic_const_exprs`](https://github.com/rust-lang/rust/issues/76560).
+> [!Important]
+> You will need [Rust nightly<sup>↗</sup>](https://doc.rust-lang.org/book/appendix-07-nightly-rust.html) since the project uses [`generic_const_exprs`](https://github.com/rust-lang/rust/issues/76560).
 
-```rust
-ascendant> cargo run
+See the algorithm in action:
+
+```bash
+ascendant> cargo run -- solve-one 7 --diff 2 --random
 ```
 
-You can configure the puzzle size to be solved in `src/main.rs`.[^cli]
+See what else you can do:
 
-[^cli]: I might add a CLI soon to allow features like seeing the algorithm in action for one particular puzzle.
+```bash
+ascendant> cargo run -- --help
+```
+
+### Features
+Fetch puzzles:
+
+```bash
+# fetch 6x6 puzzles of all difficulties
+ascendant> cargo run -- fetch 6 --diffs 1 2 3
+```
+
+Solve puzzles in bulk and view stats:
+
+```bash
+# solve all 4x4, 5x5, 6x6 puzzles
+ascendant> cargo run -- solve-all 4 5 6
+```
+
+View the steps in solving one puzzle:
+
+```bash
+# solve the 7x7 full hard (difficulty 2) puzzle from April 1, showing all solution steps
+ascendant> cargo run -- solve-one 7 --diff 2 --date 0401 --show-steps
+```
 
 
 <br>
