@@ -58,10 +58,8 @@ impl<const N: usize> Solver<N>
     {
         let mut did_deduce = false;
 
-        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_down_mut(x).1) }
-        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_up_mut(x).1) }
-        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_right_mut(y).1) }
-        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_left_mut(y).1) }
+        for x in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_across_row_mut(x).1) }
+        for y in 0..N { did_deduce |= Self::pinpoint_cells_in_lane(grid.look_across_col_mut(y).1) }
         
         if util::args("DEBUG") {
             println!("post-pinpoint:\n{grid:?}");

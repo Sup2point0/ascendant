@@ -43,7 +43,7 @@ You can configure the puzzle size to be solved in `src/main.rs`.[^cli]
 | :--- | :--------- | :---------- | :---- | :---- |
 | 4x4  | full       | **365/365** | 0.7 s | 2026 January
 |      | sparse     |   127/365   | ^     | 2026 January
-| 5x5  | full easy  |   361/365   | 1.5 s | 2026 January
+| 5x5  | full easy  |   361/365   | 1.0 s | 2026 January
 |      | full hard  |   357/365   | ^     | 2026 January
 |      | sparse     |    48/365   | ^     | 2026 January
 | 6x6  | full easy  |   309/365   | 4.3 s | 2026 January
