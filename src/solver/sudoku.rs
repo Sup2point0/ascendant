@@ -1,5 +1,3 @@
-use std::collections::HashMap;
-
 use itertools::Itertools;
 use natbitset::Bitset;
 
@@ -16,13 +14,7 @@ impl<const N: usize> Solver<N>
     }
 
     /// Given a collection of sets, find the combinations of sets which between them are guaranteed to consume all the digits in their union.
-    /// 
-    /// The returned value is a map from unions to the subsets comprising that union, e.g.
-    /// 
-    /// HashMap {
-    ///     [1234] -> [12] [123] [34]
-    /// }
-    pub fn find_isolated_groups<I>(sets: I) -> HashMap<Bitset<N>, Vec<Bitset<N>>>
+    pub fn find_isolated_groups<I>(sets: I) -> Vec<Bitset<N>>
         where I: IntoIterator<Item = Bitset<N>> + Clone
     {
         let combinations = (2..=N).flat_map(|n|
@@ -37,12 +29,15 @@ impl<const N: usize> Solver<N>
                     |p, q| (p | *q)
                 );
                 let is_isolated = sets.len() == union.len();
-                is_isolated.then_some((union, sets))
+                is_isolated.then_some(union)
             });
         
         groups.collect()
     }
 
+    /// Applies `isolate_groups_in_lane` to all lanes in the grid.
+    /// 
+    /// (See that method for how this works.)
     pub fn isolate_all_in_grid(grid: &mut Grid<N>) -> bool
     {
         let mut did_deduce = false;
@@ -57,6 +52,11 @@ impl<const N: usize> Solver<N>
         did_deduce
     }
 
+    /// Find isolated groups in `lane` and eliminate their candidates from other `Cell::Pencil`s.
+    /// 
+    /// An “isolated” group is a set of `Cell::Pencil`s which, between them, are *guaranteed* to consume the candidates they contain. For instance, if we have two `Cell::Pencil(Bitset(1, 2))`, we know one must contain the `1`, and the other must contain the `2`.
+    /// 
+    /// We don't know which way round (yet), but we can still use this information - it means that `1` and `2` cannot go anywhere else in the lane. Hence we can eliminate `1` and `2` as candidates from all other `Cell::Pencil`s in the lane.
     pub fn isolate_groups_in_lane(mut lane: [&mut Cell<N>; N]) -> bool
     {
         let mut did_deduce = false;
@@ -77,9 +77,9 @@ impl<const N: usize> Solver<N>
             for cell in &mut lane {
                 let Cell::Pencil(marks) = cell else { continue; };
 
-                if !Self::is_subset(*marks, group.0) {
+                if !Self::is_subset(*marks, group) {
                     let before = *marks;
-                    *marks /= group.0;
+                    *marks /= group;
                     
                     did_deduce |= (*marks != before);
                 }
@@ -89,7 +89,9 @@ impl<const N: usize> Solver<N>
         did_deduce
     }
 
-    /// Apply the rules of Sudoku to eliminate candidates from all `Cell::Pencil` in `grid`.
+    /// Apply `deduce_one_cell_sudoku_style` to all cells in the grid.
+    /// 
+    /// (See that method for how this works.)
     pub fn deduce_all_sudoku_style(grid: &mut Grid<N>) -> bool
     {
         let mut did_deduce = false;
@@ -136,7 +138,9 @@ impl<const N: usize> Solver<N>
         did_deduce
     }
 
-    /// Find cells in `grid` that can be solved and turn them from `Cell::Pencil` to `Cell::Solved`.
+    /// Apply `pinpoint_cells_in_lane` to all lanes in the grid.
+    /// 
+    /// (See that method for how this works.)
     pub fn pinpoint_all_in_grid(grid: &mut Grid<N>) -> bool
     {
         let mut did_deduce = false;

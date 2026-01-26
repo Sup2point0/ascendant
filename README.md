@@ -39,20 +39,20 @@ You can configure the puzzle size to be solved in `src/main.rs`.[^cli]
 
 [^human]: After many years solving Skyscrapers (on-off, granted), I can speedrun some sparse 5x5, will need to spend maybe a good hour on sparse 6x6, and have only ever solved 1 sparse 7x7, which took many sittings over many days. Ofc, you may find easier large puzzles with specially designed tricks on sites other than Brainbashers, but this is the only site I’ve really used, so it’s all I have to go off =)
 
-| size | difficulty | solved      | time  | as of |
-| :--- | :--------- | :---------- | :---- | :---- |
-| 4x4  | full       | **365/365** | 0.7 s | 2026 January
-|      | sparse     |   127/365   | ^     | 2026 January
-| 5x5  | full easy  |   361/365   | 1.0 s | 2026 January
-|      | full hard  |   357/365   | ^     | 2026 January
-|      | sparse     |    48/365   | ^     | 2026 January
-| 6x6  | full easy  |   309/365   | 4.3 s | 2026 January
-|      | full hard  |   305/365   | ^     | 2026 January
-|      | sparse     |     5/365   | ^     | 2026 January
-| 7x7  | full easy  |   248/365   | 2.8 s | 2026 January
-|      | full hard  |   234/365   | ^     | 2026 January
-| 8x8  | full easy  |   173/365   | 4.6 s | 2026 January
-|      | full hard  |   155/365   | ^     | 2026 January
+| size | difficulty | solved      | time   | as of |
+| :--- | :--------- | :---------- | :----- | :---- |
+| 4x4  | full       | **365/365** | ~0.7 s | 2026 January
+|      | sparse     |   127/365   | ^      | 2026 January
+| 5x5  | full easy  |   361/365   | 1.0 s  | 2026 January
+|      | full hard  |   357/365   | ^      | 2026 January
+|      | sparse     |    48/365   | ^      | 2026 January
+| 6x6  | full easy  |   308/365   | ~2.5 s | 2026 January
+|      | full hard  |   308/365   | ^      | 2026 January
+|      | sparse     |     5/365   | ^      | 2026 January
+| 7x7  | full easy  |   247/365   | ~2.5 s | 2026 January
+|      | full hard  |   241/365   | ^      | 2026 January
+| 8x8  | full easy  |   172/365   | ~4.5 s | 2026 January
+|      | full hard  |   161/365   | ^      | 2026 January
 
 ### Notes
 
@@ -95,10 +95,10 @@ These are the steps in each pass-through:[^order]
   - e.g. A lane $`\text{| 3 [36] [123] \_ \_ \_ |}`$ can be eliminated to $`\text{| 3 [6] [12] \_ \_ \_ |}`$.
 - **Pinpoint**: Mark cells which are the only place in their lane for a digit to go as solved.
   - e.g. A lane $`\text{| [123] [23] [24] [34] 5 6 |}`$ can be solved to $`\text{| 1 [23] [24] [34] 5 6 |}`$.
-- **Isolate**: Eliminate candidates outside of “isolates” (couples, triplets, etc.)
+- **Isolate**: Eliminate candidates outside of ‘isolated’ groups (couples, triplets, etc.)
   - Two $`[12]`$ cells between them are guaranteed to use both $1$ and $2$.
     - We might not know which way round, but we can still deduce that $1$ and $2$ cannot go in any other cells in the lane.
-  - This can be thought of as a “pseudo-pinpoint” followed by sudoku elimination.
+  - This can be thought of as a ‘pseudo-pinpoint’ followed by sudoku elimination.
   - e.g. A lane $`\text{| [12] [12] [123] [26] \_ \_ |}`$ can be eliminated to $`\text{| [12] [12] [3] [6] \_ \_ |}`$.
 - **Solve**: Mark cells with only 1 candidate left as solved.
 

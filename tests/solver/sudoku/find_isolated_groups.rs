@@ -1,4 +1,3 @@
-use maplit::hashmap;
 use natbitset::*;
 use natbitset::byteset as b;
 
@@ -13,9 +12,9 @@ use ascendant::*;
             b![1,2],
             b![1,2],
         ]),
-        hashmap! {
-            b![1,2] => vec![b![1,2], b![1,2]],
-        }
+        vec![
+            b![1,2],
+        ]
     );
     
     // can ignore
@@ -25,9 +24,9 @@ use ascendant::*;
             b![1,2],
             b![3,4],
         ]),
-        hashmap! {
-            b![1,2] => vec![b![1,2], b![1,2]],
-        }
+        vec![
+            b![1,2],
+        ]
     );
     
     // can chain merge
@@ -37,9 +36,9 @@ use ascendant::*;
             b![2,3],
             b![3,1],
         ]),
-        hashmap! {
-            b![1,2,3] => vec![b![1,2], b![2,3], b![3,1]],
-        }
+        vec![
+            b![1,2,3],
+        ]
     );
     
     // should cross merge
@@ -50,10 +49,10 @@ use ascendant::*;
             b![3,4],
             b![3,4],
         ]),
-        hashmap! {
-            b![1,2] => vec![b![1,2], b![1,2]],
-            b![3,4] => vec![b![3,4], b![3,4]],
-            b![1,2,3,4] => vec![b![1,2], b![1,2], b![3,4], b![3,4]],
-        }
+        vec![
+            b![1,2],
+            b![3,4],
+            b![1,2,3,4],
+        ]
     );
 }
