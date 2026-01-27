@@ -22,10 +22,10 @@ use ascendant::Cell::Solved as Sv;
     assert_eq!(lane, [ p![3,4], p![1,2,3], p![1,2,3], Sv(5), p![1;4] ]);
 
     // 2 | 3 _ _ 5 _
-    let mut lane = [Sv(3), p![1;4], p![1;4], Sv(5), p![1;4] ];
+    let mut lane = [ Sv(3), p![1;4], p![1;4], Sv(5), p![1;4] ];
 
     Solver::<N>::deduce_sequence_in_lane((Some(clue), util::arr(lane.iter_mut())));
-    assert_eq!(lane, [Sv(3), p![1,2], p![1,2], Sv(5), p![1;4] ]);
+    assert_eq!(lane, [ Sv(3), p![1,2], p![1,2], Sv(5), p![1;4] ]);
 }
 
 #[test] fn deduce_sequence_in_lane_35()

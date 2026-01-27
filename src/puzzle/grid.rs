@@ -1,8 +1,8 @@
 use std::*;
-use std::collections::{
-    HashMap,
-    HashSet,
-};
+use std::collections::HashMap;
+
+use itertools::*;
+use natbitset::Bitset;
 
 use crate::*;
 
@@ -139,15 +139,15 @@ impl<const N: usize> Grid<N>
         invalid |=
             lane.iter()
                 .map(|cell| cell.digit())
-                .collect::<HashSet<_>>()
+                .collect::<Bitset<N, u16>>()
             !=
-                (1..=N).collect::<HashSet<_>>();
+                Bitset::<N, u16>::all();
 
         if let Some(clue) = clue_start {
-            invalid |= Self::count_visible(lane) != clue;
+            invalid |= Self::count_visible_in_solved_lane(lane) != clue;
         }
         if let Some(clue) = clue_end {
-            invalid |= Self::count_visible(lane.into_iter().rev()) != clue;
+            invalid |= Self::count_visible_in_solved_lane(lane.into_iter().rev()) != clue;
         }
 
         !invalid
@@ -232,8 +232,8 @@ impl<const N: usize> Grid<N>
 // == PROCESS == //
 impl<const N: usize> Grid<N>
 {
-    /// Looking across a lane of cells (which should be solved), how many skyscrapers are not obscured?
-    pub fn count_visible(lane: impl IntoIterator<Item = Cell<N>>) -> usize
+    /// Looking across a lane of **solved** cells, how many skyscrapers are not obscured?
+    pub fn count_visible_in_solved_lane(lane: impl IntoIterator<Item = Cell<N>>) -> usize
     {
         let mut visible = 0;
         let mut peak = 0;
@@ -250,22 +250,57 @@ impl<const N: usize> Grid<N>
         visible
     }
 
-    /// Get the indices of the visible cells in a lane.
-    pub fn find_visible_indices(lane: &[&mut Cell<N>; N]) -> Vec<usize>
+    /// Looking across a lane of solved or unsolved, what are the fewest and greatest possible numbers of skyscrapers that could be visible?
+    /// 
+    /// ```text
+    /// 1 2    3 4 5 6    -> (6, 6)
+    /// 6 _    _ _ _ _    -> (1, 1)
+    /// 4 [15] _ _ 6 [15] -> (2, 3)  // could be 4-5-6 (3 visible) or 4-6-5 (2 visible)
+    /// ```
+    pub fn count_possible_visible_in_lane(lane: &[impl AsRef<Cell<N>>; N]) -> (Digit, Digit)
     {
-        let mut visible = vec![];
-        let mut peak = 0;
+        fn count<const N: usize>(peak: Digit, cells: &[Cell<N>]) -> (Digit, Digit)
+        {
+            match &cells[..] {
+                [] => (0, 0),
 
-        for (i, cell) in lane.iter().enumerate() {
-            let digit = cell.digit();
+                [Cell::Solved(d), rest @ ..] =>
+                {
+                    if peak > *d {
+                        count(peak, rest)
+                    } else {
+                        let (lower, upper) = count(*d, rest);
+                        (lower + 1, upper + 1)
+                    }
+                },
 
-            if digit > peak {
-                visible.push(i);
-                peak = digit;
+                [Cell::Pencil(cands), rest @ ..] =>
+                {
+                    if cands.into_iter().all(|d| peak > d) {
+                        count(peak, rest)
+                    }
+                    else {
+                        cands.into_iter()
+                            .map(|d|
+                                if peak > d {
+                                    count(peak, rest)
+                                } else {
+                                    let (lower, upper) = count(d, rest);
+                                    (lower + 1, upper + 1)
+                                }
+                            )
+                            .reduce(
+                                |(lower1, upper1), (lower2, upper2)|
+                                (lower1.min(lower2), upper1.max(upper2))
+                            )
+                            .expect("Cell should not have no candidates")
+                        }
+                }
             }
         }
 
-        visible
+        let lane = lane.into_iter().map(|cell| *cell.as_ref()).collect_vec();
+        count(0, &lane)
     }
 
     /// For each digit 1 to N, find the indices of the lane in which it could be present. Returns a `HashMap` of each digit to its list of indices.

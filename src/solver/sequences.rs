@@ -8,6 +8,7 @@ impl<const N: usize> Solver<N>
 {
     pub fn deduce_cells_in_lane((clue, mut lane): (Option<Digit>, [&mut Cell<N>; N])) -> bool
     {
+        // TODO short circuit earlier on no clue
         let mut did_deduce = false;
 
         for i in 0..lane.len()

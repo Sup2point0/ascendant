@@ -31,4 +31,9 @@ mod solver
 
         mod isolate_groups_in_lane;
     }
+
+    mod skyscrapers
+    {
+        mod pick_visible_in_close_lane;
+    }
 }

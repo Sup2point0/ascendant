@@ -18,6 +18,17 @@ pub fn arr<I, T, const N: usize>(iter: I) -> [T; N]
 }
 
 
+pub fn arr_mut<T, const N: usize>(iter: &mut [T]) -> [&mut T; N]
+    where
+        T: fmt::Debug
+{
+    iter.iter_mut()
+        .collect::<ArrayVec<&mut T, N>>()
+        .into_inner()
+        .unwrap()
+}
+
+
 pub fn rep(c: char, n: usize) -> String
 {
     std::iter::repeat_n(c, n).collect::<String>()
