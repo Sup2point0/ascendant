@@ -38,9 +38,27 @@ use itertools::*;
 {
     const N: usize = 6;
 
-    // 2 | 4 [15] _ _ 6 [15]
+    // 2 | 4 [15] _ _ 6 _ -> 4 5 _ _ 6 _
     let mut lane = [ Sv(4), p![1,5], p![2,3], p![2,3], Sv(6), p![1,5] ];
 
     Solver::<N>::pick_visible_in_close_lane((Some(2), util::arr_mut(&mut lane)));
     assert_eq!(lane, [ Sv(4), p![1], p![2,3], p![2,3], Sv(6), p![1,5] ]);
+
+    // 3 | 4 [15] _ _ 6 _ -> 4 5 _ _ 6 _
+    let mut lane = [ Sv(4), p![1,5], p![2,3], p![2,3], Sv(6), p![1,5] ];
+
+    Solver::<N>::pick_visible_in_close_lane((Some(3), util::arr_mut(&mut lane)));
+    assert_eq!(lane, [ Sv(4), p![5], p![2,3], p![2,3], Sv(6), p![1,5] ]);
+
+    // 5 | 1 2 3 [45] [45] 6 -> no change
+    let mut lane = [ Sv(1), Sv(2), Sv(3), p![4,5], p![4,5], Sv(6) ];
+
+    Solver::<N>::pick_visible_in_close_lane((Some(5), util::arr_mut(&mut lane)));
+    assert_eq!(lane, [ Sv(1), Sv(2), Sv(3), p![4,5], p![4,5], Sv(6) ]);
+
+    // 5 | 1 2 4 [35] [3] 6 -> 1 2 4 [5] [3] 6
+    let mut lane = [ Sv(1), Sv(2), Sv(4), p![3,5], p![3], Sv(6) ];
+
+    Solver::<N>::pick_visible_in_close_lane((Some(5), util::arr_mut(&mut lane)));
+    assert_eq!(lane, [ Sv(1), Sv(2), Sv(4), p![5], p![3], Sv(6) ]);
 }

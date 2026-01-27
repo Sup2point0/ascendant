@@ -1,6 +1,8 @@
 use std::*;
 use std::cell::LazyCell;
 
+use itertools::*;
+
 use crate::*;
 
 
@@ -74,23 +76,33 @@ impl<const N: usize> Solver<N>
         did_deduce
     }
 
-    /// In a lane where the currently possibly visible number of skyscrapers is 
+    /// Restrict candidates in a lane where toggling the visibility of a single skyscraper can solve the lane.
+    /// 
+    /// In this lane, we need 1 more visible skyscraper, hence we can deduce the last remaining `Cell::Pencil`:
+    /// 
+    /// ```text
+    ///  4 | 1 2 4 [35] 6 _
+    /// -> | 1 2 4   3  6 _
+    /// 
+    /// !4 | 1 2 4   5  6 _  <-- gives 5 visible, not 4!
+    /// ```
     pub fn pick_visible_in_close_lane((clue, lane): (Option<Digit>, [&mut Cell<N>; N])) -> bool
     {
         let mut did_deduce = false;
 
         let Some(clue) = clue else { return false };
+        let already_met_clue = (Grid::count_visible_solved_in_lane(&lane) == clue);
 
         let (lower, upper) = Grid::count_possible_visible_in_lane(&lane);
-        println!("lower = {:?}", lower);
-        println!("upper = {:?}", upper);
-        let is_one_away = (upper - lower == 1) && (lower == clue) || (upper == clue);
-        if !is_one_away { return false }
+        let can_pick       = (upper - lower == 1);
+        let will_meet_clue = (lower == clue);
+        let need_one_more  = (upper == clue);
+
+        let is_pickable = can_pick && (will_meet_clue || need_one_more);
+        if !is_pickable { return false }
 
         let mut grouped = Self::group_uncertain_in_lane(lane);
-
         let islands = grouped.len();
-        let ptr = grouped.as_mut_ptr();
 
         /* NOTE: We don't iterate over first and last cells, as these have no previous and next, respectively. */
         for i in 0..(islands - 1) {
@@ -101,36 +113,46 @@ impl<const N: usize> Solver<N>
             
             No mutations are made, and this mutable reference is the only reference that escapes this block.
             */
-            let (prev, cells, next) = unsafe
+            let (prev_peak, pencil_cells, next_peak) = unsafe
             {
-                let current = slice::from_raw_parts_mut(ptr.add(i), 1);
-                let [Island::Uncertain(cells)] = current else { continue };
+                let ptr = grouped.as_mut_ptr();
 
-                let prev = slice::from_raw_parts(ptr.add(i - 1), 1);
-                let next = slice::from_raw_parts(ptr.add(i + 1), 1);
+                let current = &mut *ptr.add(i);
+                let Island::Uncertain(cells) = current else { continue };
 
-                let [Island::Peak(prev)] = prev else { unreachable!() };
-                let [Island::Peak(next)] = next else { unreachable!() };
+                let Island::Peak(prev) = &*ptr.add(i - 1) else { unreachable!() };
+                let Island::Peak(next) = &*ptr.add(i + 1) else { unreachable!() };
 
                 (*prev, cells, *next)
             };
 
-            println!("cells = {:?}", cells);
+            if already_met_clue && will_meet_clue {
+                /* Don't allow any more skyscrapers to be visible. Remove all candidates that would create a new peak. */
+                for cell in pencil_cells {
+                    let Cell::Pencil(cands) = cell else { unreachable!() };
 
-            for cell in cells.drain(..) {
-                println!("cell = {:?}", cell);
-                let possible_peak = cell.max();
+                    let before = *cands;
+                    cands.retain(|d| prev_peak > d);
 
-                if prev < possible_peak && possible_peak < next {
-                    if lower == clue {
-                        let Cell::Pencil(cands) = cell else { unreachable!() };
+                    did_deduce |= (*cands != before);
+                }
+            }
+            else if need_one_more {
+                let mut could_be_visible = pencil_cells.into_iter()
+                    .filter(|cell| {
+                        let max_cand = cell.max_cand().unwrap_or(0);
+                        prev_peak < max_cand && max_cand < next_peak
+                    })
+                    .collect_vec();
 
-                        let before = *cands;
-                        // MIGRATE Wait for `retain()`
-                        *cands = cands.into_iter().filter(|d| prev > *d).collect();
-
-                        did_deduce |= (*cands != before);
-                    }
+                /* Only force a cell to be visible if only 1 cell is able to be; otherwise, we can't determine which of the cells should be made visible. */
+                if let [Cell::Pencil(cands)] = &mut could_be_visible[..] {
+                    println!("cands = {:?}", cands);
+                    let before = *cands;
+                    cands.retain(|d| prev_peak < d);
+                    println!("cands after = {:?}", cands);
+                    
+                    did_deduce |= (*cands != before);
                 }
             }
         }
