@@ -59,15 +59,15 @@ use crate::*;
 
     // 1 2 3 4 5 6
     let lane = [ Sv(1), Sv(2), Sv(3), Sv(4), Sv(5), Sv(6) ];
-    assert_eq!( Grid::<N>::count_visible_in_solved_lane(lane), 6 );
+    assert_eq!( Grid::<N>::count_visible_solved_in_lane(lane), 6 );
 
     // 6 1 5 2 4 3
     let lane = [ Sv(6), Sv(1), Sv(5), Sv(2), Sv(4), Sv(3) ];
-    assert_eq!( Grid::<N>::count_visible_in_solved_lane(lane), 1 );
+    assert_eq!( Grid::<N>::count_visible_solved_in_lane(lane), 1 );
 
     // 1 3 2 4 6 5
     let lane = [ Sv(1), Sv(3), Sv(2), Sv(4), Sv(6), Sv(5) ];
-    assert_eq!( Grid::<N>::count_visible_in_solved_lane(lane), 4 );
+    assert_eq!( Grid::<N>::count_visible_solved_in_lane(lane), 4 );
 }
 
 #[test] fn count_possible_visible_in_lane()

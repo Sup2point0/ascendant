@@ -144,10 +144,10 @@ impl<const N: usize> Grid<N>
                 Bitset::<N, u16>::all();
 
         if let Some(clue) = clue_start {
-            invalid |= Self::count_visible_in_solved_lane(lane) != clue;
+            invalid |= Self::count_visible_solved_in_lane(lane) != clue;
         }
         if let Some(clue) = clue_end {
-            invalid |= Self::count_visible_in_solved_lane(lane.into_iter().rev()) != clue;
+            invalid |= Self::count_visible_solved_in_lane(lane.into_iter().rev()) != clue;
         }
 
         !invalid
@@ -233,13 +233,13 @@ impl<const N: usize> Grid<N>
 impl<const N: usize> Grid<N>
 {
     /// Looking across a lane of **solved** cells, how many skyscrapers are not obscured?
-    pub fn count_visible_in_solved_lane(lane: impl IntoIterator<Item = Cell<N>>) -> usize
+    pub fn count_visible_solved_in_lane(lane: impl IntoIterator<Item = impl AsRef<Cell<N>>>) -> usize
     {
         let mut visible = 0;
         let mut peak = 0;
 
         for cell in lane.into_iter() {
-            let digit = cell.digit();
+            let digit = cell.as_ref().digit();
 
             if digit > peak {
                 visible += 1;

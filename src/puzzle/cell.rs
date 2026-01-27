@@ -71,19 +71,19 @@ impl<const N: usize> Cell<N>
 
 impl<const N: usize> Cell<N>
 {
-    /// Extract the solved digit of a `Cell::Solved`.
-    pub fn solved_digit(&self) -> Option<Digit>
-    {
-        match self {
-            Cell::Solved(digit) => Some(*digit),
-            Cell::Pencil(..)    => None,
-        }
-    }
-
     /// If the cell is solved, extract the digit, otherwise return `0`.
     pub fn digit(&self) -> Digit
     {
         self.solved_digit().unwrap_or(0)
+    }
+
+    /// Extract the solved digit of a `Cell::Solved`.
+    pub fn solved_digit(&self) -> Option<Digit>
+    {
+        match self {
+            Self::Solved(digit) => Some(*digit),
+            Self::Pencil{..}    => None,
+        }
     }
 
     /// Return the maximum digit a cell could be, whether it is solved or pencil marks.
@@ -91,7 +91,16 @@ impl<const N: usize> Cell<N>
     {
         match self {
             Self::Solved(digit)  => *digit,
-            Self::Pencil(digits) => digits.max().expect("Cell cannot have 0 candidates"),
+            Self::Pencil(cands) => cands.maximum().expect("Cell cannot have 0 candidates"),
+        }
+    }
+
+    /// Extract the greatest candidate of a `Cell::Pencil`.
+    pub fn max_cand(&self) -> Option<Digit>
+    {
+        match self {
+            Self::Pencil(cands) => Some(cands.maximum().expect("Cell cannot have 0 candidates")),
+            Self::Solved{..}    => None
         }
     }
 
