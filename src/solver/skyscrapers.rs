@@ -8,7 +8,10 @@ use crate::*;
 
 #[derive(Eq, PartialEq, Debug)]
 pub enum Island<'l, const N: usize> {
+    /// A single island containing the value of a `Cell::Solved`.
     Peak(usize),
+    
+    /// An island of `Cell::Pencil`s.
     Uncertain(Vec<&'l mut Cell<N>>),
 }
 
@@ -76,6 +79,19 @@ impl<const N: usize> Solver<N>
         did_deduce
     }
 
+    pub fn pick_close_in_grid(grid: &mut Grid<N>) -> bool
+    {
+        let mut did_deduce = false;
+
+        for x in 0..N { did_deduce |= Self::pick_visible_in_close_lane(grid.look_down_mut(x)); }
+        for x in 0..N { did_deduce |= Self::pick_visible_in_close_lane(grid.look_up_mut(x)); }
+        for y in 0..N { did_deduce |= Self::pick_visible_in_close_lane(grid.look_right_mut(y)); }
+        for y in 0..N { did_deduce |= Self::pick_visible_in_close_lane(grid.look_left_mut(y)); }
+        debug!("post-pick:\n{grid:?}");
+
+        did_deduce
+    }
+
     /// Restrict candidates in a lane where toggling the visibility of a single skyscraper can solve the lane.
     /// 
     /// In this lane, we need 1 more visible skyscraper, hence we can deduce the last remaining `Cell::Pencil`:
@@ -105,8 +121,20 @@ impl<const N: usize> Solver<N>
         let islands = grouped.len();
 
         /* NOTE: We don't iterate over first and last cells, as these have no previous and next, respectively. */
-        for i in 0..(islands - 1) {
-            if i == 0 { continue }
+        'islands: for i in 0..(islands - 1) {
+            if i == 0 {
+                if let Island::Uncertain(cells) = &grouped[0]
+                && let Island::Peak(next_peak) = &grouped[1]
+                && cells.iter().map(|cell| cell.max()).max().unwrap() > *next_peak
+                {
+                    break 'islands;
+                } else {
+                    continue;
+                }
+            }
+
+            /* We also stop once we reach the lane peak. */
+            if let Island::Peak(n) = grouped[i] && n == N { continue }
 
             /* SAFETY:
             Read the raw values (which are `Copy`) of previous and next islands, and get a mutable reference to the current island.
@@ -126,13 +154,22 @@ impl<const N: usize> Solver<N>
                 (*prev, cells, *next)
             };
 
-            if already_met_clue && will_meet_clue {
-                /* Don't allow any more skyscrapers to be visible. Remove all candidates that would create a new peak. */
+            if already_met_clue {
+                /* Don't allow any more skyscrapers to be visible if they won't obscure a current peak. Remove all candidates that would create a new peak. */
                 for cell in pencil_cells {
                     let Cell::Pencil(cands) = cell else { unreachable!() };
 
+                    if cands.maximum().expect("Cell should not have no candidates") > next_peak {
+                        break 'islands;
+                    }
+
                     let before = *cands;
+                    // MIGRATE use `retain_nonempty`
                     cands.retain(|d| prev_peak > d);
+
+                    if cands.len() == 0 {
+                        panic!("Deleted all candidates while trying to hide candidates in lane: {grouped:?}");
+                    }
 
                     did_deduce |= (*cands != before);
                 }
@@ -147,10 +184,13 @@ impl<const N: usize> Solver<N>
 
                 /* Only force a cell to be visible if only 1 cell is able to be; otherwise, we can't determine which of the cells should be made visible. */
                 if let [Cell::Pencil(cands)] = &mut could_be_visible[..] {
-                    println!("cands = {:?}", cands);
                     let before = *cands;
+                    // MIGRATE use `retain_nonempty`
                     cands.retain(|d| prev_peak < d);
-                    println!("cands after = {:?}", cands);
+
+                    if cands.len() == 0 {
+                        panic!("Deleted all candidates while trying to show candidates in lane: {grouped:?}");
+                    }
                     
                     did_deduce |= (*cands != before);
                 }
@@ -167,10 +207,16 @@ impl<const N: usize> Solver<N>
     pub fn group_uncertain_in_lane(lane: [&mut Cell<N>; N]) -> Vec<Island<'_, N>>
     {
         let mut out = vec![];
+        let mut peak = 0;
 
         for cell in lane {
             match cell {
-                Cell::Solved(d) => out.push(Island::Peak(*d)),
+                Cell::Solved(d) => {
+                    if *d > peak {
+                        out.push(Island::Peak(*d));
+                        peak = *d;
+                    }
+                },
                 Cell::Pencil{..} => {
                     if let Some(Island::Uncertain(cells)) = out.last_mut() {
                         cells.push(cell);
