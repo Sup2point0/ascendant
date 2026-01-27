@@ -72,14 +72,14 @@ ascendant> cargo run -- solve-one 7 --diff=2 --date=0401 --debug
 |      | sparse     |   127/365   | ^      | 2026 January
 | 5x5  | full easy  |   361/365   | 1.0 s  | 2026 January
 |      | full hard  |   357/365   | ^      | 2026 January
-|      | sparse     |    48/365   | ^      | 2026 January
-| 6x6  | full easy  |   308/365   | ~2.5 s | 2026 January
-|      | full hard  |   308/365   | ^      | 2026 January
-|      | sparse     |     5/365   | ^      | 2026 January
-| 7x7  | full easy  |   247/365   | ~2.5 s | 2026 January
-|      | full hard  |   241/365   | ^      | 2026 January
-| 8x8  | full easy  |   172/365   | ~4.5 s | 2026 January
-|      | full hard  |   161/365   | ^      | 2026 January
+|      | sparse     |    52/365   | ^      | 2026 January
+| 6x6  | full easy  |   316/365   | ~2.5 s | 2026 January
+|      | full hard  |   311/365   | ^      | 2026 January
+|      | sparse     |     8/365   | ^      | 2026 January
+| 7x7  | full easy  |   262/365   | ~2.5 s | 2026 January
+|      | full hard  |   254/365   | ^      | 2026 January
+| 8x8  | full easy  |   210/365   | ~4.5 s | 2026 January
+|      | full hard  |   194/365   | ^      | 2026 January
 
 ### Notes
 
@@ -135,8 +135,8 @@ These are the steps in each pass-through:[^order]
 - **Lane**: A straight line of cells in the $`x`$ or $`y`$ direction.
   - **Row**: A horizontal lane.
   - **Col**: A vertical lane.
-- **Peak**: An $`N`$-skyscraper in an $`N`$×$`N`$ puzzle, or more generally, a skyscraper guaranteed to be visible.[^peak]
-  - Akin to a ‘maximum’ in mathematics.
+- **Peak**: A skyscraper guaranteed to be visible.[^peak] (akin to a ‘maximum’ in mathematics)
+  - **Lane Peak**: An $`N`$-skyscraper in an $`N`$×$`N`$ puzzle.
 - **Sequence**: An ascending sequence of skyscrapers, looking from a clue across the lane towards the peak. Ideally strictly ascending, but not always so.
 
 [^peak]: Named this way because, if you were to look at the skyline of skyscrapers, you would see them taller than other buildings!
