@@ -250,7 +250,7 @@ impl<const N: usize> Solver<N>
 
         /* Find unsolved cells which *could* be visible. */
         let mut current_peak = 0;
-        let mut relevant_uncertain_indices = vec![];
+        let mut unsolved_indices = vec![];
 
         for (i, cell) in lane.iter().enumerate() {
             match cell {
@@ -258,7 +258,7 @@ impl<const N: usize> Solver<N>
                     if let Some(max) = cands.maximum()
                     && max > current_peak
                     {
-                        relevant_uncertain_indices.push(i);
+                        unsolved_indices.push(i);
                     }
                 },
                 Cell::Solved(d) => {
@@ -268,29 +268,69 @@ impl<const N: usize> Solver<N>
             }
         }
 
-        let [target_idx] = relevant_uncertain_indices[..] else { return false };
-        
-        /* NOTE: Need this first so it doesn't conflict with mutable borrow later... */
-        let mut hypothetical_lane = util::snap_lane(&lane);
+        match unsolved_indices[..]
+        {
+            [idx] =>
+            {
+                /* NOTE: Need this first so it doesn't conflict with mutable borrow later... */
+                let mut hypothetical_lane = util::snap_lane(&lane);
+                let mut valid_choices = Bitset::<N>::none();
 
-        let mut valid_choices = Bitset::<N>::none();
-        let Cell::Pencil(cands) = lane[target_idx] else { return false };
+                let Cell::Pencil(cands) = lane[idx] else { return false };
 
-        for cand in *cands {
-            hypothetical_lane[target_idx] = Cell::Solved(cand);
+                for cand in *cands {
+                    hypothetical_lane[idx] = Cell::Solved(cand);
 
-            if Grid::count_visible_solved_in_lane(hypothetical_lane) == clue {
-                valid_choices += cand;
-            }
+                    if Grid::count_visible_solved_in_lane(hypothetical_lane) == clue {
+                        valid_choices += cand;
+                    }
+                }
+
+                let before = *cands;
+                *cands = valid_choices;
+
+                if cands.is_empty() {
+                    panic!("deleted all candidates picking last for cell: {cands:?} in lane: {hypothetical_lane:?}");
+                }
+
+                *cands != before
+            },
+
+            [idx_left, idx_right] =>
+            {
+                let Cell::Pencil(cands_left) = lane[idx_left] else { return false };
+                let cands_left = *cands_left;
+                let Cell::Pencil(cands_right) = lane[idx_right] else { return false };
+                let cands_right = *cands_right;
+
+                let is_couplet = (cands_left == cands_right) && (cands_left.len() == 2);
+                if !is_couplet { return false }
+
+                let mut hypothetical_lane = util::snap_lane(&lane);
+                let mut valid_permutation = None;
+
+                for couplet in [cands_left.members_asc(), cands_left.members_desc()] {
+                    // SAFETY: Both sets have exactly 2 members, indexing is safe.
+                    let cand_left = couplet[0];
+                    let cand_right = couplet[1];
+
+                    hypothetical_lane[idx_left]  = Cell::Solved(cand_left);
+                    hypothetical_lane[idx_right] = Cell::Solved(cand_right);
+
+                    if Grid::count_visible_solved_in_lane(hypothetical_lane) == clue {
+                        if valid_permutation.is_some() { return false }
+                        valid_permutation = Some((cand_left, cand_right));
+                    }
+                }
+
+                let Some((valid_left, valid_right)) = valid_permutation else { unreachable!() };
+                *lane[idx_left]  = Cell::Solved(valid_left);
+                *lane[idx_right] = Cell::Solved(valid_right);
+
+                true
+            },
+
+            _ => false,
         }
-
-        let before = *cands;
-        *cands = valid_choices;
-
-        if cands.is_empty() {
-            panic!("deleted all candidates picking last for cell: {cands:?} in lane: {hypothetical_lane:?}");
-        }
-
-        *cands != before
     }
 }

@@ -123,18 +123,21 @@ ascendant> cargo run -- solve-one 7 --diff=2 --date=0401 --debug
 
 | size | difficulty | solved      | time   | as of |
 | :--- | :--------- | :---------- | :----- | :---- |
-| 4x4  | full       | **365/365** | ~0.7 s | 2026 January
-|      | sparse     |   127/365   | ^      | 2026 January
-| 5x5  | full easy  |   364/365   | 1.0 s  | 2026 January
-|      | full hard  |   360/365   | ^      | 2026 January
-|      | sparse     |    60/365   | ^      | 2026 January
-| 6x6  | full easy  |   339/365   | ~2.5 s | 2026 January
-|      | full hard  |   338/365   | ^      | 2026 January
-|      | sparse     |    15/365   | ^      | 2026 January
-| 7x7  | full easy  |   300/365   | ~2.5 s | 2026 January
-|      | full hard  |   295/365   | ^      | 2026 January
-| 8x8  | full easy  |   281/365   | ~4.5 s | 2026 January
-|      | full hard  |   264/365   | ^      | 2026 January
+| 4x4  | full       | **365/365** | ~0.5 s | 2026 January
+|      | sparse     |   219/365   | ^      | 2026 January
+| 5x5  | full easy  | **365/365** | ~1.5 s | 2026 January
+|      | full hard  | **365/365** | ^      | 2026 January
+|      | sparse     |    85/365   | ^      | 2026 January
+| 6x6  | full easy  |   359/365   | ~4.5 s | 2026 January
+|      | full hard  |   355/365   | ^      | 2026 January
+|      | sparse     |    21/365   | ^      | 2026 January
+| 7x7  | full easy  |   331/365   | ~3.5 s | 2026 January
+|      | full hard  |   335/365   | ^      | 2026 January
+| 8x8  | full easy  |   320/365   | ~7.5 s | 2026 January
+|      | full hard  |   310/365   | ^      | 2026 January
+
+> [!Note]
+> 7x7 and 8x8 are taking less time currently since I haven't tried the solver on Sparse puzzles for those sizes yet!
 
 ### Notes
 

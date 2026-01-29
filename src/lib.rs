@@ -1,6 +1,6 @@
 #![allow(incomplete_features)]
 #![feature(generic_const_exprs)]
-#![feature(never_type)]
+#![feature(if_let_guard)]
 
 #![allow(dead_code)]
 #![allow(unused_parens)]
