@@ -36,14 +36,14 @@ Fetch puzzles:
 
 ```bash
 # fetch 6x6 puzzles of all difficulties
-ascendant> cargo run -- fetch 6 --diffs 1 2 3
+ascendant> cargo run -- fetch --sizes 6 --diffs 1 2 3
 ```
 
 Solve puzzles in bulk and view stats:
 
 ```bash
-# solve all 4x4, 5x5, 6x6 puzzles
-ascendant> cargo run -- solve-all 4 5 6
+# solve all 4x4, 5x5, 6x6 puzzles of difficulty 3
+ascendant> cargo run -- solve-all --sizes 4 5 6 --diffs 3
 ```
 
 View the steps in solving one puzzle:

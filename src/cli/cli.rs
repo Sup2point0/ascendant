@@ -60,13 +60,21 @@ pub enum Mode
     #[command(about = "Solve all stored puzzles")]
     SolveAll
     {
-        #[arg(
+        #[arg(long,
+            num_args = 1..,
             help = "Sizes of puzzles to solve"
         )]
         sizes: Option<Vec<usize>>,
 
-        #[clap(
-            long, global = true,
+        #[arg(long,
+            num_args = 1..=3,
+            value_parser = Cli::try_read_diff,
+            help = "Difficulty of the puzzles to solve (1/2/3)"
+        )]
+        diffs: Option<Vec<Difficulty>>,
+
+        #[clap(long,
+            global = true,
             help = "Show failed puzzle solution attempts?"
         )]
         show_fail: bool,
@@ -75,12 +83,14 @@ pub enum Mode
     #[command(about = "Fetch puzzles from brainbashers.com")]
     Fetch
     {
-        #[arg(
+        #[arg(long,
+            num_args = 1..,
             help = "Sizes of puzzles to fetch"
         )]
         sizes: Option<Vec<usize>>,
 
         #[arg(long,
+            num_args = 1..=3,
             value_parser = Cli::try_read_diff,
             help = "Difficulties of puzzles to fetch (1, 2 or 3)"
         )]
@@ -157,7 +167,9 @@ impl Cli
 
     fn solve_all(self) -> ah::Result<()>
     {
-        let Mode::SolveAll { sizes, show_fail } = self.mode else { unreachable!() };
+        let Mode::SolveAll { sizes, diffs, show_fail } = self.mode else { unreachable!() };
+
+        let diffs = diffs.unwrap_or(vec![]);
 
         if let Some(sizes) = sizes {
             // SAFETY: This is not multithreaded, and is only for logging anyway.
@@ -169,7 +181,7 @@ impl Cli
 
             seq_macro::seq!(N in 4..=9 {
                 if sizes.contains(&N) {
-                    runner::try_solve_stored::<N>()?;
+                    runner::try_solve_stored::<N>(&diffs)?;
                 }
             });
         } else {

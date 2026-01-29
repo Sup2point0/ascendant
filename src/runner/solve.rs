@@ -1,4 +1,5 @@
 use anyhow as ah;
+use itertools::*;
 
 use crate::*;
 use crate::cli::detail::OutputDetail;
@@ -28,18 +29,21 @@ pub fn try_solve_stored_single<const N: usize>(difficulty: Difficulty, date: &st
 pub fn try_solve_stored_all() -> ah::Result<()>
 {
     seq_macro::seq!(N in 4..=9 {
-        try_solve_stored::<N>()?;
+        try_solve_stored::<N>(&Difficulty::all())?;
     });
 
     Ok(())
 }
 
 
-pub fn try_solve_stored<const N: usize>() -> ah::Result<()>
+pub fn try_solve_stored<const N: usize>(difficulties: &[Difficulty]) -> ah::Result<()>
 {
-    let difficulties = Loader::load_grids::<N>()?;
+    let difficulties = difficulties.iter().map(|diff| diff.to_string()).collect_vec();
+    let loaded = Loader::load_grids::<N>()?;
 
-    for (diff, grids) in difficulties {
+    for (diff, grids) in loaded {
+        if !difficulties.contains(&diff) { continue }
+
         let total = grids.len();
 
         match try_solve_all::<N>(grids) {

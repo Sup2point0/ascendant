@@ -8,6 +8,18 @@ pub enum Difficulty {
     Sparse,
 }
 
+impl Difficulty
+{
+    pub fn all() -> Vec<Self>
+    {
+        vec![
+            Self::FullEasy,
+            Self::FullHard,
+            Self::Sparse,
+        ]
+    }
+}
+
 impl TryFrom<String> for Difficulty
 {
     type Error = ah::Error;
