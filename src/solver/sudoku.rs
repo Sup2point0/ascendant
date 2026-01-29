@@ -126,7 +126,7 @@ impl<const N: usize> Solver<N>
                 did_deduce |= digits.has(d);
                 *digits -= d;
 
-                if digits.len() == 0 {
+                if digits.is_empty() {
                     panic!("Deleted all candidates while performing Sudoku deductions!");
                 }
             }

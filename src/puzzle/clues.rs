@@ -32,6 +32,13 @@ impl<const N: usize> Clues<N>
     }
 }
 
+impl<const N: usize> Default for Clues<N>
+{
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl<const N: usize> fmt::Debug for Clues<N>
 {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result

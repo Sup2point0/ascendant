@@ -19,7 +19,7 @@ impl<'l, const N: usize> Island<'l, N> {
     pub fn get(self) -> Vec<Cell<N>> {
         match self {
             Island::Peak(d)          => vec![Cell::Solved(d)],
-            Island::Uncertain(cells) => cells.into_iter().map(|cell| cell.clone()).collect(),
+            Island::Uncertain(cells) => cells.into_iter().map(|cell| *cell).collect(),
         }
     }
 }
@@ -167,7 +167,7 @@ impl<const N: usize> Solver<N>
                     // MIGRATE use `retain_nonempty`
                     cands.retain(|d| prev_peak > d);
 
-                    if cands.len() == 0 {
+                    if cands.is_empty() {
                         panic!("Deleted all candidates while trying to hide candidates in lane: {grouped:?}");
                     }
 
@@ -188,7 +188,7 @@ impl<const N: usize> Solver<N>
                     // MIGRATE use `retain_nonempty`
                     cands.retain(|d| prev_peak < d);
 
-                    if cands.len() == 0 {
+                    if cands.is_empty() {
                         panic!("Deleted all candidates while trying to show candidates in lane: {grouped:?}");
                     }
                     

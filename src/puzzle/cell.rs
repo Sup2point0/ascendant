@@ -146,6 +146,13 @@ impl<const N: usize> Cell<N>
     }
 }
 
+impl<const N: usize> Default for Cell<N>
+{
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl<const N: usize> fmt::Debug for Cell<N>
 {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result
@@ -167,6 +174,6 @@ impl<const N: usize> fmt::Debug for Cell<N>
 impl<const N: usize> AsRef<Cell<N>> for Cell<N>
 {
     fn as_ref(&self) -> &Cell<N> {
-        &self
+        self
     }
 }

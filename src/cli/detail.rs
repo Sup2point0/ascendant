@@ -2,10 +2,11 @@ use std::*;
 
 
 /// The level of detail of print output.
-#[derive(Copy, Clone, Hash, Eq, PartialEq, PartialOrd, Debug)]
+#[derive(Copy, Clone, Hash, Eq, PartialEq, Ord, PartialOrd, Default, Debug)]
 pub enum OutputDetail
 {
     /// Default user-facing output.
+    #[default]
     DEFAULT,
 
     /// Print the start and end states of puzzles that the algorithm fails to solve.
@@ -18,13 +19,6 @@ pub enum OutputDetail
     DEBUG_STEPS,
 }
 
-impl Default for OutputDetail
-{
-    fn default() -> Self {
-        Self::DEFAULT
-    }
-}
-
 impl Into<usize> for OutputDetail
 {
     fn into(self) -> usize
@@ -35,16 +29,5 @@ impl Into<usize> for OutputDetail
             Self::SHOW_PASSES => 2,
             Self::DEBUG_STEPS => 3,
         }
-    }
-}
-
-impl Ord for OutputDetail
-{
-    fn cmp(&self, other: &Self) -> cmp::Ordering
-    {
-        let left: usize = (*self).into();
-        let right: usize = (*other).into();
-        
-        left.cmp(&right)
     }
 }

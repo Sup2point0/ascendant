@@ -48,7 +48,6 @@ pub fn try_solve_stored<const N: usize>() -> ah::Result<()>
             Ok(solved) => println!(
                 ".. {n}x{n} -- difficulty {diff} -- solved {solved}/{total}",
                 n = N,
-                diff = diff.to_string()
             ),
             Err(e) => println!("{e:?}"),
         }

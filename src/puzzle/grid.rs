@@ -87,10 +87,8 @@ impl<const N: usize> Grid<N>
     ) -> ()
     {
         let row = row.into_iter().enumerate()
-            .filter_map(|(x, n)|
-                (!Self::is_prep_edge(x))
-                .then(|| Self::clue_from(n))
-            );
+            .filter(|&(x, _)| !Self::is_prep_edge(x))
+            .map(|(_, n)| Self::clue_from(n));
 
         *clue_row = util::arr(row);
     }
@@ -167,7 +165,7 @@ impl<const N: usize> Grid<N>
     }
 
     pub fn look_right(&self, row: usize) -> (Option<Digit>, [Cell<N>; N]) {
-        ( self.clues.left[row], util::arr(self.cells[row].into_iter()) )
+        ( self.clues.left[row], util::arr(self.cells[row]) )
     }
     pub fn look_right_mut(&mut self, row: usize) -> (Option<Digit>, [&mut Cell<N>; N]) {
         ( self.clues.left[row], util::arr(self.cells[row].iter_mut()) )
@@ -198,7 +196,7 @@ impl<const N: usize> Grid<N>
     pub fn look_across_row(&self, row: usize) -> (Option<Digit>, [Cell<N>; N], Option<Digit>) {
         (
             self.clues.left[row],
-            util::arr(self.cells[row].into_iter()),
+            util::arr(self.cells[row]),
             self.clues.right[row],
         )
     }
@@ -261,7 +259,7 @@ impl<const N: usize> Grid<N>
     {
         fn count<const N: usize>(peak: Digit, cells: &[Cell<N>]) -> (Digit, Digit)
         {
-            match &cells[..] {
+            match cells {
                 [] => (0, 0),
 
                 [Cell::Solved(d), rest @ ..] =>
@@ -299,7 +297,7 @@ impl<const N: usize> Grid<N>
             }
         }
 
-        let lane = lane.into_iter().map(|cell| *cell.as_ref()).collect_vec();
+        let lane = lane.iter().map(|cell| *cell.as_ref()).collect_vec();
         count(0, &lane)
     }
 
@@ -378,7 +376,7 @@ impl<const N: usize> fmt::Debug for Grid<N>
             write!(f, "  {: ^1$}  |", digit, N)?;
         }
         
-        write!(f, "\n")?;
+        writeln!(f)?;
 
         Ok(())
     }
