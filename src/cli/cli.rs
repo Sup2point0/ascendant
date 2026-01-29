@@ -94,7 +94,7 @@ impl Cli
     {
         println!(">> Running ascendant...");
 
-        // SAFE: This is not multithreaded, and is only for logging anyway.
+        // SAFETY: This is not multithreaded, and is only for logging anyway.
         unsafe {
             if      self.debug      { OUTPUT_DETAIL = OutputDetail::DEBUG_STEPS; }
             else if self.show_steps { OUTPUT_DETAIL = OutputDetail::SHOW_PASSES; }
@@ -145,7 +145,7 @@ impl Cli
 
         seq_macro::seq!(N in 4..=9 {
             if size == N {
-                // SAFE: This is not multithreaded, and is only for logging anyway.
+                // SAFETY: This is not multithreaded, and is only for logging anyway.
                 unsafe { OUTPUT_DETAIL = OUTPUT_DETAIL.max(OutputDetail::SHOW_PASSES) }
 
                 runner::try_solve_stored_single::<N>(diff, &date)?;
@@ -160,7 +160,7 @@ impl Cli
         let Mode::SolveAll { sizes, show_fail } = self.mode else { unreachable!() };
 
         if let Some(sizes) = sizes {
-            // SAFE: This is not multithreaded, and is only for logging anyway.
+            // SAFETY: This is not multithreaded, and is only for logging anyway.
             unsafe {
                 if show_fail {
                     OUTPUT_DETAIL = OUTPUT_DETAIL.max(OutputDetail::SHOW_FAIL);

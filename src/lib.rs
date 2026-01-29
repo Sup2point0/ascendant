@@ -15,7 +15,7 @@ pub mod cli;
 pub mod runner;
 
 pub mod util;
-pub use util::{ MapValues };
+pub use util::{ FindMapMaybe, MapValues };
 
 
 pub type Digit = usize;

@@ -43,6 +43,24 @@ pub fn snap_lane<const N: usize>(lane: &[&mut Cell<N>; N]) -> [Cell<N>; N]
 }
 
 
+pub trait FindMapMaybe<T> where Self: Iterator<Item = T>
+{
+    /// Find the first element in `self` for which `predicate(map(element))` is true, ignoring elements for which `map` returns `None`.
+    fn find_map_maybe<F, Mid, P>(&mut self, mut map: F, mut predicate: P) -> Option<T>
+        where
+            Self: Sized,
+            F: FnMut(&Self::Item) -> Option<Mid>,
+            P: FnMut(Mid) -> bool
+    {
+        self.find(|each| map(each).map(|some| predicate(some)) == Some(true))
+    }
+}
+
+impl<I,T> FindMapMaybe<T> for I
+    where I: Iterator<Item = T>
+{}
+
+
 pub trait MapValues<V,W>
 {
     type Output;

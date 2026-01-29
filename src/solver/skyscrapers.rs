@@ -164,11 +164,9 @@ impl<const N: usize> Solver<N>
                     }
 
                     let before = *cands;
-                    // MIGRATE use `retain_nonempty`
-                    cands.retain(|d| prev_peak > d);
 
-                    if cands.is_empty() {
-                        panic!("Deleted all candidates while trying to hide candidates in lane: {grouped:?}");
+                    if let Err(e) = cands.retain_nonempty(|d| prev_peak > d) {
+                        panic!("Deleted all candidates while trying to hide candidates in lane: {grouped:?}, caused by: {e}");
                     }
 
                     did_deduce |= (*cands != before);
@@ -185,11 +183,9 @@ impl<const N: usize> Solver<N>
                 /* Only force a cell to be visible if only 1 cell is able to be; otherwise, we can't determine which of the cells should be made visible. */
                 if let [Cell::Pencil(cands)] = &mut could_be_visible[..] {
                     let before = *cands;
-                    // MIGRATE use `retain_nonempty`
-                    cands.retain(|d| prev_peak < d);
 
-                    if cands.is_empty() {
-                        panic!("Deleted all candidates while trying to show candidates in lane: {grouped:?}");
+                    if let Err(e) = cands.retain_nonempty(|d| prev_peak < d) {
+                        panic!("Deleted all candidates while trying to hide candidates in lane: {grouped:?}, caused by: {e}");
                     }
                     
                     did_deduce |= (*cands != before);

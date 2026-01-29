@@ -14,9 +14,7 @@ pub fn try_solve_stored_single<const N: usize>(difficulty: Difficulty, date: &st
 
     let Some(puzzle) = (
         puzzles.into_iter()
-            // TODO wtf is this, is there a better way...?
-            .filter(|puzzle| puzzle.url.as_ref().map(|url| url.contains(date)) == Some(true))
-            .next()
+            .find_map_maybe(|puzzle| puzzle.url.clone(), |url| url.contains(date))
     ) else {
         return Err(ah::anyhow!("Failed to find puzzles of difficulty {diff}"))
     };
