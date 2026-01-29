@@ -8,55 +8,58 @@ impl<const N: usize> Solver<N>
 {
     pub fn deduce_cells_in_lane((clue, mut lane): (Option<Digit>, [&mut Cell<N>; N])) -> bool
     {
-        // TODO short circuit earlier on no clue
+        let Some(clue) = clue else { return false };
+
         let mut did_deduce = false;
 
         for i in 0..lane.len()
         {
             let lane_snap = util::snap_lane(&lane);
 
-            let cell = &mut lane[i];
-            if let Cell::Solved(_) = cell { continue; }
+            let cell@Cell::Pencil{..} = &mut lane[i] else { continue };
 
-            if let Some(1) = clue && i == 0 {
+            if clue == 1 && i == 0 {
                 **cell = Cell::Solved(N);
                 continue;
             }
-            else if let Some(c) = clue && c == N {
+            else if clue == N {
                 **cell = Cell::Solved(i+1);
+                continue;
             }
 
-            if let Cell::Pencil(_) = cell
-            {
-                let cands = {
-                    if let Some(c) = clue
-                    && let Some(idx) = Grid::find_peak(&lane_snap)
-                    && i < idx
-                    {
-                        Self::calc_cands_from_peak(c, i, idx)
-                    }
-                    else {
-                        Self::calc_cands_from_clue(clue, i)
-                    }
-                };
+            let cands = {
+                if let Some(idx) = Grid::find_peak(&lane_snap)
+                && i < idx
+                {
+                    Self::calc_cands_from_peak(clue, i, idx)
+                } else {
+                    Self::calc_cands_from_clue(clue, i)
+                }
+            };
 
-                did_deduce = cell.intersect(cands, lane_snap);
-            }
+            did_deduce |= cell.intersect(cands, lane_snap);
         }
 
         did_deduce
     }
 
     /// For one cell, calculate candidates based on the lane's clue.
-    pub fn calc_cands_from_clue(clue: Option<Digit>, i: usize) -> Bitset<N>
+    pub fn calc_cands_from_clue(clue: Digit, i: usize) -> Bitset<N>
     {
-        let clue_offset = clue.map(|c| c-1).unwrap_or(0);
+        let clue_offset = clue - 1;
         let out = N + i - clue_offset;
 
-        Cell::cands(1 as usize, out)
+        let mut out = Cell::cands(1 as usize, out)
             .expect(&format!(
                 "Produced no candidates for cell at idx: `{i}`, deducing from clue: `{clue:?}`, caused by"
-            ))
+            ));
+
+        /* STRATEGY: post-head cell in a 2-clue lane cannot be pre-peak skyscraper */
+        if clue == 2 && i == 1 {
+            out -= N - 1;
+        }
+
+        out
     }
 
     /// For one cell, calculate candidates based on both the lane's clue and the index of its peak.

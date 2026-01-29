@@ -124,16 +124,16 @@ ascendant> cargo run -- solve-one 7 --diff=2 --date=0401 --debug
 | size | difficulty | solved      | time   | as of |
 | :--- | :--------- | :---------- | :----- | :---- |
 | 4x4  | full       | **365/365** | ~0.5 s | 2026 January
-|      | sparse     |   219/365   | ^      | 2026 January
+|      | sparse     |   256/365   | ^      | 2026 January
 | 5x5  | full easy  | **365/365** | ~1.5 s | 2026 January
 |      | full hard  | **365/365** | ^      | 2026 January
-|      | sparse     |    85/365   | ^      | 2026 January
+|      | sparse     |    93/365   | ^      | 2026 January
 | 6x6  | full easy  |   359/365   | ~4.5 s | 2026 January
 |      | full hard  |   355/365   | ^      | 2026 January
-|      | sparse     |    21/365   | ^      | 2026 January
+|      | sparse     |    23/365   | ^      | 2026 January
 | 7x7  | full easy  |   331/365   | ~3.5 s | 2026 January
 |      | full hard  |   335/365   | ^      | 2026 January
-| 8x8  | full easy  |   320/365   | ~7.5 s | 2026 January
+| 8x8  | full easy  |   321/365   | ~7.5 s | 2026 January
 |      | full hard  |   310/365   | ^      | 2026 January
 
 > [!Note]
@@ -145,7 +145,8 @@ ascendant> cargo run -- solve-one 7 --diff=2 --date=0401 --debug
   <summary> <strong>show</strong> </summary>
 
 - The algorithm is not strong at all on sparse puzzles, although it is fairly impressive how far it can get on sparse 5x5 puzzles.
-  - Only 5/365 on the sparse 6x6 puzzles... 🤣
+  - Only 21/365 on the sparse 6x6 puzzles... 🤣
+  - 4x4 sparse puzzles are quite specially intractable, simply down to how barren information is – some puzzles only have, like, 3 clues!
 - Despite the increase in information with larger puzzle sizes, the increase in complexity is much more significant.
   - That being said, the algorithm often reaches an *almost*-solved state.
   - I’m currently figuring out how to improve the algorithm to handle these final near-solved states. Many of them need only a single push before the rules of Sudoku can clear the rest of the puzzle!
