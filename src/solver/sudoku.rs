@@ -138,6 +138,8 @@ impl<const N: usize> Solver<N>
     /// Apply `pinpoint_cells_in_lane` to all lanes in the grid.
     /// 
     /// (See that method for how this works.)
+    /// 
+    /// We call this very often, because it cleans up the output of other deductions and significantly speeds up solving.
     pub fn pinpoint_all_in_grid(grid: &mut Grid<N>) -> bool
     {
         let mut did_deduce = false;

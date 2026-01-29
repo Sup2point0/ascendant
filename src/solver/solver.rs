@@ -69,6 +69,9 @@ impl<const N: usize> Solver<N>
 
             did_deduce |= Self::pick_close_in_grid(&mut grid);
             did_deduce |= Self::pinpoint_all_in_grid(&mut grid);
+
+            did_deduce |= Self::pick_last_in_grid(&mut grid);
+            did_deduce |= Self::pinpoint_all_in_grid(&mut grid);
         }
         
         (grid, did_deduce)

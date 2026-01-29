@@ -35,5 +35,7 @@ mod solver
     mod skyscrapers
     {
         mod pick_visible_in_close_lane;
+
+        mod pick_last_in_lane;
     }
 }

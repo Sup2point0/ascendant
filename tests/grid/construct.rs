@@ -1,7 +1,5 @@
 use ascendant::*;
-use ascendant::{
-    Cell::Solved as Sv,
-};
+use ascendant::Cell::Solved as Sv;
 
 
 #[test] pub fn construct_grid()

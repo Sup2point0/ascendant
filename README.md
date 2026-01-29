@@ -125,16 +125,16 @@ ascendant> cargo run -- solve-one 7 --diff=2 --date=0401 --debug
 | :--- | :--------- | :---------- | :----- | :---- |
 | 4x4  | full       | **365/365** | ~0.7 s | 2026 January
 |      | sparse     |   127/365   | ^      | 2026 January
-| 5x5  | full easy  |   363/365   | 1.0 s  | 2026 January
-|      | full hard  |   358/365   | ^      | 2026 January
-|      | sparse     |    59/365   | ^      | 2026 January
-| 6x6  | full easy  |   325/365   | ~2.5 s | 2026 January
-|      | full hard  |   322/365   | ^      | 2026 January
+| 5x5  | full easy  |   364/365   | 1.0 s  | 2026 January
+|      | full hard  |   360/365   | ^      | 2026 January
+|      | sparse     |    60/365   | ^      | 2026 January
+| 6x6  | full easy  |   339/365   | ~2.5 s | 2026 January
+|      | full hard  |   338/365   | ^      | 2026 January
 |      | sparse     |    15/365   | ^      | 2026 January
-| 7x7  | full easy  |   274/365   | ~2.5 s | 2026 January
-|      | full hard  |   277/365   | ^      | 2026 January
-| 8x8  | full easy  |   236/365   | ~4.5 s | 2026 January
-|      | full hard  |   230/365   | ^      | 2026 January
+| 7x7  | full easy  |   300/365   | ~2.5 s | 2026 January
+|      | full hard  |   295/365   | ^      | 2026 January
+| 8x8  | full easy  |   281/365   | ~4.5 s | 2026 January
+|      | full hard  |   264/365   | ^      | 2026 January
 
 ### Notes
 
@@ -190,6 +190,7 @@ These are the steps in each pass-through:[^order]
 - **Lane**: A straight line of cells in the $`x`$ or $`y`$ direction.
   - **Row**: A horizontal lane.
   - **Col**: A vertical lane.
+  - **Half-Lane**: One side of a lane including cells up to the lane peak.
 - **Peak**: A skyscraper guaranteed to be visible.[^peak] (akin to a ‘maximum’ in mathematics)
   - **Lane Peak**: An $`N`$-skyscraper in an $`N`$×$`N`$ puzzle.
 - **Sequence**: An ascending sequence of skyscrapers, looking from a clue across the lane towards the peak. Ideally strictly ascending, but not always so.

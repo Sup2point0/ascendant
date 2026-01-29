@@ -2,6 +2,7 @@ use std::*;
 use std::cell::LazyCell;
 
 use itertools::*;
+use natbitset::Bitset;
 
 use crate::*;
 
@@ -225,5 +226,71 @@ impl<const N: usize> Solver<N>
         }
 
         out
+    }
+
+    pub fn pick_last_in_grid(grid: &mut Grid<N>) -> bool
+    {
+        let mut did_deduce = false;
+
+        for x in 0..N { did_deduce |= Self::pick_last_in_lane(grid.look_down_mut(x)); }
+        for x in 0..N { did_deduce |= Self::pick_last_in_lane(grid.look_up_mut(x)); }
+        did_deduce |= Self::pinpoint_all_in_grid(grid);
+
+        for y in 0..N { did_deduce |= Self::pick_last_in_lane(grid.look_right_mut(y)); }
+        for y in 0..N { did_deduce |= Self::pick_last_in_lane(grid.look_left_mut(y)); }
+        debug!("post-last:\n{grid:?}");
+
+        did_deduce
+    }
+
+    /// In a half-lane with only 1 relevant unsolved cell remaining, eliminate impossible candidates from that cell.
+    pub fn pick_last_in_lane((clue, lane): (Option<Digit>, [&mut Cell<N>; N])) -> bool
+    {
+        let Some(clue) = clue else { return false };
+
+        /* Find unsolved cells which *could* be visible. */
+        let mut current_peak = 0;
+        let mut relevant_uncertain_indices = vec![];
+
+        for (i, cell) in lane.iter().enumerate() {
+            match cell {
+                Cell::Pencil(cands) => {
+                    if let Some(max) = cands.maximum()
+                    && max > current_peak
+                    {
+                        relevant_uncertain_indices.push(i);
+                    }
+                },
+                Cell::Solved(d) => {
+                    current_peak = current_peak.max(*d);
+                    if *d == N { break }
+                }
+            }
+        }
+
+        let [target_idx] = relevant_uncertain_indices[..] else { return false };
+        
+        /* NOTE: Need this first so it doesn't conflict with mutable borrow later... */
+        let mut hypothetical_lane = util::snap_lane(&lane);
+
+        let mut valid_choices = Bitset::<N>::none();
+        let Cell::Pencil(cands) = lane[target_idx] else { return false };
+
+        for cand in *cands {
+            hypothetical_lane[target_idx] = Cell::Solved(cand);
+
+            if Grid::count_visible_solved_in_lane(hypothetical_lane) == clue {
+                valid_choices += cand;
+            }
+        }
+
+        let before = *cands;
+        *cands = valid_choices;
+
+        if cands.is_empty() {
+            panic!("deleted all candidates picking last for cell: {cands:?} in lane: {hypothetical_lane:?}");
+        }
+
+        *cands != before
     }
 }
