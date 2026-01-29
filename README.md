@@ -4,8 +4,10 @@ An automated solver for [*Skyscrapers*<sup>↗</sup>](https://sup2point0.github.
 
 For a rundown of the algorithm, jump to [§ Algorithm](#algorithm). For an explanation of how Skyscrapers puzzles work, I have a [quickfire explanation on *Skyscraping*<sup>↗</sup>](https://sup2point0.github.io/skyscraping/walk/primer) you can check out.
 
+### Example
+
 <details>
-  <summary> <strong>Example</strong> </summary>
+  <summary> <strong>show</strong> </summary>
 
 ```hs
 solving puzzle from https://www.brainbashers.com/showskyscrapers.asp?date=1217&size=5&diff=2
@@ -123,16 +125,16 @@ ascendant> cargo run -- solve-one 7 --diff=2 --date=0401 --debug
 | :--- | :--------- | :---------- | :----- | :---- |
 | 4x4  | full       | **365/365** | ~0.7 s | 2026 January
 |      | sparse     |   127/365   | ^      | 2026 January
-| 5x5  | full easy  |   361/365   | 1.0 s  | 2026 January
-|      | full hard  |   357/365   | ^      | 2026 January
-|      | sparse     |    52/365   | ^      | 2026 January
-| 6x6  | full easy  |   316/365   | ~2.5 s | 2026 January
-|      | full hard  |   311/365   | ^      | 2026 January
-|      | sparse     |     8/365   | ^      | 2026 January
-| 7x7  | full easy  |   262/365   | ~2.5 s | 2026 January
-|      | full hard  |   254/365   | ^      | 2026 January
-| 8x8  | full easy  |   210/365   | ~4.5 s | 2026 January
-|      | full hard  |   194/365   | ^      | 2026 January
+| 5x5  | full easy  |   363/365   | 1.0 s  | 2026 January
+|      | full hard  |   358/365   | ^      | 2026 January
+|      | sparse     |    59/365   | ^      | 2026 January
+| 6x6  | full easy  |   325/365   | ~2.5 s | 2026 January
+|      | full hard  |   322/365   | ^      | 2026 January
+|      | sparse     |    15/365   | ^      | 2026 January
+| 7x7  | full easy  |   274/365   | ~2.5 s | 2026 January
+|      | full hard  |   277/365   | ^      | 2026 January
+| 8x8  | full easy  |   236/365   | ~4.5 s | 2026 January
+|      | full hard  |   230/365   | ^      | 2026 January
 
 ### Notes
 

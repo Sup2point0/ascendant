@@ -93,7 +93,7 @@ impl<const N: usize> Solver<N>
         let mut did_deduce = false;
 
         'exit: {
-            /* 1st pass from end: Descend peaks */
+            // 1st pass from end: Descend peaks and count
             let peak_index = match Grid::find_peak(&lane) {
                 None    => break 'exit,
                 Some(i) => i,
@@ -112,23 +112,18 @@ impl<const N: usize> Solver<N>
             let mut first_peak = N;
             let mut peaks = 1;
 
-            // println!("lane = {:?}", lane);
-
             for d in (2..N).rev()
             {
                 let indices = &seen_indices[&d];
-                // println!("-- d={d}, indices={indices:?}, first-peak={first_peak}, peaks={peaks}");
 
                 /* If this is a solved skyscraper left of our current first peak, set it as the new first peak. */
                 if indices.len() == 1 {
-                    // println!("PEAK");
                     if indices[0] < first_peak_idx {
                         first_peak_idx = indices[0];
                         first_peak = d;
                         peaks += 1;
 
                         if peaks == clue {
-                            // println!("DELEGATING");
                             return Self::deduce_haven_in_lane(lane, N, first_peak_idx);
                         }
                     }
@@ -143,7 +138,7 @@ impl<const N: usize> Solver<N>
                 }
             }
 
-            /* 2nd pass from start: Enforce ascending sequence */
+            // 2nd pass from start: Enforce ascending sequence
             if first_peak_idx == 0 { break 'exit; }
 
             if peaks == clue - 1 {
@@ -158,9 +153,24 @@ impl<const N: usize> Solver<N>
                 let lane_snap = util::snap_lane(&lane);
                 let cell = &mut lane[i];
 
-                if let Cell::Pencil(_) = cell {
-                    let cands = Self::calc_ascending(i, sequence_peak, cells_visible, first_peak_idx);
-                    did_deduce = cell.intersect(cands, lane_snap);
+                let cands = Self::calc_ascending(i, sequence_peak, cells_visible, first_peak_idx);
+                did_deduce = cell.intersect(cands, lane_snap);
+            }
+
+            /* If how many cells are left matches exactly how many more skyscrapers we need to see, enforce an ascending sequence using their current candidates */
+            if cells_visible == first_peak_idx {
+                let mut current_peak = N;
+
+                for i in (0..first_peak_idx).rev() {
+                    let lane_snap = util::snap_lane(&lane);
+                    let Cell::Pencil(cands) = &mut lane[i] else { continue };
+
+                    let cands_max = cands.maximum().expect("Cell should not have no candidates");
+                    current_peak = (current_peak - 1).min(cands_max);
+
+                    if let Err(e) = cands.retain_nonempty(|d| d <= current_peak) {
+                        panic!("Deleted all candidates while trying to enforce ascending sequence in lane: {lane_snap:?}, caused by: {e}");
+                    }
                 }
             }
         }

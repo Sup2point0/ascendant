@@ -169,7 +169,7 @@ impl Cli
     {
         let Mode::SolveAll { sizes, diffs, show_fail } = self.mode else { unreachable!() };
 
-        let diffs = diffs.unwrap_or(vec![]);
+        let diffs = diffs.unwrap_or(Difficulty::all());
 
         if let Some(sizes) = sizes {
             // SAFETY: This is not multithreaded, and is only for logging anyway.
@@ -181,7 +181,7 @@ impl Cli
 
             seq_macro::seq!(N in 4..=9 {
                 if sizes.contains(&N) {
-                    runner::try_solve_stored::<N>(&diffs)?;
+                    runner::try_solve_stored::<N>(diffs.clone())?;
                 }
             });
         } else {
